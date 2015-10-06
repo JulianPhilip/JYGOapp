@@ -31,6 +31,7 @@ gem 'omniauth-facebook'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'i18n-tasks'
+gem 'validates_timeliness', '~> 3.0'
 
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
