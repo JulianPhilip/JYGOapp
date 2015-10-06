@@ -10,7 +10,7 @@ class AddFieldsToUsers < ActiveRecord::Migration
     add_column :users, :zip_code, :string
     add_column :users, :city, :string
     add_column :users, :phone_number, :string
-    add_column :users, :status, :string
+    add_column :users, :status, :boolean
     add_column :users, :avg_rating_user, :string
   end
 end

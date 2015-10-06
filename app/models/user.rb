@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
                                :before_message => "Êtes-vous certain d'être né au 19ème siècle ?"
   validates :sexe, presence: true, inclusion: {in: ["Male","Female"]}
   validates :address, presence: true
+  validates :zip_code, presence: true
+  validates :city, presence: true
+  validates :phone_number, :phony_plausible => true, presence: true
+  validates :status, :inclusion => {:in => [true, false]}, presence: true
+  validates :avg_rating_user, presence: false
 end
