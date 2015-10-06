@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :birthdate, presence: true
   validates_date :birthdate, :before => lambda { 16.years.ago },
                                :before_message => "Vous devez être âgé de plus de 16 ans"
-  validates_date :birthdate, :on_or_after => { 125.years.ago },
+  validates_date :birthdate, :on_or_after => lambda { 125.years.ago },
                                :before_message => "Êtes-vous certain d'être né au 19ème siècle ?"
   validates :sexe, presence: true, inclusion: {in: ["Male","Female"]}
   validates :address, presence: true
