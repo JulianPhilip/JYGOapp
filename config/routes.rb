@@ -1,7 +1,31 @@
 Rails.application.routes.draw do
+  get 'shopper/new'
+
+  get 'shopper/create'
+
+  get 'shopper/show'
+
+  get 'shopper/edit'
+
+  get 'shopper/update'
+
+  get 'shopper/show_zip'
+
   devise_for :users
 
   Rails.application.routes.draw do
+  get 'shopper/new'
+
+  get 'shopper/create'
+
+  get 'shopper/show'
+
+  get 'shopper/edit'
+
+  get 'shopper/update'
+
+  get 'shopper/show_zip'
+
   scope '(:locale)', locale: /fr|en/ do
     resources :users
     end
