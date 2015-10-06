@@ -1,0 +1,22 @@
+<h2>Compléter ou éditer votre profil</h2>
+<%= simple_form_for current_user, url: 'users/:id', method: "patch" do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :username, autofocus: true %>
+    <%= f.input :firstname, autofocus: true %>
+    <%= f.input :lastname, autofocus: true %>
+    <%= f.input :sexe, autofocus: true %>
+    <%= f.input :birthday, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:month, :year] %>
+    <%= f.input :address, autofocus: true %>
+    <%= f.input :city, autofocus: true %>
+    <%= f.input :zip_code, autofocus: true %>
+    <%= f.input :phone_number, autofocus: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Save changes" %>
+  </div>
+<% end %>

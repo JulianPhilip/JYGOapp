@@ -1,34 +1,13 @@
 Rails.application.routes.draw do
-  get 'shopper/new'
 
-  get 'shopper/create'
 
-  get 'shopper/show'
-
-  get 'shopper/edit'
-
-  get 'shopper/update'
-
-  get 'shopper/show_zip'
+  get 'users/show'
 
   devise_for :users
 
-  Rails.application.routes.draw do
-  get 'shopper/new'
-
-  get 'shopper/create'
-
-  get 'shopper/show'
-
-  get 'shopper/edit'
-
-  get 'shopper/update'
-
-  get 'shopper/show_zip'
 
   scope '(:locale)', locale: /fr|en/ do
     resources :users
-    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -39,6 +18,11 @@ Rails.application.routes.draw do
   get '/not_available' => "welcome#not_available" ,as: 'not_available'
   get '/sorry' => "welcome#sorry", as: 'sorry'
   get '/available'=> "welcome#available", as: 'available'
+  get '/team' => "welcome#team", as: 'team'
+  get '/contactus' => "welcome#contactus", as: 'nouscontacter'
+  get '/edit_info' => "users#edit_info", as: 'edit_info'
+  get '/new' => "shopper#new", as: 'devenir_shopper'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
