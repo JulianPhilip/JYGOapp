@@ -7,14 +7,11 @@ class WelcomeController < ApplicationController
   end
 
   def not_available
-    if shopper_available? == true
+    if Shopper.enough_in_zip_code?(params[:zip_code])
       redirect_to available_path
     else
       redirect_to sorry_path
     end
   end
 
-  def shopper_available?
-    params[:zip_code] == "12340"
-  end
 end
