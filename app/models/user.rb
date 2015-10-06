@@ -18,4 +18,10 @@ class User < ActiveRecord::Base
   # validates :phone_number, :phony_plausible => true, presence: false
   # validates :status, :inclusion => {:in => [true, false]}, presence: false
   validates :avg_rating_user, presence: false
+  geocoded_by :full_street_address
+
+
+   def full_street_address
+    [address, zip_code, city].compact.join(', ')
+  end
 end
