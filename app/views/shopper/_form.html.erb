@@ -1,0 +1,12 @@
+<h2> </h2>
+<%= simple_form_for current_user, url: 'users/:id', method: "patch" do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :default_radius, collection: 1..5 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "J'y go" %>
+  </div>
+<% end %>

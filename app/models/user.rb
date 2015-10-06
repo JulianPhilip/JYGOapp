@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   validates :username, presence: false
   validates :firstname, presence: false
   validates :lastname, presence: false
-  validates :birthdate, presence: false
-  # validates_date :birthdate, :before => lambda { 16.years.ago },
+  validates :birthday, presence: false
+  # validates_date :birthday, :before => lambda { 16.years.ago },
   #                              :before_message => "Vous devez être âgé de plus de 16 ans"
-  # validates_date :birthdate, :on_or_after => lambda { 125.years.ago },
+  # validates_date :birthday, :on_or_after => lambda { 125.years.ago },
   #                              :before_message => "Êtes-vous certain d'être né au 19ème siècle ?"
   # validates :sexe, presence: false, inclusion: {in: ["Male","Female"]}
   validates :address, presence: false
