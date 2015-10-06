@@ -34,7 +34,7 @@ gem 'i18n-tasks'
 gem 'validates_timeliness', '~> 3.0'
 gem 'phony'
 gem 'phony_rails'
-
+gem 'geocoder'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
 # Use ActiveModel has_secure_password
