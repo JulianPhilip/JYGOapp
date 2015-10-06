@@ -26,6 +26,11 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem "figaro"
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'i18n-tasks'
 
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
