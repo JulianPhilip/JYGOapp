@@ -25,4 +25,10 @@ class User < ActiveRecord::Base
    def full_street_address
     [address, zip_code, city].compact.join(', ')
   end
+
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
 end

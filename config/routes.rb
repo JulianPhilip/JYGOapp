@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   get '/contactus' => "welcome#contactus", as: 'nouscontacter'
   get '/edit_info' => "users#edit_info", as: 'edit_info'
   get '/shop_config_1' => "high_voltage/pages#show", id: 'orders_user'
+  get '/home_call_action' => "users#home_call_action", as: 'home'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
