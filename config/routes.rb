@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/team' => "welcome#team", as: 'team'
   get '/contactus' => "welcome#contactus", as: 'nouscontacter'
   get '/edit_info' => "users#edit_info", as: 'edit_info'
-
+  get '/shop_config_1' => "high_voltage/pages#show", id: 'orders_user'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
