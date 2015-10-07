@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007094249) do
+ActiveRecord::Schema.define(version: 20151007100113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,10 @@ ActiveRecord::Schema.define(version: 20151007094249) do
     t.string   "avg_rating_user"
     t.float    "latitude"
     t.float    "longitute"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.date     "date_of_birth"
   end
 
