@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /fr|en/ do
     resources :users
+    resources :shoppers, only: [:show, :new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,8 +22,6 @@ Rails.application.routes.draw do
   get '/team' => "welcome#team", as: 'team'
   get '/contactus' => "welcome#contactus", as: 'nouscontacter'
   get '/edit_info' => "users#edit_info", as: 'edit_info'
-  get '/new' => "shopper#new", as: 'devenir_shopper'
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

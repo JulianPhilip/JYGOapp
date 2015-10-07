@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   validates :avg_rating_user, presence: false
   geocoded_by :full_street_address
 
+  has_one :shopper
 
    def full_street_address
     [address, zip_code, city].compact.join(', ')
