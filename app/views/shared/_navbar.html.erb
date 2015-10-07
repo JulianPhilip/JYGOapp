@@ -13,7 +13,7 @@
        <li><%= link_to "Nous contacter", nouscontacter_path %></li>
        <li><%= link_to "L'équipe", team_path %></li>
        <% if user_signed_in? %>
-         <li><%= link_to "Profil", '/users/:id' %></li>
+         <li><%= link_to "Profil", user_path(current_user) %></li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
