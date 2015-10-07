@@ -1,5 +1,5 @@
 <h2>Compléter ou éditer votre profil</h2>
-<%= simple_form_for current_user, url: 'users/:id', method: "patch" do |f| %>
+<%= simple_form_for current_user, url:current_user, method: "patch" do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -7,9 +7,9 @@
     <%= f.input :firstname, autofocus: true %>
     <%= f.input :lastname, autofocus: true %>
     <%= f.input :sexe, autofocus: true %>
-    <%= f.input :birthday, as: :date, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, discard_day: true,
-                              order: [:month, :year] %>
+     <%= f.input :date_of_birth, :as => :date, :start_year => Date.today.year - 12,
+      :end_year => 1900,
+      :order => [ :day, :month, :year], :required => true %>
     <%= f.input :address, autofocus: true %>
     <%= f.input :city, autofocus: true %>
     <%= f.input :zip_code, autofocus: true %>

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :username, presence: false
   validates :firstname, presence: false
   validates :lastname, presence: false
-  validates :birthday, presence: false
+  validates :date_of_birth, presence: false
   # validates_date :birthday, :before => lambda { 16.years.ago },
   #                              :before_message => "Vous devez être âgé de plus de 16 ans"
   # validates_date :birthday, :on_or_after => lambda { 125.years.ago },
