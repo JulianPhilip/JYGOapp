@@ -1,5 +1,5 @@
 <h2> </h2>
-<%= simple_form_for current_user, url: current_user, method: "patch" do |f| %>
+<%= simple_form_for @shopper, url: shoppers_path, method: :post do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
