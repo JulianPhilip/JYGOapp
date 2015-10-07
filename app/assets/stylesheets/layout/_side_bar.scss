@@ -149,3 +149,11 @@
   section{
     padding-left: 15px;
   }
+
+
+
+@media (min-width: 768px){
+#bs-sidebar-navbar-collapse-1 .navbar-nav {
+    float: none;
+}
+}
