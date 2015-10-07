@@ -1,7 +1,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    <%= render partial: "shared/side_bar" %>
+
     <!-- /#sidebar-wrapper -->
 
       <!-- Page Content -->
@@ -10,6 +10,7 @@
           <div class="row">
             <div class="col-lg-12">
               <h1>Votre profil: </h1>
+              <%= image_tag @user.picture.url(:medium) %>
               <ul>
                 <li> Username: <%= @user.username %></li>
                 <li> Prénom: <%= @user.firstname %></li>
@@ -19,7 +20,7 @@
                 <li> Code postal: <%= @user.zip_code %></li>
                 <li> Numéro de téléphone: <%= @user.phone_number %></li>
               </ul>
-
+              <%= link_to "Modifier vos informations", edit_info_path %>
               <div>
                 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.zip_code} #{@user.city}" %>
               </div>
