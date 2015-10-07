@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/team' => "welcome#team", as: 'team'
   get '/contactus' => "welcome#contactus", as: 'nouscontacter'
   get '/edit_info' => "users#edit_info", as: 'edit_info'
+  get '/home_call_action' => "users#home_call_action", as: 'home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
