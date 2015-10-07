@@ -24,7 +24,7 @@
               <div>
                 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.zip_code} #{@user.city}" %>
               </div>
-              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+
             </div>
           </div>
         </div>
@@ -34,10 +34,4 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- Menu Toggle Script -->
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+
