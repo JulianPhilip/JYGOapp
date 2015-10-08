@@ -1,0 +1,14 @@
+<h2>Ajouter ou éditer une disponibilité</h2>
+<%= simple_form_for @availability, url: availabilities_show_path , method: "patch" do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :date, as: :date, label: "Sélectionnez la date", as: :string, start_year: Time.now.year + 1, end_year: Time.now.year - 0, end_day: Time.now.day - 0 , order: [:day, :month, :year] %>
+    <%= f.input :acceptation_auto, label: "Souhaitez-vous activer la validation automatique ?" %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sauvegarder" %>
+  </div>
+<% end %>
