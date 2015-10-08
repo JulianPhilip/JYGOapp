@@ -11,10 +11,9 @@
    </button>
    <div class = "collapse navbar-collapse" id="navHeaderCollapse">
      <ul class = "nav navbar-nav pull-right">
-       <li><%= link_to "Accueil", '/' %></li>
-
-       <li><%= link_to "Nous contacter", nouscontacter_path %></li>
-       <li><%= link_to "L'équipe", team_path %></li>
+       <li><a href="#accueil">Accueil</a></li>
+       <li><a href="#contact">Contact</a></li>
+       <li><a href="#team">L'équipe</a></li>
 
        <% if user_signed_in? %>
          <li><%= link_to "Profil", user_path(current_user) %></li>
@@ -28,3 +27,13 @@
    </div>
  </div>
 </nav>
+
+
+
+
+
+
+       <!-- <li><%= link_to "Accueil", '/' %></li>
+
+       <li><%= link_to "Nous contacter", nouscontacter_path %></li>
+       <li><%= link_to "L'équipe", team_path %></li> -->

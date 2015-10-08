@@ -13,6 +13,17 @@
   background-image: url(panier.jpg);
   background-size: cover;
   color: white;
+
+  input{
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+  }
+
+  button{
+    display: block;
+    margin-top: 10px;
+  }
 }
 
 .contact{
