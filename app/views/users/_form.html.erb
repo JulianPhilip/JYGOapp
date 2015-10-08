@@ -8,9 +8,7 @@
     <%= f.input :firstname, autofocus: true %>
     <%= f.input :lastname, autofocus: true %>
     <%= f.input :sexe, autofocus: true %>
-    <%= f.input :date_of_birth, as: :date, :start_year => Date.today.year - 12,
-                              end_year: Date.today.year - 90, discard_day: true,
-                              order: [:month, :year] %>
+    <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
     <%= f.input :address, autofocus: true %>
     <%= f.input :city, autofocus: true %>
     <%= f.input :zip_code, autofocus: true %>

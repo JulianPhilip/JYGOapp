@@ -1,4 +1,13 @@
 class UsersController < ApplicationController
+
+  def search_shopper
+  search = {
+    location: params[:address],
+    date: Date.parse(params[:date]),
+  }
+  @avalabilities = Availability.search(search)
+  end
+
   def show
     @user = current_user
   end

@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007100113) do
+ActiveRecord::Schema.define(version: 20151008101843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: :cascade do |t|
+    t.integer  "shopper_id"
+    t.date     "date"
+    t.boolean  "acceptation_auto"
+    t.boolean  "status"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "availabilities", ["shopper_id"], name: "index_availabilities_on_shopper_id", using: :btree
 
   create_table "shoppers", force: :cascade do |t|
     t.integer  "user_id"
@@ -59,10 +70,6 @@ ActiveRecord::Schema.define(version: 20151007100113) do
     t.string   "avg_rating_user"
     t.float    "latitude"
     t.float    "longitute"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
     t.date     "date_of_birth"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
@@ -73,5 +80,6 @@ ActiveRecord::Schema.define(version: 20151007100113) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "availabilities", "shoppers"
   add_foreign_key "shoppers", "users"
 end
