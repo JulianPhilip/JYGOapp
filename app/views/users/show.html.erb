@@ -1,4 +1,8 @@
 <div id="wrapper">
+  <br>
+  <br>
+  <br>
+  <br>
 
     <!-- Sidebar -->
 
@@ -8,8 +12,9 @@
       <div id="page-content-wrapper">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-8 col-lg-offset-1">
               <h1>Votre profil: </h1>
+              <div class="col-md-6">
               <div class="avatar">
               <%= image_tag @user.picture.url(:medium) %>
               </div>
@@ -24,10 +29,13 @@
               </ul>
 
               <%= link_to "Modifier vos informations", edit_info_path %>
-
-              <div>
-                <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.zip_code} #{@user.city}" %>
               </div>
+
+
+                <div class="col-md-6">
+                <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.zip_code} #{@user.city}" %>
+                </div>
+
 
             </div>
           </div>
