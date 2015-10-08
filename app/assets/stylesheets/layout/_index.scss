@@ -17,15 +17,17 @@ h1{
 // Sections ------------------------------------------------------------------
 #accueil{
   height: 100vw;
-  width: 100vw;
+  width: 1140px;
   padding: 90px;
   margin-right: 0px;
   background-image: url(http://i.imgur.com/mtmzfsJ.jpg);
   background-size: cover;
-  color: white;
+  color: #4682B4;
+  background-color: #E7C4B4;
 
   .intro-text{
     margin-top: 50px;
+    margin: 0 auto;
 
     input{
       border: 1px solid black;
