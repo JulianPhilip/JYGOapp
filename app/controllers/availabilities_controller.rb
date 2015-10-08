@@ -43,8 +43,10 @@ class AvailabilitiesController < ApplicationController
 
   private
 
+
   def availabilities_params
-    params.require(:availability).permit(:date, :acceptation_auto)
+    params.require(:availability).permit(:date, :beginning_hour, :ending_hour, :acceptation_auto)
+
   end
 
 end

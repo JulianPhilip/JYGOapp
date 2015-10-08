@@ -4,8 +4,9 @@
 
   <div class="form-inputs">
     <%= f.input :date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+    <%= f.input :beginning_hour, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
+    <%= f.input :ending_hour, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
     <%= f.input :acceptation_auto, label: "Souhaitez-vous activer la validation automatique ?" %>
-
   </div>
 
   <div class="form-actions">
