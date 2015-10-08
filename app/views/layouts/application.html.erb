@@ -9,7 +9,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="my-container">
+<body class="my-container body-padding">
 <%= render 'shared/navbar' %>
 <%= render 'shared/notices' %>
 <% if user_signed_in? %>
@@ -18,15 +18,10 @@
 <%= javascript_include_tag 'application' %>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
+
 <div class="container">
 <%= yield %>
 
 </div>
-=======
-
-<%= yield %>
-
->>>>>>> 06a35970d9a662bb2bf67944bd49885f31af0850
 </body>
 </html>

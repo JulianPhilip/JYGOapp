@@ -19,7 +19,8 @@ h1{
   height: 100vw;
   width: 100vw;
   padding: 90px;
-  background-image: url(panier.jpg);
+  margin-right: 0px;
+  background-image: url(http://i.imgur.com/mtmzfsJ.jpg);
   background-size: cover;
   color: white;
 
@@ -59,9 +60,15 @@ h1{
 }
 
 #team{
-  height: 100vw; 
+  height: 100vw;
   padding: 90px;
   background-color: honeydew;
   color: black;
+}
+
+
+// Padding for body in layout
+.body-padding {
+  padding-top: 33px;
 }
 
