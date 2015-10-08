@@ -43,8 +43,8 @@ class AvailabilitiesController < ApplicationController
 
   private
 
-  def shopper_params
-    params.require(:availability).permit(:date, :acceptation_auto)
+  def availability_params
+    params.require(:availability).permit(:date, :beginning_hour, :ending_hour, :acceptation_auto)
   end
 
 end
