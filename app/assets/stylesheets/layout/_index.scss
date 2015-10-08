@@ -5,34 +5,63 @@
 @import "carousel";
 
 
+// Globals -------------------------------------------------------------------
+
+h1{
+  margin: 0;
+  text-decoration: none;
+}
+
+
 
 // Sections ------------------------------------------------------------------
-.accueil{
-  padding-top: 50px;
+#accueil{
   height: 100vw;
+  width: 100vw;
+  padding: 90px;
   background-image: url(panier.jpg);
   background-size: cover;
   color: white;
 
-  input{
-    border: 1px solid black;
-    border-radius: 3px;
-    padding: 5px;
-  }
+  .intro-text{
+    margin-top: 50px;
 
-  button{
-    display: block;
-    margin-top: 10px;
+    input{
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 5px;
+    }
+
+    button{
+      height: 40px;
+      width: 100px;
+      display: block;
+      margin-top: 10px;
+      background-color: transparent;
+      border: 3px solid steelblue;
+      border-radius: 3px;
+      color: steelblue;
+      transition: 0.3s;
+      &:hover{
+        background-color: steelblue;
+        color: aliceblue;
+      }
+    }
+
   }
 }
 
-.contact{
+#contact{
   height: 100vw;
-  border: 2px solid black;
+  padding: 90px;
+  background-color: steelblue;
+  color: white;
 }
 
-.team{
+#team{
   height: 100vw; 
-  border: 2px solid red;
+  padding: 90px;
+  background-color: honeydew;
+  color: black;
 }
 
