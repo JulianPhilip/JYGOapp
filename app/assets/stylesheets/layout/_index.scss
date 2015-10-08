@@ -6,26 +6,22 @@
 
 
 
-
-.my-container{
+// Sections ------------------------------------------------------------------
+.accueil{
   padding-top: 50px;
-   background: -webkit-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* W3C */
+  height: 100vw;
+  background-image: url(panier.jpg);
+  background-size: cover;
+  color: white;
 }
 
-.background{
-  padding-top: 50px;
-  padding-bottom: 0px;
-  background-image: url("http://i.imgur.com/ztguWs4.jpg");
-    background-repeat: no-repeat;
-      background-position: 50% 0;
-      -ms-background-size: cover;
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size: cover;
-      background-size: cover;
-      background-opacity: 50%;
+.contact{
+  height: 100vw;
+  border: 2px solid black;
 }
+
+.team{
+  height: 100vw; 
+  border: 2px solid red;
+}
+
