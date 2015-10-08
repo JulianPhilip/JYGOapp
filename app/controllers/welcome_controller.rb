@@ -1,8 +1,12 @@
 class WelcomeController < ApplicationController
+
+
   def index
   end
+
   def available
   end
+
   def sorry
   end
 

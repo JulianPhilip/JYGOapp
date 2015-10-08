@@ -11,8 +11,8 @@ class AvailabilitiesController < ApplicationController
   end
 
   def show
-    current_shopper = Shopper.where(user: current_user).first
-    @availability = current_shopper.availability
+    @current_shopper = Shopper.where(user: current_user).first
+    @availability = Availability.find(params[:id])
   end
 
   def new
@@ -21,8 +21,8 @@ class AvailabilitiesController < ApplicationController
 
   def create
     current_shopper = Shopper.where(user: current_user).first
-    @availability = current_shopper.create_shopper(availability_params)
-    redirect_to availabilities_show_path(@availability)
+    @availability = current_shopper.availabilities.create(availabilities_params)
+    redirect_to @availability
   end
 
   def edit
@@ -32,8 +32,8 @@ class AvailabilitiesController < ApplicationController
 
   def update
     current_shopper = Shopper.where(user: current_user).first
-    @shopper = current_shopper.availability.update(availability_params)
-    redirect_to availabilities_show_path(@availability)
+    @shopper = current_shopper.availability.update(availabilities_params)
+    redirect_to availabilities_path(@availability)
   end
 
   def delete
@@ -43,8 +43,10 @@ class AvailabilitiesController < ApplicationController
 
   private
 
-  def availability_params
+
+  def availabilities_params
     params.require(:availability).permit(:date, :beginning_hour, :ending_hour, :acceptation_auto)
+
   end
 
 end
