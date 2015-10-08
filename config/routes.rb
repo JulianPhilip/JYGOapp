@@ -1,28 +1,14 @@
 Rails.application.routes.draw do
 
 
-  get 'availabilities/index'
-
-  get 'availabilities/show'
-
-  get 'availabilities/new'
-
-  get 'availabilities/create'
-
-  get 'availabilities/edit'
-
-  get 'availabilities/update'
-
-  get 'availabilities/delete'
-
-  get 'users/show'
-
   devise_for :users
 
 
   scope '(:locale)', locale: /fr|en/ do
     resources :users
-    resources :shoppers, only: [:show, :new, :create]
+    resources :shoppers, only: [:show, :index, :new, :create]
+    resources :searchs, only: [:index]
+    resources :availabilities
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -38,6 +24,7 @@ Rails.application.routes.draw do
   get '/edit_info' => "users#edit_info", as: 'edit_info'
   get '/shop_config_1' => "high_voltage/pages#show", id: 'orders_user'
   get '/home_call_action' => "users#home_call_action", as: 'home'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

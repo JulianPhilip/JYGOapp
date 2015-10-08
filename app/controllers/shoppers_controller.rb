@@ -1,6 +1,13 @@
 class ShoppersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+  search = {
+    date: Date.parse(params[:date]),
+  }
+  @shoppers = Availability.search(search)
+  end
+
   def new
     @shopper = Shopper.new
   end
