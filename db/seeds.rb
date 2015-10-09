@@ -26,4 +26,14 @@ end
     )
 end
 
+50.times do
+  Shop.create(
+    name: Faker::Company.name,
+    category: Faker::Commerce.department(2,true),
+    country: ("France"),
+    city: ("Paris"),
+    street_and_number: Faker::Address.street_address,
+    zip_code: 75014
+    )
+end
 
