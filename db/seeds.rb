@@ -33,7 +33,8 @@ end
     country: ("France"),
     city: ("Paris"),
     street_and_number: Faker::Address.street_address,
-    zip_code: 75014
+    zip_code: 75014,
+    description: Faker::Lorem.sentences(1)
     )
 end
 
