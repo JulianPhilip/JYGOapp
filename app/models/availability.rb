@@ -3,7 +3,7 @@ class Availability < ActiveRecord::Base
 
 
   def self.search(query)
-    Availability.where("availabilities.date == ? ", query[:date])
+    Availability.where("availabilities.date = ? ", query[:date].to_date)
     #Appartment.near('Antwerp').where("guest_capacity <= ?", 3).joins(:availabilities).where("availabilities.start_date <= ? AND availabilities.end_date >= ?", Date.new(2015,7,2), Date.new(2015,7,14))
   end
 

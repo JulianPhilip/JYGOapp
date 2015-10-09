@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   has_one :shopper
 
-   def full_street_address
+  def full_street_address
     [address, zip_code, city].compact.join(', ')
   end
 
