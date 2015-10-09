@@ -24,7 +24,7 @@
 
         <li ><a href="<%= user_path(current_user) %>"> Profil <span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
         <% if @shopper.nil? %>
-        <li ><a href="<%= new_shopper_path %>" class="dropdown-toggle" data-toggle="dropdown"> Devenir shopper<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+        <li ><a href="/shoppers/new" class="dropdown-toggle" data-toggle="dropdown"> Devenir shopper<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
         <% else %>
         <li ><a href="<%= new_shopper_path %>" class="dropdown-toggle" data-toggle="dropdown"> Shopper <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a>
           <ul class="dropdown-menu forAnimate" role="menu">
