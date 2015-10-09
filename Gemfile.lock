@@ -87,7 +87,6 @@ GEM
       thread_safe
     erubis (2.7.0)
     execjs (2.6.0)
-    fabrication (2.14.1)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
@@ -269,7 +268,6 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
-  fabrication
   figaro
   font-awesome-sass
   geocoder
