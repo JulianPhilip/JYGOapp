@@ -16,14 +16,12 @@ h1{
 
 // Sections ------------------------------------------------------------------
 #accueil{
-  height: 100vw;
+  height: 100vh;
   width: 1140px;
   padding: 90px;
-  margin-right: 0px;
-  background-image: url(http://i.imgur.com/mtmzfsJ.jpg);
+  background-image: url(http://i.imgur.com/66nKj6x.jpg);
   background-size: cover;
-  color: #4682B4;
-  background-color: #E7C4B4;
+  color: white;
 
   .intro-text{
     margin-top: 50px;
@@ -33,6 +31,7 @@ h1{
       border: 1px solid black;
       border-radius: 3px;
       padding: 5px;
+      color: black;
     }
 
     button{
@@ -40,10 +39,10 @@ h1{
       width: 100px;
       display: block;
       margin-top: 10px;
+      color: steelblue;
       background-color: transparent;
       border: 3px solid steelblue;
       border-radius: 3px;
-      color: steelblue;
       transition: 0.3s;
       &:hover{
         background-color: steelblue;
@@ -55,22 +54,23 @@ h1{
 }
 
 #contact{
-  height: 100vw;
+  height: 100vh;
   padding: 90px;
-  background-color: steelblue;
+  background-color: #00458A;
   color: white;
 }
 
 #team{
-  height: 100vw;
+  height: 120vh;
   padding: 90px;
-  background-color: honeydew;
-  color: black;
+  background-color: #00458A;
+  color: white;
+
+  .team-member{
+    background-color: #EDDB86;
+    width: 200px;
+    padding: 2px;
+    border: 2px solid navy;
+    margin: 25px;
+  }
 }
-
-
-// Padding for body in layout
-.body-padding {
-  padding-top: 33px;
-}
-

@@ -5,4 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
 
+50.times do
+  User.create(
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: "testtest",
+    password_confirmation: "testtest",
+    address: Faker::Address.street_address,
+    zip_code: Faker::Address.postcode
+    )
+end
+
+20.times do
+  Shopper.create(
+    user_id: rand(1..50),
+    default_radius: 5
+    )
+end
