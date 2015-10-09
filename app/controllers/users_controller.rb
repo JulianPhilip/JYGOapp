@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = current_user
   end
@@ -17,6 +21,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :firstname, :lastname, :city, :zip_code, :phone_number, :address, :date_of_birth, :picture)
+  end
+
+  def location
+    [:address, :city, :zipcode].joins(",")
   end
 
 
