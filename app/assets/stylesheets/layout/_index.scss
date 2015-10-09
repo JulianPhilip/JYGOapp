@@ -19,16 +19,13 @@ h1{
   height: 100vw;
   width: 1140px;
   padding: 90px;
-  margin-right: 0px;
-  background-image: url(http://i.imgur.com/mtmzfsJ.jpg);
+  background-image: url(http://i.imgur.com/66nKj6x.jpg);
   background-size: cover;
-  color: #00458A;
-  background-color: #E7C4B4;
+  color: white;
 
   .intro-text{
     margin-top: 50px;
     margin: 0 auto;
-    background-color :rgba(255,255,255, 0.5);
 
     input{
       border: 1px solid black;
@@ -41,13 +38,13 @@ h1{
       width: 100px;
       display: block;
       margin-top: 10px;
+      color: steelblue;
       background-color: transparent;
-      border: 3px solid #00458A;
+      border: 3px solid steelblue;
       border-radius: 3px;
-      color: #00458A;
       transition: 0.3s;
       &:hover{
-        background-color: #00458A;
+        background-color: steelblue;
         color: aliceblue;
       }
     }
@@ -68,10 +65,3 @@ h1{
   background-color: #00458A;
   color: white;
 }
-
-
-// Padding for body in layout
-.body-padding {
-  padding-top: 33px;
-}
-
