@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /fr|en/ do
     resources :users
-    resources :shoppers, only: [:show, :index, :new, :create]
+    resources :shoppers, only: [:show, :index, :new, :create, :show_all]
     resources :searchs, only: [:index]
     resources :availabilities
   end

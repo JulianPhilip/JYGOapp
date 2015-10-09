@@ -15,6 +15,13 @@ require 'faker'
     password: "testtest",
     password_confirmation: "testtest",
     address: Faker::Address.street_address,
-    zip_code: Faker::Address.postcode,
+    zip_code: Faker::Address.postcode
+    )
+end
+
+20.times do
+  Shopper.create(
+    user_id: rand(1..50),
+    default_radius: 5
     )
 end

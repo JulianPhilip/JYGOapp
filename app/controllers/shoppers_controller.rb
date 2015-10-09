@@ -3,9 +3,9 @@ class ShoppersController < ApplicationController
 
   def index
   search = {
-    date: Date.parse(params[:date]),
+    date: params[:date].to_date
   }
-  @shoppers = Availability.search(search)
+  @shoppers = Availability.search(search).map(&:shopper)
   end
 
   def new
@@ -19,6 +19,10 @@ class ShoppersController < ApplicationController
 
   def show
     @shopper = current_user.shopper
+  end
+
+  def show_all
+    @shoppers = Shopper.all
   end
 
   def edit
