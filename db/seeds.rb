@@ -5,37 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
 
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-User.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
-Shopper.create()
+50.times do
+  User.create(
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: "testtest",
+    password_confirmation: "testtest",
+    address: Faker::Address.street_address,
+    zip_code: Faker::Address.postcode,
+    )
+end
