@@ -16,7 +16,7 @@ h1{
 
 // Sections ------------------------------------------------------------------
 #accueil{
-  height: 100vw;
+  height: 100vh;
   width: 1140px;
   padding: 90px;
   background-image: url(http://i.imgur.com/66nKj6x.jpg);
@@ -31,6 +31,7 @@ h1{
       border: 1px solid black;
       border-radius: 3px;
       padding: 5px;
+      color: black;
     }
 
     button{
@@ -53,14 +54,14 @@ h1{
 }
 
 #contact{
-  height: 60vw;
+  height: 60vh;
   padding: 90px;
   background-color: #00458A;
   color: white;
 }
 
 #team{
-  height: 60vw;
+  height: 60vh;
   padding: 90px;
   background-color: #00458A;
   color: white;
