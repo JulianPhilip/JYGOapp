@@ -22,12 +22,13 @@ h1{
   margin-right: 0px;
   background-image: url(http://i.imgur.com/mtmzfsJ.jpg);
   background-size: cover;
-  color: #4682B4;
+  color: #00458A;
   background-color: #E7C4B4;
 
   .intro-text{
     margin-top: 50px;
     margin: 0 auto;
+    background-color :rgba(255,255,255, 0.5);
 
     input{
       border: 1px solid black;
@@ -41,12 +42,12 @@ h1{
       display: block;
       margin-top: 10px;
       background-color: transparent;
-      border: 3px solid steelblue;
+      border: 3px solid #00458A;
       border-radius: 3px;
-      color: steelblue;
+      color: #00458A;
       transition: 0.3s;
       &:hover{
-        background-color: steelblue;
+        background-color: #00458A;
         color: aliceblue;
       }
     }
@@ -55,17 +56,17 @@ h1{
 }
 
 #contact{
-  height: 100vw;
+  height: 60vw;
   padding: 90px;
-  background-color: steelblue;
+  background-color: #00458A;
   color: white;
 }
 
 #team{
-  height: 100vw;
+  height: 60vw;
   padding: 90px;
-  background-color: honeydew;
-  color: black;
+  background-color: #00458A;
+  color: white;
 }
 
 
