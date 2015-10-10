@@ -58,6 +58,19 @@ h1{
   padding: 90px;
   background-color: #00458A;
   color: white;
+
+  .what-box{
+
+    ul{
+      list-style: none;
+      left: 50%;
+
+      li{
+        display: inline-block;
+        margin-right: 100px;
+      }
+    }
+  }
 }
 
 #why{
