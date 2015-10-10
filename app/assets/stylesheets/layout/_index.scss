@@ -55,19 +55,31 @@ h1{
 
 #what{
   height: 100vh;
-  padding: 90px;
   background-color: #00458A;
   color: white;
 
+  #what-title{
+    margin: 90px 0 0 90px;  
+    display: inline-block;
+  }
+
   .what-box{
+    margin: 200px auto;
+    display: table; // Allows list items centering to work
 
     ul{
       list-style: none;
-      left: 50%;
+      padding: 0;
+      margin: 0 auto;
 
       li{
         display: inline-block;
+        text-align: center;
         margin-right: 100px;
+
+        svg{
+          margin: 0 auto;
+        }
       }
     }
   }
@@ -75,8 +87,11 @@ h1{
 
 #why{
   height: 120vh;
-  padding: 90px;
   background-color: #00458A;
   color: white;
+  #why-title{
+    margin: 90px 0 0 90px;
+    display: inline-block;
+  }
 }
 
