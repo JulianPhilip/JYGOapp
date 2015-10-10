@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+<<<<<<< HEAD
+=======
+  resources :products
+>>>>>>> 209a92c08318ec4a245f1cd2c4067c164e316c16
 
   resources :shops
   resources :orders
