@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151009143147) do
+ActiveRecord::Schema.define(version: 20151010112044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20151009143147) do
   end
 
   add_index "availabilities", ["shopper_id"], name: "index_availabilities_on_shopper_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "category"
+    t.string   "sub_category"
+    t.string   "name"
+    t.string   "key_words"
+    t.text     "description"
+    t.integer  "min_price"
+    t.integer  "max_price"
+    t.string   "difficulty"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "shoppers", force: :cascade do |t|
     t.integer  "user_id"
