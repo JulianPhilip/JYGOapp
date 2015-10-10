@@ -44,6 +44,8 @@
 //     });
 //   });
 
+(function(){
+
 // Globals : 
 var doc = $(document);
 // Scrolling animation
@@ -65,3 +67,29 @@ doc.on("scroll", function(e){
 		$("nav#landingnav").addClass("active");
 	}
 })
+
+// Hide SVG paths : 
+var pathlist = document.querySelectorAll("path");
+console.log(pathlist);
+
+var hideAllPaths = function() {
+	for (i=0; i<pathlist.length; i++) {
+		pathlist[i].style.display = "none";
+	}
+}
+
+//TODO (thomas): make it unroll for real with dash thing
+var unroll = function() {
+	for (i=0; i<pathlist.length; i++) {
+		(function(index) {
+			setTimeout(function(){
+				pathlist[index].style.display = 'inline';
+			}, 900 * index + 300);
+		})(i);
+	}
+}
+
+//hideAllPaths();
+//unroll();
+
+})();
