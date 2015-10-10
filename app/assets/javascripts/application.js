@@ -44,10 +44,24 @@
 //     });
 //   });
 
-
+// Globals : 
+var doc = $(document);
+// Scrolling animation
 $('a').click(function(){
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
 });
+
+// Navbars swaping, (transparent/opaque)
+doc.on("scroll", function(e){
+	if(doc.scrollTop() >= $(window).height()) {
+		$("nav#landingnav").removeClass("active");
+		$("nav#scrollednav").addClass("active");
+	}
+	else {
+		$("nav#scrollednav").removeClass("active");
+		$("nav#landingnav").addClass("active");
+	}
+})
