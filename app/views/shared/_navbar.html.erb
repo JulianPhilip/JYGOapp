@@ -1,19 +1,13 @@
-<nav class="navbar navbar-default main-nav navbar-wagon">
+<nav class="nav" id="landingnav">
 
- <div class="container-fluid main-nav-container">
+ <div>
+   <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
 
-   <a href="<%= root_path %>" class = "navbar-brand"><img src="http://i.imgur.com/ataYUYi.png" class="logo"></a>
-
-   <button class = "navbar-toggle" data-toggle = "collapse" data-target = "#navHeaderCollapse">
-     <span class = "icon-bar"></span>
-     <span class = "icon-bar"></span>
-     <span class = "icon-bar"></span>
-   </button>
-   <div class = "collapse navbar-collapse" id="navHeaderCollapse">
-     <ul class = "nav navbar-nav pull-right">
+   <div>
+     <ul>
        <li><a class="link accueil" href="#accueil">Accueil</a></li>
-       <li><a class="link contact" href="#contact">Contact</a></li>
-       <li><a class="link team" href="#team">L'équipe</a></li>
+       <li><a class="link what" href="#what">What</a></li>
+       <li><a class="link why" href="#why">Why</a></li>
 
        <% if user_signed_in? %>
         <li><%= link_to "Passer Commande", searchs_path %></li>
@@ -23,18 +17,35 @@
          <li><%= link_to "Login", new_user_session_path %></li>
          <li><%= link_to "Sign up", new_user_registration_path %></li>
        <% end %>
-
      </ul>
    </div>
+
  </div>
+
 </nav>
 
+<nav class="nav" id="scrollednav">
 
+ <div>
+   <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
 
+   <div>
+     <ul>
+       <li><a class="link accueil" href="#accueil">Accueil</a></li>
+       <li><a class="link what" href="#what">What</a></li>
+       <li><a class="link why" href="#why">Why</a></li>
 
+       <% if user_signed_in? %>
+        <li><%= link_to "Passer Commande", searchs_path %></li>
+         <li><%= link_to "Profil", user_path(current_user) %></li>
+         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+       <% else %>
+         <li><%= link_to "Login", new_user_session_path %></li>
+         <li><%= link_to "Sign up", new_user_registration_path %></li>
+       <% end %>
+     </ul>
+   </div>
 
+ </div>
 
-       <!-- <li><%= link_to "Accueil", '/' %></li>
-
-       <li><%= link_to "Nous contacter", nouscontacter_path %></li>
-       <li><%= link_to "L'équipe", team_path %></li> -->
+</nav>
