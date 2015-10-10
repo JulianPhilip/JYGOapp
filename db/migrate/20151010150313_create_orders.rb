@@ -10,7 +10,8 @@ class CreateOrders < ActiveRecord::Migration
       t.boolean :status_exec
       t.integer :total_est_amout_min
       t.integer :total_est_amount_max
-      t.integercommission :total_amount
+      t.integer :total_amount
+      t.integer :commission
       t.text :comment
 
       t.timestamps null: false
