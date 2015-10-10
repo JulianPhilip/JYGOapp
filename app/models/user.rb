@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   geocoded_by :full_street_address
 
   has_one :shopper
+  has_many :orders
 
   def full_street_address
     [address, zip_code, city].compact.join(', ')

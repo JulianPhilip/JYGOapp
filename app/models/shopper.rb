@@ -1,6 +1,7 @@
 class Shopper < ActiveRecord::Base
   belongs_to :user
   has_many :availabilities
+  has_many :orders
   validates :default_radius, presence: false
   validates :avg_rating_shopper, presence: false
   validates :nb_exec_orders, presence: false
