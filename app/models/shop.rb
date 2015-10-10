@@ -1,4 +1,5 @@
 class Shop < ActiveRecord::Base
+  has_many :ordered_product
   validates :country, presence: false
   validates :city, presence: false
   validates :zip_code, presence: false
