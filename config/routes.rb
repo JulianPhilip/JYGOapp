@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
 
 
-<<<<<<< HEAD
-=======
+
+  get 'ordered_products/index'
+
+  get 'ordered_products/show'
+
+  get 'ordered_products/new'
+
+  get 'ordered_products/edit'
+
+  get 'ordered_products/create'
+
+  get 'ordered_products/update'
+
+  get 'ordered_products/destroy'
+
   resources :products
->>>>>>> 209a92c08318ec4a245f1cd2c4067c164e316c16
 
   resources :shops
   resources :orders
