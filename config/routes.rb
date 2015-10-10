@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
 
+
   resources :shops
+  resources :orders
 
   devise_for :users
 
