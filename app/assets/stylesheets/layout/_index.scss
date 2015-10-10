@@ -55,15 +55,79 @@ h1{
 
 #what{
   height: 100vh;
-  padding: 90px;
   background-color: #00458A;
   color: white;
+
+  #what-title{
+    margin: 90px 0 0 90px;  
+    display: inline-block;
+  }
+
+  .what-box{
+    margin: 200px auto;
+    display: table; // Allows list items centering to work
+
+    ul{
+      height: 150px;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+
+      li{
+        height: inherit;
+        display: inline-block;
+        text-align: center;
+        margin-right: 100px;
+
+        svg{
+          margin: 0 auto;
+        }
+      }
+    }
+  }
 }
 
 #why{
   height: 120vh;
-  padding: 90px;
   background-color: #00458A;
   color: white;
+
+  #why-title{
+    margin: 90px 0 0 90px;
+    display: inline-block;
+  }
+
+  .why-box{
+  margin: 200px auto;
+  display: table; // Allows list items centering to work
+
+  ul{
+    height: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+
+    li{
+      height: inherit;
+      display: inline-block;
+      text-align: center;
+      margin-right: 100px;
+
+      svg{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+}
+
+#about{
+  height: 50vh;
+  background-color: grey;
+
+  #about-title{
+    margin: 50px 0 0 50px;
+    display: inline-block;
+  }
 }
 
