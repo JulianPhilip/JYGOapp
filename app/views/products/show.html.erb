@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+<p>
+  <strong>Sub-category:</strong>
+  <%= @product.sub_category %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Mots-Clés:</strong>
+  <%= @product.key_words %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Prix-minimum:</strong>
+  <%= @product.min_price %>
+</p>
+<p>
+  <strong>Prix-maximum:</strong>
+  <%= @product.max_price %>
+</p>
+<p>
+  <strong>Accesibilité:</strong>
+  <%= @product.difficulty %>
+</p>
+<div>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+</div>
+
+
