@@ -43,5 +43,13 @@ nav{
 
   &#scrollednav{
     background-color: aliceblue;
+
+    a{
+      color: black;
+
+      &:hover{
+        color: steelblue;
+      }
+    }
   }
 }

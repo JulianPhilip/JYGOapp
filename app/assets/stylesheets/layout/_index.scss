@@ -68,11 +68,13 @@ h1{
     display: table; // Allows list items centering to work
 
     ul{
+      height: 150px;
       list-style: none;
       padding: 0;
       margin: 0 auto;
 
       li{
+        height: inherit;
         display: inline-block;
         text-align: center;
         margin-right: 100px;
@@ -89,8 +91,42 @@ h1{
   height: 120vh;
   background-color: #00458A;
   color: white;
+
   #why-title{
     margin: 90px 0 0 90px;
+    display: inline-block;
+  }
+
+  .why-box{
+  margin: 200px auto;
+  display: table; // Allows list items centering to work
+
+  ul{
+    height: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+
+    li{
+      height: inherit;
+      display: inline-block;
+      text-align: center;
+      margin-right: 100px;
+
+      svg{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+}
+
+#about{
+  height: 50vh;
+  background-color: grey;
+
+  #about-title{
+    margin: 50px 0 0 50px;
     display: inline-block;
   }
 }
