@@ -17,7 +17,7 @@
 //= require_tree .
 
 // note (thomas): I'm not sure about this block below:
-//  
+//
 // function htmlbodyHeightUpdate(){
 //     var height3 = $( window ).height()
 //     var height1 = $('.nav').height()+50
@@ -46,7 +46,7 @@
 
 (function(){
 
-// Globals : 
+// Globals :
 var doc = $(document);
 // Scrolling animation
 $('a').click(function(){
@@ -68,7 +68,7 @@ doc.on("scroll", function(e){
 	}
 })
 
-// Hide SVG paths : 
+// Hide SVG paths :
 var pathlist = document.querySelectorAll("path");
 
 var hideAllPaths = function() {

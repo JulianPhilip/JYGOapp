@@ -13,6 +13,7 @@
       <li> <span>Ville </span><%= @user.city %></li>
       <li> <span>Tel </span><%= @user.phone_number %></li>
     </ul>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.city}" %>
     <%= link_to "Modifier vos informations", edit_info_path %>
   </div>
 </div>
