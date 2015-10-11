@@ -70,13 +70,19 @@ doc.on("scroll", function(e){
 
 // Hide SVG paths : 
 var pathlist = document.querySelectorAll("path");
-console.log(pathlist);
 
 var hideAllPaths = function() {
 	for (i=0; i<pathlist.length; i++) {
-		pathlist[i].style.display = "none";
+		l = pathlist[i].getTotalLength();
+		pathlist[i].style.strokeDasharray = l + " " + l;
+		pathlist[i].style.strokeDashoffset = l;
+		pathlist[i].getBoundingClientRect();
+		pathlist[i].style.transition = "stroke-dashoffset 2s ease-in-out";
 	}
 }
+
+// pathlist[0].getBoundingClientRect().top < returns position relative to top of viewport
+// $(window).height() < to get viewport height
 
 //TODO (thomas): make it unroll for real with dash thing
 var unroll = function() {
@@ -89,7 +95,8 @@ var unroll = function() {
 	}
 }
 
-//hideAllPaths();
+hideAllPaths();
+//pathlist[i].style.strokeDashoffset = "0";
 //unroll();
 
 })();
