@@ -1,16 +1,19 @@
 <nav id="landingnav" class="">
 
-   <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
+   <a href="<%= root_path %>"><img id="nav-logo" src="http://i.imgur.com/ataYUYi.png"></a>
 
      <ul>
-       <li><a class="link accueil" href="#accueil">Accueil</a></li>
-       <li><a class="link what" href="#what">What</a></li>
-       <li><a class="link why" href="#why">Why</a></li>
-       <li><a class="link about" href="#about">About</a></li>
+       <% if !user_signed_in? %>
+         <li><a class="link accueil" href="#accueil">Accueil</a></li>
+         <li><a class="link what" href="#what">What</a></li>
+         <li><a class="link why" href="#why">Why</a></li>
+         <li><a class="link about" href="#about">About</a></li>
+       <% end %>
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
          <li><%= link_to "Profil", user_path(current_user) %></li>
+         <li><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
@@ -24,17 +27,20 @@
 
 <nav id="scrollednav" class="active">
 
-   <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
+   <a href="<%= root_path %>"><img id="nav-logo" src="http://i.imgur.com/ataYUYi.png"></a>
 
      <ul>
-       <li><a class="link accueil" href="#accueil">Accueil</a></li>
-       <li><a class="link what" href="#what">What</a></li>
-       <li><a class="link why" href="#why">Why</a></li>
-       <li><a class="link about" href="#about">About</a></li>
+       <% if !user_signed_in? %>
+         <li><a class="link accueil" href="#accueil">Accueil</a></li>
+         <li><a class="link what" href="#what">What</a></li>
+         <li><a class="link why" href="#why">Why</a></li>
+         <li><a class="link about" href="#about">About</a></li>
+       <% end %>
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
          <li><%= link_to "Profil", user_path(current_user) %></li>
+         <li><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>

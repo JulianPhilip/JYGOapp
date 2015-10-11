@@ -1,12 +1,16 @@
 nav{  
-  height: 45px;
+  height: 50px;
   width: 100vw;
   position: fixed;
-  padding: 10px;
-  top: -45px;
+  //padding: 10px;
+  top: -50px;
 
   img{
     height: 100%;
+  }
+
+  #nav-logo{
+    padding: 10px;
   }
 
   ul{ 
@@ -14,11 +18,29 @@ nav{
     list-style: none;
 
     li{
-      display: inline;
+      //display: inline;
+      float: left;
       margin-right: 50px;
+      line-height: 50px;
+      vertical-align: middle;
     }
   }
+  .nav-imgcropper{
+    width: 45px;
+    height: 45px;
+    margin-top: 3px;
+    position: relative; 
+    overflow: hidden;
+    border: solid black 2px;
+    border-radius: 100%;
+    display: inline-block;
 
+    img{
+      display: inline;
+      width: auto;
+      vertical-align: top;
+    }
+  } 
   &.active{
     top: 0px;
     transition: 0.3s
