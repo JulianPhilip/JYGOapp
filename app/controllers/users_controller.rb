@@ -26,7 +26,4 @@ class UsersController < ApplicationController
   def location
     [:address, :city, :zipcode].join(",")
   end
-
-
-
 end
