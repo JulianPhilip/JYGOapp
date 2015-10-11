@@ -12,7 +12,8 @@
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
-         <li><%= link_to "Profil", user_path(current_user) %><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
+         <li><%= link_to "Profil", user_path(current_user) %></li>
+         <li><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
@@ -38,7 +39,8 @@
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
-         <li><%= link_to "Profil", user_path(current_user) %><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
+         <li><%= link_to "Profil", user_path(current_user) %></li>
+         <li><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>

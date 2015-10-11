@@ -18,14 +18,17 @@ nav{
     list-style: none;
 
     li{
-      display: inline;
+      //display: inline;
+      float: left;
       margin-right: 50px;
+      line-height: 50px;
+      vertical-align: middle;
     }
   }
   .nav-imgcropper{
     width: 45px;
     height: 45px;
-    margin-left: 10px;
+    margin-top: 3px;
     position: relative; 
     overflow: hidden;
     border: solid black 2px;
@@ -34,8 +37,8 @@ nav{
 
     img{
       display: inline;
-      margin: 0 auto;
       width: auto;
+      vertical-align: top;
     }
   } 
   &.active{
