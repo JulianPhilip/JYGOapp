@@ -1,12 +1,16 @@
 nav{  
-  height: 45px;
+  height: 50px;
   width: 100vw;
   position: fixed;
-  padding: 10px;
-  top: -45px;
+  //padding: 10px;
+  top: -50px;
 
   img{
     height: 100%;
+  }
+
+  #nav-logo{
+    padding: 10px;
   }
 
   ul{ 
@@ -18,7 +22,22 @@ nav{
       margin-right: 50px;
     }
   }
+  .nav-imgcropper{
+    width: 45px;
+    height: 45px;
+    margin-left: 10px;
+    position: relative; 
+    overflow: hidden;
+    border: solid black 2px;
+    border-radius: 100%;
+    display: inline-block;
 
+    img{
+      display: inline;
+      margin: 0 auto;
+      width: auto;
+    }
+  } 
   &.active{
     top: 0px;
     transition: 0.3s
