@@ -42,3 +42,11 @@
 //         htmlbodyHeightUpdate()
 //     });
 //   });
+
+$(".modalLink").click(function(e){
+	$(".modalDialog").toggleClass("active");
+});
+
+$('.closeModal').click(function(e){
+	$(".modalDialog").removeClass("active");
+})
