@@ -3,10 +3,12 @@
    <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
 
      <ul>
-       <li><a class="link accueil" href="#accueil">Accueil</a></li>
-       <li><a class="link what" href="#what">What</a></li>
-       <li><a class="link why" href="#why">Why</a></li>
-       <li><a class="link about" href="#about">About</a></li>
+       <% if !user_signed_in? %>
+         <li><a class="link accueil" href="#accueil">Accueil</a></li>
+         <li><a class="link what" href="#what">What</a></li>
+         <li><a class="link why" href="#why">Why</a></li>
+         <li><a class="link about" href="#about">About</a></li>
+       <% end %>
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
@@ -27,10 +29,12 @@
    <a href="<%= root_path %>"><img src="http://i.imgur.com/ataYUYi.png"></a>
 
      <ul>
-       <li><a class="link accueil" href="#accueil">Accueil</a></li>
-       <li><a class="link what" href="#what">What</a></li>
-       <li><a class="link why" href="#why">Why</a></li>
-       <li><a class="link about" href="#about">About</a></li>
+       <% if !user_signed_in? %>
+         <li><a class="link accueil" href="#accueil">Accueil</a></li>
+         <li><a class="link what" href="#what">What</a></li>
+         <li><a class="link why" href="#why">Why</a></li>
+         <li><a class="link about" href="#about">About</a></li>
+       <% end %>
 
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
