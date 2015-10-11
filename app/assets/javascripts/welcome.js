@@ -3,7 +3,7 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 (function(){
-
+console.log('qfmdksjqmsfkdjsmflkdqsmflkdjqsfqsQQQQQQQQQQQQQ')
 // Globals :
 var doc = $(document);
 // Scrolling animation
@@ -15,6 +15,10 @@ $('a').click(function(){
 });
 
 // Navbars swaping, (transparent/opaque)
+
+$("nav#scrollednav").removeClass("active");
+$("nav#landingnav").addClass("active");
+
 doc.on("scroll", function(e){
 	if(doc.scrollTop() >= $(window).height()) {
 		$("nav#landingnav").removeClass("active");
