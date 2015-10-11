@@ -1,18 +1,18 @@
-<div id="">
+<div class="content">
 <!-- Page Content -->
-  <h1>Votre profil: </h1>
-  <div class="">
-    <%= image_tag @user.picture.url(:medium) %>
+<h1>Profil: </h1>
+<div id="profilecard">
+    <div class="imgcropper">
+      <%= image_tag @user.picture.url(:medium) %>
+    </div>
+    <ul>
+      <li> <span>Pseudo </span> <%= @user.username %></li>
+      <li> <span>Prénom </span> <%= @user.firstname %></li>
+      <li> <span>Nom </span><%= @user.lastname %></li>
+      <li> <span>Adresse </span><%= @user.address %></li>
+      <li> <span>Ville </span><%= @user.city %></li>
+      <li> <span>Tel </span><%= @user.phone_number %></li>
+    </ul>
+    <%= link_to "Modifier vos informations", edit_info_path %>
   </div>
-  <ul>
-    <li> Username: <%= @user.username %></li>
-    <li> Prénom: <%= @user.firstname %></li>
-    <li> Nom: <%= @user.lastname %></li>
-    <li> Adresse: <%= @user.address %></li>
-    <li> Ville: <%= @user.city %></li>
-    <li> Code postal: <%= @user.zip_code %></li>
-    <li> Numéro de téléphone: <%= @user.phone_number %></li>
-  </ul>
-
-  <%= link_to "Modifier vos informations", edit_info_path %>
 </div>

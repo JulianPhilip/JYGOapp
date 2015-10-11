@@ -1,3 +1,131 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// Globals -------------------------------------------------------------------
+
+h1{
+  margin: 0;
+  text-decoration: none;
+}
+
+
+
+// Sections ------------------------------------------------------------------
+#accueil{
+  height: 100vh;
+  width: 100%;
+  padding: 90px;
+  background-image: url(http://i.imgur.com/66nKj6x.jpg);
+  background-size: cover;
+  color: white;
+
+  .intro-text{
+    margin-top: 50px;
+    margin: 0 auto;
+
+    input{
+      border: 1px solid black;
+      border-radius: 3px;
+      padding: 5px;
+      color: black;
+    }
+
+    button{
+      height: 40px;
+      width: 100px;
+      display: block;
+      margin-top: 10px;
+      color: steelblue;
+      background-color: transparent;
+      border: 3px solid steelblue;
+      border-radius: 3px;
+      transition: 0.3s;
+      &:hover{
+        background-color: steelblue;
+        color: aliceblue;
+      }
+    }
+
+  }
+}
+
+#what{
+  height: 100vh;
+  background-color: #00458A;
+  color: white;
+
+  #what-title{
+    margin: 90px 0 0 90px;  
+    display: inline-block;
+  }
+
+  .what-box{
+    margin: 200px auto;
+    display: table; // Allows list items centering to work
+
+    ul{
+      height: 150px;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+
+      li{
+        height: inherit;
+        display: inline-block;
+        text-align: center;
+        margin-right: 100px;
+
+        svg{
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+#why{
+  height: 120vh;
+  background-color: #00458A;
+  color: white;
+
+  #why-title{
+    margin: 90px 0 0 90px;
+    display: inline-block;
+  }
+
+  .why-box{
+  margin: 200px auto;
+  display: table; // Allows list items centering to work
+
+  ul{
+    height: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+
+    li{
+      height: inherit;
+      display: inline-block;
+      text-align: center;
+      margin-right: 100px;
+
+      svg{
+        margin: 0 auto;
+      }
+    }
+  }
+}
+}
+
+#about{
+  height: 50vh;
+  background-color: grey;
+
+  #about-title{
+    margin: 50px 0 0 50px;
+    display: inline-block;
+  }
+}
