@@ -9,20 +9,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'shared/navbar' %>
-<% if false %>
-	<%= render 'shared/notices' %>
-<% end %>
-<% if false %>
-	<% if user_signed_in? %>
-	<%= render partial: "shared/side_bar" %>
-	<% end %>
-<% end %>
-<%= javascript_include_tag 'application' %>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<%= yield %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= render 'shared/navbar' %>
+
+	<% if false %>
+		<%= render 'shared/notices' %>
+	<% end %>
+
+	<% if false %>
+		<% if user_signed_in? %>
+		<%= render partial: "shared/side_bar" %>
+		<% end %>
+	<% end %>
+
+	<%= javascript_include_tag 'application' %>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<%= yield %>
+	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>
