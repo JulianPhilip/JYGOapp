@@ -5,24 +5,28 @@
   <meta name="The crowdsourced shopping service" content="<%= (yield(:description) || "").squish %>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', params[:controller], media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'shared/navbar' %>
-<% if false %>
-	<%= render 'shared/notices' %>
-<% end %>
-<% if false %>
-	<% if user_signed_in? %>
-	<%= render partial: "shared/side_bar" %>
-	<% end %>
-<% end %>
-<%= javascript_include_tag 'application' %>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<%= yield %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= render 'shared/navbar' %>
+
+	<% if false %>
+		<%= render 'shared/notices' %>
+	<% end %>
+
+	<% if false %>
+		<% if user_signed_in? %>
+		<%= render partial: "shared/side_bar" %>
+		<% end %>
+	<% end %>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<%= yield %>
+	
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

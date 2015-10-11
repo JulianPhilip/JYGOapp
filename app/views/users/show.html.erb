@@ -1,49 +1,18 @@
-<div id="wrapper">
-  <br>
-  <br>
-  <br>
-  <br>
-
-    <!-- Sidebar -->
-
-    <!-- /#sidebar-wrapper -->
-
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-8 col-lg-offset-1">
-              <h1>Votre profil: </h1>
-              <div class="col-md-6">
-              <div class="avatar">
-              <%= image_tag @user.picture.url(:medium) %>
-              </div>
-              <ul>
-                <li> Username: <%= @user.username %></li>
-                <li> Prénom: <%= @user.firstname %></li>
-                <li> Nom: <%= @user.lastname %></li>
-                <li> Adresse: <%= @user.address %></li>
-                <li> Ville: <%= @user.city %></li>
-                <li> Code postal: <%= @user.zip_code %></li>
-                <li> Numéro de téléphone: <%= @user.phone_number %></li>
-              </ul>
-
-              <%= link_to "Modifier vos informations", edit_info_path %>
-              </div>
-
-
-                <div class="col-md-6">
-                <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.zip_code} #{@user.city}" %>
-                </div>
-
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-
+<div class="content">
+<!-- Page Content -->
+<h1>Profil: </h1>
+<div id="profilecard">
+    <div class="imgcropper">
+      <%= image_tag @user.picture.url(:medium) %>
     </div>
-    <!-- /#wrapper -->
-
-
+    <ul>
+      <li> <span>Pseudo </span> <%= @user.username %></li>
+      <li> <span>Prénom </span> <%= @user.firstname %></li>
+      <li> <span>Nom </span><%= @user.lastname %></li>
+      <li> <span>Adresse </span><%= @user.address %></li>
+      <li> <span>Ville </span><%= @user.city %></li>
+      <li> <span>Tel </span><%= @user.phone_number %></li>
+    </ul>
+    <%= link_to "Modifier vos informations", edit_info_path %>
+  </div>
+</div>
