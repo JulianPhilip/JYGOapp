@@ -4,7 +4,7 @@
 
      <ul>
        <% if !user_signed_in? %>
-         <li><a class="link accueil" href="#accueil">Accueil</a></li>
+         <li><%= link_to "Acceuil", :root, class: "link acceuil" %></li>
          <li><a class="link what" href="#what">What</a></li>
          <li><a class="link why" href="#why">Why</a></li>
          <li><a class="link about" href="#about">About</a></li>
@@ -14,8 +14,8 @@
          <li><%= link_to "Passer Commande", searchs_path %></li>
          <li><%= link_to "Profil", user_path(current_user) %></li>
          <li><a id="dropdownToggle" href="#">
-                <div class="nav-imgcropper"> 
-                  <%= image_tag current_user.picture.url(:medium) %> 
+                <div class="nav-imgcropper">
+                  <%= image_tag current_user.picture.url(:medium) %>
                 </div>
                 </a>
                 <div class="dropdown">
@@ -24,7 +24,7 @@
                     <li><a href="#">Second</a></li>
                     <li><a href="#">Third</a></li>
                     <li><a href="#">Fourth</a></li>
-                  </ul> 
+                  </ul>
                 </div>
           </li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -56,7 +56,7 @@
          <li><%= link_to "Profil", user_path(current_user) %></li>
          <li>
            <a href="<%= user_path(current_user) %>">
-             <div class="nav-imgcropper"> 
+             <div class="nav-imgcropper">
                 <%= image_tag current_user.picture.url(:medium) %>
              </div>
           </a>
