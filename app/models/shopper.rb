@@ -16,6 +16,15 @@ class Shopper < ActiveRecord::Base
     Shopper.joins(:user).where(users: {zip_code: zip_code}).count > 9
   end
 
+    def self.search(query)
+    User.near(query[:location], 3)
+    # shoppers = Shopper.where("availabilities.date = ? ", query[:date].to_date)
+
+
+    # Availability.where("availabilities.date = ? ", query[:date].to_date)
+    #Appartment.near('Antwerp').where("guest_capacity <= ?", 3).joins(:availabilities).where("availabilities.start_date <= ? AND availabilities.end_date >= ?", Date.new(2015,7,2), Date.new(2015,7,14))
+    end
+
   def self.current
     where(user: current_user).first
   end
