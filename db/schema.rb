@@ -132,7 +132,7 @@ ActiveRecord::Schema.define(version: 20151011141829) do
     t.boolean  "status"
     t.string   "avg_rating_user"
     t.float    "latitude"
-    t.float    "longitude"
+    t.float    "longitute"
     t.date     "date_of_birth"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
