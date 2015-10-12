@@ -71,4 +71,8 @@ $('.modalDialog.loginBtn').click(function(e){
 	});
 });
 
+$("#dropdownToggle").click(function(e){
+	$('.dropdown').toggleClass('active');
+})
+
 })();
