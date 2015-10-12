@@ -25,7 +25,7 @@
 	<div id="openModal" class="modalDialog">
 		<div>
 			<a href="#close" class="closeModal">X</a>
-			<h2>Login</h2>	
+			<h2>Login</h2>
 			<form id="loginForm" action="">
 				<input class="email" type="text" placeholder="Email">
 				<input class="password" type="password" placeholder="Mot de passe">
@@ -34,11 +34,13 @@
 		</div>
 	</div>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
 	<%= yield %>
 
 	<%= javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </body>
 </html>

@@ -6,6 +6,7 @@
 <table class="table table_striped">
   <thead>
     <tr>
+      <th>Shoppers</th>
       <th>Prénom</th>
       <th>Nom</th>
       <th>Email</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @shoppers.each_with_index do |shopper, index| %>
       <tr>
+        <td><%= image_tag shopper.user.picture, width:"100px" %></td>
         <td><%= shopper.user.firstname %></td>
         <td><%= shopper.user.lastname %></td>
         <td><%= shopper.user.email %></td>
@@ -35,39 +37,4 @@
 </table>
 <!--  New Possibility -->
 
-<div class="container">
-  <div class="row">
-        <div class="span12">
-        <ul class="thumbnails">
-          <% @shoppers.each_with_index do |shopper, index| %>
-          <li class="span5 clearfix">
-                  <div class="thumbnail clearfix">
-                    <%= image_tag shopper.user.picture %>
-                    <div class="caption" class="pull-left">
-                      <h4>
-                      <div>Prénom: <%= shopper.user.firstname %></div>
-                      </h4>
-                      <h4>
-                      <div>Nom: <%= shopper.user.lastname %></div>
-                      </h4>
-                      <h4>
-                      <div><%= shopper.user.email %></div>
-                      </h4>
-                      <h4>
-                      <div><%= shopper.user.address %>, <%= shopper.user.zip_code %> <%= shopper.user.city %></div>
-                      </h4>
-                      <div>
-                      <%= form_tag orders_path do %>
-                      <%= hidden_field_tag 'shopper_id', shopper.id %>
-                      <%= hidden_field_tag 'date', @selected_date %>
-                      <%= submit_tag 'choisir ce shopper' %>
-                      <% end %>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <% end %>
-              </ul>
-                </div>
-              </div>
-            </div>
+
