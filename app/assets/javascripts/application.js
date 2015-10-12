@@ -45,6 +45,7 @@
 
 (function(){
 
+// Modal -----------------------------------------------------------------
 $(".modalLink").click(function(e){
 	$(".modalDialog").toggleClass("active");
 });
@@ -53,28 +54,38 @@ $('.closeModal').click(function(e){
 	$(".modalDialog").removeClass("active");
 })
 
+// AJAX handling stuff :
 var getLoginData = function(){
-	var email = $(".modalDialog.email").val();
-	var password = $(".modalDialog.password").val();
+	var email = $("#emailInput").val();
+	var password = $("#passwordInput").val();
+	console.log("GET DATA LOGIN", email, password);
 	resp = {user: { email: email, password: password, remember_me: 1}};
 	return resp;
 }
 
-
-$('.modalDialog.loginBtn').click(function(e){
+//TODO (thomas): missing CSRF token 
+$('.loginBtn').click(function(e){
 	var ld = getLoginData();
-	console.log('lhlkjhljkhlkjh' + ld);
 	var loginrequest = $.ajax({
+		url: "/users/sign_in",
 		method: "POST",
-		url: "/users",
-		data: ld
+		beforeSend: function(xhr) {xhr.setRequestHeader("X-CSRF-Token", $('meta[name="csrf-token"]').attr('content'))},
+		data: ld,
+		success: function(r){
+			//window.location.href = r.redirect
+			console.log(r);
+			window.location = '/';
+		}
 	});
+	//loginrequest.send();
 });
 
-//$(".dropdown").hide();
-
-$("#dropdownToggle").click(function(e){
+// Navbars dropdown menus ------------------------------------------------
+$(".dropdownToggle.transparent").click(function(e){
 	$('.dropdown').toggleClass('active');
+})
+$(".dropdownToggle.opaque").click(function(e){
+	$('.dropdown.opaque').toggleClass('active');
 })
 
 })();
