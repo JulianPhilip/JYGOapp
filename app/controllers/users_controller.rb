@@ -23,9 +23,9 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :firstname, :lastname, :city, :zip_code, :phone_number, :address, :date_of_birth, :picture)
   end
 
-  def location
-    [:address, :city, :zipcode].joins(",")
-  end
+  # def location
+  #   [:address, :city, :zipcode].joins(",")
+  # end
 
 
 

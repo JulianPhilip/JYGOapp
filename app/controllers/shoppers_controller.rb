@@ -6,7 +6,8 @@ class ShoppersController < ApplicationController
     date: params[:date].to_date,
     location: current_user.full_street_address,
   }
-  @shoppers = Availability.search(search).map(&:shopper)
+  geocoded_by :full_street_address
+  @shoppers = Shopper.search(search).map(&:shopper)
   end
 
   def new

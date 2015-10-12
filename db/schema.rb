@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20151010150313) do
-
+ActiveRecord::Schema.define(version: 20151011141829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +29,20 @@ ActiveRecord::Schema.define(version: 20151010150313) do
 
   add_index "availabilities", ["shopper_id"], name: "index_availabilities_on_shopper_id", using: :btree
 
+  create_table "ordered_products", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.integer  "shop_id"
+    t.string   "origin"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "quantity"
+  end
+
+  add_index "ordered_products", ["order_id"], name: "index_ordered_products_on_order_id", using: :btree
+  add_index "ordered_products", ["product_id"], name: "index_ordered_products_on_product_id", using: :btree
+  add_index "ordered_products", ["shop_id"], name: "index_ordered_products_on_shop_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -63,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151010150313) do
     t.string   "difficulty"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "unit"
   end
 
   create_table "shoppers", force: :cascade do |t|
@@ -132,6 +145,9 @@ ActiveRecord::Schema.define(version: 20151010150313) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "availabilities", "shoppers"
+  add_foreign_key "ordered_products", "orders"
+  add_foreign_key "ordered_products", "products"
+  add_foreign_key "ordered_products", "shops"
   add_foreign_key "orders", "shoppers"
   add_foreign_key "orders", "users"
   add_foreign_key "shoppers", "users"

@@ -22,7 +22,7 @@
         <td><%= shopper.user.email %></td>
         <td><%= shopper.user.address %></td>
         <td><%= shopper.default_radius %></td>
-        <td><%= link_to 'Choisir', :root, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Choisir', new_order_path , class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>

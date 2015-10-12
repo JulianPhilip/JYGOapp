@@ -6,6 +6,7 @@ class OrderedProductsController < ApplicationController
   end
 
   def new
+    @ordered_product = Ordered_product.new
   end
 
   def edit
@@ -19,4 +20,11 @@ class OrderedProductsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def user_params
+    params.require(:ordered_product).permit(:product_id, :quantity)
+  end
+
 end

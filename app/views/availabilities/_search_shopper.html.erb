@@ -1,8 +1,16 @@
 <%= form_for :search, url:  shoppers_path, method: :get do |s| %>
 
 <div class="form-group">
-<label class="sr-only" for="date">Date</label>
+<label class="sr-only" for="date">Adresse de livraison</label>
+<div class="input-group">
+  Adresse de livraison :
+  <br>
+ <%= current_user.address %>
+ <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{current_user.address} #{current_user.zip_code} #{current_user.city}" %>
+</div>
+<label class="sr-only" for="date">Date de livraison</label>
   <div class="input-group">
+    Date de livraison :
       <input type="date" class="form-control" id="date" name="date" required >
       <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   </div>
