@@ -74,6 +74,7 @@ $('.loginBtn').click(function(e){
 		success: function(r){
 			//window.location.href = r.redirect
 			console.log(r);
+			window.location = '/';
 		}
 	});
 	//loginrequest.send();
