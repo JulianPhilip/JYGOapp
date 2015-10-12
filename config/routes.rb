@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :shops
   resources :orders
 
-  devise_for :users
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
 
   scope '(:locale)', locale: /fr|en/ do

@@ -14,10 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require_tree .
 
 // note (thomas): I'm not sure about this block below:
-//  
+//
 // function htmlbodyHeightUpdate(){
 //     var height3 = $( window ).height()
 //     var height1 = $('.nav').height()+50
@@ -46,57 +45,30 @@
 
 (function(){
 
-// Globals : 
-var doc = $(document);
-// Scrolling animation
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top
-    }, 500);
-    return false;
+$(".modalLink").click(function(e){
+	$(".modalDialog").toggleClass("active");
 });
 
-// Navbars swaping, (transparent/opaque)
-doc.on("scroll", function(e){
-	if(doc.scrollTop() >= $(window).height()) {
-		$("nav#landingnav").removeClass("active");
-		$("nav#scrollednav").addClass("active");
-	}
-	else {
-		$("nav#scrollednav").removeClass("active");
-		$("nav#landingnav").addClass("active");
-	}
+$('.closeModal').click(function(e){
+	$(".modalDialog").removeClass("active");
 })
 
-// Hide SVG paths : 
-var pathlist = document.querySelectorAll("path");
-
-var hideAllPaths = function() {
-	for (i=0; i<pathlist.length; i++) {
-		l = pathlist[i].getTotalLength();
-		pathlist[i].style.strokeDasharray = l + " " + l;
-		pathlist[i].style.strokeDashoffset = l;
-		pathlist[i].getBoundingClientRect();
-		pathlist[i].style.transition = "stroke-dashoffset 2s ease-in-out";
-	}
+var getLoginData = function(){
+	var email = $(".modalDialog.email").val();
+	var password = $(".modalDialog.password").val();
+	resp = {user: { email: email, password: password, remember_me: 1}};
+	return resp;
 }
 
-// pathlist[0].getBoundingClientRect().top < returns position relative to top of viewport
-// $(window).height() < to get viewport height
 
-//TODO (thomas): make it unroll for real with dash thing
-var unroll = function() {
-	for (i=0; i<pathlist.length; i++) {
-		(function(index) {
-			setTimeout(function(){
-				pathlist[index].style.display = 'inline';
-			}, 900 * index + 300);
-		})(i);
-	}
-}
-
-hideAllPaths();
-//pathlist[i].style.strokeDashoffset = "0";
-//unroll();
+$('.modalDialog.loginBtn').click(function(e){
+	var ld = getLoginData();
+	console.log('lhlkjhljkhlkjh' + ld);
+	var loginrequest = $.ajax({
+		method: "POST",
+		url: "/users",
+		data: ld
+	});
+});
 
 })();

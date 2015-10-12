@@ -1,6 +1,6 @@
 <div class="content">
 <!-- Page Content -->
-<h1>Profil: </h1>
+<h1 class = text-center>Profil: </h1>
 <div id="profilecard">
     <div class="imgcropper">
       <%= image_tag @user.picture.url(:medium) %>
@@ -13,6 +13,58 @@
       <li> <span>Ville </span><%= @user.city %></li>
       <li> <span>Tel </span><%= @user.phone_number %></li>
     </ul>
-    <%= link_to "Modifier vos informations", edit_info_path %>
-  </div>
-</div>
+    <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{@user.address} #{@user.city}" %>
+
+    <h2 class = text-center>vos spécialitées</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li>
+              <% if @user.vin == true %>
+                <%= "vous pouvez me faire confience pour le vin" %>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.boucherie == true %>
+                <%= "vous pouvez me faire confience pour votre viande" %>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.charcuterie == true %>
+                <%= "vous pouvez me faire confience pour votre charcuterie" %>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.prix == true %>
+                <%= "vous pouvez me faire confience pour la recherche de bonne affaires" %>
+              <%end%>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+        <ul>
+          <li>
+            <% if @user.legume == true %>
+              <%= "vous pouvez me faire confience pour trouver de bon légume" %>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.fruit == true %>
+              <%= "vous pouvez me faire confience pour trouver de bon fruit" %>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.poisson == true %>
+              <%= "vous pouvez me faire confience pour les produit frais venant de la mer" %>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.boutique == true %>
+              <%= "vous pouvez me faire confience pour selectionner les meilleurs addresses" %>
+            <%end%>
+          </li>
+        </ul>
+        </div>
+        </div>
+        <%= link_to "Modifier vos informations", edit_info_path %>
+      </div>
