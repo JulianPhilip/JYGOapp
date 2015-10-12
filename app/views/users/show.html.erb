@@ -1,5 +1,4 @@
-<div class="content">
-<!-- Page Content -->
+<!-- <div class="content">
 <h1 class = text-center>Profil: </h1>
 <div id="profilecard">
     <div class="imgcropper">
@@ -68,3 +67,38 @@
         </div>
         <%= link_to "Modifier vos informations", edit_info_path %>
       </div>
+ -->
+
+
+ <div class="container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" ></button>
+                    <h4 class="modal-title" id="myModalLabel">About <%= @user.firstname %></h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                    <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
+                    <span><strong>Skills: </strong></span>
+                        <span class="label label-warning">HTML5/CSS</span>
+                        <span class="label label-info">Adobe CS 5.5</span>
+                        <span class="label label-info">Microsoft Office</span>
+                        <span class="label label-success">Windows XP, Vista, 7</span>
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <button type="button" class="btn btn-default" >I've heard enough about <%= @user.firstname %></button>
+                    </center>
+                </div>
+            </div>
+        </div>
+</div>
