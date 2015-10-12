@@ -18,6 +18,16 @@ class User < ActiveRecord::Base
   validates :phone_number, :phony_plausible => true, presence: false
   # validates :status, :inclusion => {:in => [true, false]}, presence: false
   validates :avg_rating_user, presence: false
+  # validates :vin, :inclusion => {:in => [true, false]}
+  # validates :boucherie, :inclusion => {:in => [true, false]}
+  # validates :charcuterie, :inclusion => {:in => [true, false]}
+  # validates :prix, :inclusion => {:in => [true, false]}
+  # validates :legume, :inclusion => {:in => [true, false]}
+  # validates :fruit, :inclusion => {:in => [true, false]}
+  # validates :poisson, :inclusion => {:in => [true, false]}
+  # validates :boutique, :inclusion => {:in => [true, false]}
+
+
   geocoded_by :full_street_address
   after_validation :geocode
 
