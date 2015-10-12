@@ -13,21 +13,6 @@ $('a').click(function(){
     return false;
 });
 
-// Navbars swaping, (transparent/opaque)
-
-$("nav#scrollednav").removeClass("active");
-$("nav#landingnav").addClass("active");
-
-doc.on("scroll", function(e){
-	if(doc.scrollTop() >= $(window).height()) {
-		$("nav#landingnav").removeClass("active");
-		$("nav#scrollednav").addClass("active");
-	}
-	else {
-		$("nav#scrollednav").removeClass("active");
-		$("nav#landingnav").addClass("active");
-	}
-})
 
 // Hide SVG paths :
 var pathlist = document.querySelectorAll("path");
