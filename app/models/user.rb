@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   # validates :status, :inclusion => {:in => [true, false]}, presence: false
   validates :avg_rating_user, presence: false
   geocoded_by :full_street_address
+  after_validation :geocode
+
 
   has_one :shopper
   has_many :orders
