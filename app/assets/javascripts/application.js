@@ -42,3 +42,33 @@
 //         htmlbodyHeightUpdate()
 //     });
 //   });
+
+(function(){
+
+$(".modalLink").click(function(e){
+	$(".modalDialog").toggleClass("active");
+});
+
+$('.closeModal').click(function(e){
+	$(".modalDialog").removeClass("active");
+})
+
+var getLoginData = function(){
+	var email = $(".modalDialog.email").val();
+	var password = $(".modalDialog.password").val();
+	resp = {user: { email: email, password: password, remember_me: 1}};
+	return resp;
+}
+
+
+$('.modalDialog.loginBtn').click(function(e){
+	var ld = getLoginData();
+	console.log('lhlkjhljkhlkjh' + ld);
+	var loginrequest = $.ajax({
+		method: "POST",
+		url: "/users",
+		data: ld
+	});
+});
+
+})();

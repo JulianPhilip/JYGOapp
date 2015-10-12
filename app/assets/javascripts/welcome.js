@@ -3,7 +3,6 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 (function(){
-console.log('qfmdksjqmsfkdjsmflkdqsmflkdjqsfqsQQQQQQQQQQQQQ')
 // Globals :
 var doc = $(document);
 // Scrolling animation
