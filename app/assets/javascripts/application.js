@@ -43,10 +43,13 @@
 //     });
 //   });
 
-$(".modalLink").click(function(e){
+(function(){
+	$(".modalLink").click(function(e){
 	$(".modalDialog").toggleClass("active");
 });
 
 $('.closeModal').click(function(e){
 	$(".modalDialog").removeClass("active");
 })
+
+})();

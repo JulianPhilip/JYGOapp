@@ -23,8 +23,10 @@ nav{
       margin-right: 50px;
       line-height: 50px;
       vertical-align: middle;
+
     }
   }
+
   .nav-imgcropper{
     width: 45px;
     height: 45px;
@@ -56,6 +58,14 @@ nav{
         color: steelblue;
       }
     }
+
+    .modalLink{
+    color: aliceblue;
+      &:hover{
+        color: steelblue;
+        cursor: pointer;
+      }
+    }
   }
 
   &#scrollednav{
@@ -69,5 +79,14 @@ nav{
         color: steelblue;
       }
     }
+
+    .modalLink{
+      color: black;
+      &:hover{
+        color: steelblue;
+        cursor: pointer;
+      }
+    }
+    
   }
 }
