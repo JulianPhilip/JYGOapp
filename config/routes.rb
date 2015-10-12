@@ -1,21 +1,5 @@
 Rails.application.routes.draw do
 
-
-
-  get 'ordered_products/index'
-
-  get 'ordered_products/show'
-
-  get 'ordered_products/new'
-
-  get 'ordered_products/edit'
-
-  get 'ordered_products/create'
-
-  get 'ordered_products/update'
-
-  get 'ordered_products/destroy'
-
   resources :products
 
   resources :shops

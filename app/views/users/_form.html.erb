@@ -7,7 +7,7 @@
     <%= f.input :picture %>
     <%= f.input :firstname, autofocus: true %>
     <%= f.input :lastname, autofocus: true %>
-    <%= f.input :sexe, autofocus: true %>
+    <%= f.select :sexe, [['Male',1],['Female',2]] %>
     <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
     <%= f.input :address, autofocus: true %>
     <%= f.input :city, autofocus: true %>
