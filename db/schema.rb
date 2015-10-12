@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20151012094242) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,7 +132,7 @@ ActiveRecord::Schema.define(version: 20151012094242) do
     t.boolean  "status"
     t.string   "avg_rating_user"
     t.float    "latitude"
-    t.float    "longitude"
+    t.float    "longitute"
     t.date     "date_of_birth"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
