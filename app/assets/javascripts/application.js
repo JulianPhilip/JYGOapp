@@ -63,7 +63,6 @@ var getLoginData = function(){
 	return resp;
 }
 
-//TODO (thomas): missing CSRF token 
 $('.loginBtn').click(function(e){
 	var ld = getLoginData();
 	var loginrequest = $.ajax({
