@@ -54,16 +54,16 @@ h1{
 
 #what{
   height: 100vh;
-  background-color: #00458A;
-  color: white;
+  background-color: white;
+  color: black;
 
   #what-title{
-    margin: 90px 0 0 90px;  
+    margin: 90px 0 0 90px;
     display: inline-block;
   }
 
   .what-box{
-    margin: 200px auto;
+    margin: 120px auto;
     display: table; // Allows list items centering to work
 
     ul{
@@ -88,8 +88,8 @@ h1{
 
 #why{
   height: 120vh;
-  background-color: #00458A;
-  color: white;
+  background-color: white;
+  color: black;
 
   #why-title{
     margin: 90px 0 0 90px;
@@ -97,11 +97,11 @@ h1{
   }
 
   .why-box{
-  margin: 200px auto;
+  margin: 120px auto;
   display: table; // Allows list items centering to work
 
   ul{
-    height: 150px;
+    height: 120px;
     list-style: none;
     padding: 0;
     margin: 0 auto;
