@@ -20,7 +20,10 @@
 
                 <% if user_signed_in? %>
                 <li>
-                    <%= link_to "Passer Commande", searchs_path %>
+                    <%= link_to "Exécuter une course", new_availability_path %>
+                </li>
+                <li>
+                    <%= link_to "Passer commande", searchs_path %>
                 </li>
                 <li>
                     <%= link_to "Profil", user_path(current_user) %>

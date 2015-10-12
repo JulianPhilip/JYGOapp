@@ -86,6 +86,39 @@ h1{
   }
 }
 
+#boutique{
+  height: 85vh;
+  background-color: #A9DB83;
+  color: white;
+    #boutique-title{
+       margin: 90px 0 0 90px;
+        display: inline-block;
+      }
+
+      .boutique-box{
+      margin: 60px auto;
+      display: table; // Allows list items centering to work
+
+      ul{
+        height: 90px;
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        li{
+          height: inherit;
+          display: inline-block;
+          text-align: center;
+          margin-right: 100px;
+
+          svg{
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    }
+
 #why{
   height: 120vh;
   background-color: white;
