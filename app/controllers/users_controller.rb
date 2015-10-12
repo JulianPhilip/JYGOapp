@@ -26,7 +26,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :firstname, :lastname, :city, :zip_code, :phone_number, :address, :date_of_birth, :picture, :vin, :boucherie, :charcuterie, :prix, :legume, :fruit, :poisson, :boutique)
   end
 
-  def location
-    [:address, :city, :zipcode].join(",")
-  end
+
+  # def location
+  #   [:address, :city, :zipcode].joins(",")
+  # end
+
+
 end

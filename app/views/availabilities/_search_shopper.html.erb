@@ -1,11 +1,43 @@
 <%= form_for :search, url:  shoppers_path, method: :get do |s| %>
-
+<br>
+<br>
+<div class="container">
+<div class="row">
 <div class="form-group">
-<label class="sr-only" for="date">Date</label>
+<label class="sr-only" for="date">Adresse de livraison</label>
+<div class="input-group">
+  <div class="col-xs-6">
+  <strong>Adresse de livraison :</strong>
+  <br>
+  <br>
+<%= current_user.address %>
+ <br>
+<%= current_user.city %>
+ <br>
+<%= current_user.zip_code %>
+ <br>
+</div>
+ <div class="col-xs-6">
+ <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{current_user.address} #{current_user.zip_code} #{current_user.city}" %>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<label class="sr-only" for="date">Date de livraison</label>
   <div class="input-group">
+    <div class="col-xs-6">
+    <strong>Date de livraison :</strong>
+  </div>
+  <div class="col-xs-6">
       <input type="date" class="form-control" id="date" name="date" required >
-      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
   </div>
 </div>
+</div>
+<br>
+<br>
+<div class="container">
 <button type="submit" class="btn btn-default btn-primary"> Trouver mon shopper </button>
 <% end %>
+</div>

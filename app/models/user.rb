@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
 
 
   geocoded_by :full_street_address
+  after_validation :geocode
+
 
   has_one :shopper
   has_many :orders
