@@ -13,7 +13,20 @@
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
          <li><%= link_to "Profil", user_path(current_user) %></li>
-         <li><a href="<%= user_path(current_user) %>"><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></a></li>
+         <li><a id="dropdownToggle" href="#">
+                <div class="nav-imgcropper"> 
+                  <%= image_tag current_user.picture.url(:medium) %> 
+                </div>
+                </a>
+                <div class="dropdown">
+                  <ul>
+                    <li><a href="#">First</a></li>
+                    <li><a href="#">Second</a></li>
+                    <li><a href="#">Third</a></li>
+                    <li><a href="#">Fourth</a></li>
+                  </ul> 
+                </div>
+          </li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
@@ -41,7 +54,13 @@
        <% if user_signed_in? %>
          <li><%= link_to "Passer Commande", searchs_path %></li>
          <li><%= link_to "Profil", user_path(current_user) %></li>
-         <li><a href="<%= user_path(current_user) %>"><div class="nav-imgcropper"> <%= image_tag current_user.picture.url(:medium) %> </div></a></li>
+         <li>
+           <a href="<%= user_path(current_user) %>">
+             <div class="nav-imgcropper"> 
+                <%= image_tag current_user.picture.url(:medium) %>
+             </div>
+          </a>
+        </li>
          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
        <% else %>
          <li><%= link_to "Login", new_user_session_path %></li>
@@ -51,3 +70,5 @@
      </ul>
 
 </nav>
+
+
