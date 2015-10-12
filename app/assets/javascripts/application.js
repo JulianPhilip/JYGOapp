@@ -71,10 +71,12 @@ $('.modalDialog.loginBtn').click(function(e){
 	});
 });
 
-//$(".dropdown").hide();
-
-$("#dropdownToggle").click(function(e){
+// Navbars dropdown menus :
+$(".dropdownToggle.transparent").click(function(e){
 	$('.dropdown').toggleClass('active');
+})
+$(".dropdownToggle.opaque").click(function(e){
+	$('.dropdown.opaque').toggleClass('active');
 })
 
 })();

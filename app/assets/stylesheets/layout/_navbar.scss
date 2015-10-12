@@ -98,8 +98,8 @@ nav{
 
 // Dropdown ----------------------------------
 .dropdown{
-  position: absolute;
-  top: -500px;
+  position: fixed;
+  top: -300px;
   background-color: black;
   transition: 0.2s;
   margin-right: 200px;
@@ -107,6 +107,13 @@ nav{
     list-style-type: none;
     padding: 0;
     li{
+      float: none;
+      a{
+        color: aliceblue !important;
+        &:hover{
+          color: steelblue !important;
+        }
+      }
       &:first-child a::before{
         content: "";
         display: block;
@@ -116,7 +123,7 @@ nav{
         height: 0;
         border-left: 10px solid transparent;
         border-right: 10px solid transparent;
-        border-bottom: 10px solid #FFF;
+        border-bottom: 10px solid #000;
         margin: -10px 0 0 30px;
       }
     }
