@@ -2,11 +2,13 @@ class ShoppersController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
   search = {
-    date: params[:date].to_date,
+    # date: params[:date].to_date,
     location: current_user.full_street_address,
   }
-  @shoppers = Availability.search(search).map(&:shopper)
+
+  @shoppers = Shopper.search(search).map(&:shopper).compact
   end
 
   def new
