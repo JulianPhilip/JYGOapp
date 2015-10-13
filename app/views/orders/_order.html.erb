@@ -1,37 +1,74 @@
 <%= simple_form_for @order do |o| %>
   <%= o.error_notification %>
 
-  <ul>
-    <% @order.ordered_products.each do |op| %>
-      <li><%= op.product.name %> <%= op.product.category %><%= op.quantity %><%= op.product.unit %>[<%= op.product.min_price %>€ - <%= op.product.min_price %>€]</li>
-    <% end %>
-  </ul>
 
+
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Prix estimé</th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+              <% @order.ordered_products.each do |op| %>
+                <td><%= op.product.name %></td>
+                <td><%= op.quantity %> <%= op.product.unit %> </td>
+                <td>[<%= op.product.min_price %> € - <%= op.product.min_price %> €]</td>
+                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            <% end %>
+            </tbody>
+    </table>
 
   <br>
 
   <div class="row">
-     <div class="form-control">
+    <div class="form-control">
     <div class="input-group">
   <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
 
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <%= op.collection_select(:product_id, [], :id, :name) %>
   </div>
-  <div class="col-md-4">
-    <%= op.input :quantity %>
+  <div class="col-md-3">
+    <%= op.label :quantity %>
   </div>
+  <div class="col-md-3">
+    <%= op.text_field :quantity %>
+  </div>
+  <br>
+  <br>
   <% end %>
 
-  <%= o.submit "Rajouter à la liste" %>
+  <%= o.submit "Ajouter à la liste" %>
 
 <% end %>
 </div>
 </div>
 </div>
+
+<!-- Préparer la barre de synthèse -->
+<!-- <div class="container">
+  <div class="col-md-3">
+    Prix min
+  </div>
+  <div class="col-md-3">
+    Prix max
+  </div>
+  <div class="col-md-3">
+    Commission
+  </div>
+  <div class="col-md-3">
+    Go
+  </div>
+</div> -->
 
 
 
