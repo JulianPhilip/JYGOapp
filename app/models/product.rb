@@ -6,5 +6,4 @@ class Product < ActiveRecord::Base
       Product.create! row.to_hash
     end
   end
-
 end
