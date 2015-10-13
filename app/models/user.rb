@@ -26,8 +26,7 @@ class User < ActiveRecord::Base
   # validates :fruit, :inclusion => {:in => [true, false]}
   # validates :poisson, :inclusion => {:in => [true, false]}
   # validates :boutique, :inclusion => {:in => [true, false]}
-
-
+  after_create :send_welcome_email
   geocoded_by :full_street_address
   after_validation :geocode
 
@@ -44,4 +43,12 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
+
 end
