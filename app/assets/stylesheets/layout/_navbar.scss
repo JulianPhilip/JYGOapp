@@ -1,3 +1,6 @@
+.navbar{
+    height: 60px;
+}
 .navbar-default {
     border-color: transparent;
     background-color: #222; // almost black (couleur nav when small)
@@ -66,7 +69,7 @@
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        padding: 10px 0;
         border: 0;
         background-color: transparent;
         -webkit-transition: padding .3s;
@@ -86,7 +89,7 @@
     }
 
     .navbar-default.navbar-shrink { // shrink means when scrolling down
-        padding: 10px 0;
+        padding: 5px 0;
         background-color: #222;//#222;
     }
 
