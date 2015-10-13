@@ -10,18 +10,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<div class="backround-img blur" style="background:url(http://i.imgur.com/66nKj6x.jpg)"></div>
+
 	<%= render 'shared/navbar' %>
-
-	<% if false %>
-		<%= render 'shared/notices' %>
-	<% end %>
-
-	<% if false %>
-		<% if user_signed_in? %>
-		<%= render partial: "shared/side_bar" %>
-		<% end %>
-	<% end %>
 
 	<div id="openModal" class="modalDialog">
 		        <div class="modal-dialog">
