@@ -23,7 +23,7 @@
 	<% end %>
 
 	<div id="openModal" class="modalDialog">
-		<div>
+		<!-- <div>
 			<a href="#close" class="closeModal">X</a>
 			<h2>Login</h2>
 			<form id="loginForm" action="">
@@ -31,7 +31,29 @@
 				<input id="passwordInput" type="password" placeholder="Mot de passe">
 				<button class="loginBtn" type="button">Go</button>
 			</form>
-		</div>
+		</div> -->
+		        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+	                    <h3 class="media-heading">
+	                    <small>
+		                    <input id="emailInput" type="text" placeholder="Email">
+		                    <input id="passwordInput" type="password" placeholder="Mot de passe">
+	                    </small>
+	                    </h3>
+                    </center>
+                    <hr>
+                    <center>
+	                   <button class="loginBtn" type="button">Go</button> 
+                    <br>
+                    </center>
+                </div>
+            </div>
+        </div>
 	</div>
 
 
