@@ -9,24 +9,27 @@
 
 
   <br>
+
   <div class="row">
+     <div class="form-control">
     <div class="input-group">
   <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-  <div class="col-xs-4">
+  <div class="col-md-4">
     <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
 
   </div>
-  <div class="col-xs-4">
+  <div class="col-md-4">
     <%= op.collection_select(:product_id, [], :id, :name) %>
   </div>
-  <div class="col-xs-4">
-    <%= op.input :quantity %> <%= op.collection_select(:product_id, @products, :id, :unit) %>
+  <div class="col-md-4">
+    <%= op.input :quantity %>
   </div>
   <% end %>
 
   <%= o.submit "Rajouter à la liste" %>
 
 <% end %>
+</div>
 </div>
 </div>
 
