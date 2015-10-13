@@ -1,3 +1,14 @@
-<p style="margin-top: 5em">Modify ton order:</p>
+<h2> Votre course </h2>
+<!-- Validation du shopper à intégrer -->
+<div class="height:20px width:20px"><%= image_tag @order.shopper.user.picture %></div>
+<h3> Vous avez choisi <%= @order.shopper.user.firstname %> pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %> </h3>
+
+
+<div class="container">
+<h3> Votre liste de courses: </h3>
+
+<p style="margin-top: 5em">Ajoutez des produits à votre liste</p>
 
 <%= render partial: "order" %>
+
+</div>
