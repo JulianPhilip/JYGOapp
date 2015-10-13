@@ -7,43 +7,6 @@
 	padding-top: 150px;
 }
 
-
-/*USERS 1*/
-.users1 .panel {
-    border-radius: 2px;
-}
-
-.users1 .panel-heading {
-    border-radius: 1px;
-    padding: 5px 15px;
-    font-size: 14px;
-    font-weight: 600;
-    border-color: #DDD;
-    background-color: #DDD;
-    color: #444;
-}
-
-.users1 .panel-body {
-    padding: 10px;
-}
-
-.users1 .panel-body img {
-    width: 60px;
-    border-radius: 2px;
-}
-
-.users1 .media-body p {
-    font-size: 12px;
-    margin-bottom: 0;
-    line-height: 20px;
-}
-
-@media (max-width: 550px) {
-    .users1 .col-xs-6 {
-        width: 100%;
-    }
-}
-
 /*USERS 2*/
 .users2 .image,
 .users2 .image img {
@@ -62,7 +25,7 @@
 .users2 .media .name {
     font-size: 13px;
     margin: 5px 0;
-    color: #333;
+    color: #FFF;
 }
 
 .users2 .media .heading {
@@ -73,7 +36,7 @@
     margin: 5px 0;
     font-size: 11px;
     line-height: 1.2;
-    color: #777;
+    color: #f0f0f0;
 }
 
 .users2 .media p.rating {
