@@ -13,6 +13,7 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+@import "orders";
 
 
 .modalDialog {
@@ -64,6 +65,7 @@
     background: #00d9ff;
 }
 
+
 .blur{
     -webkit-filter: blur(7px);
     background-size: cover !important;
@@ -83,3 +85,4 @@
     padding: 0 8px;
     box-sizing: border-box;
 }
+
