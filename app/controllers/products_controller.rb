@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def import
+    Product.import(params[:file])
+    redirect_to root_url, notce: "Products imported."
+  end
+
   def new
     @product = Product.new
   end
