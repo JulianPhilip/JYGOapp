@@ -40,36 +40,8 @@
 
  -->
 <div class="shopper-cards">
-    <section>
-    <% @shoppers.each_with_index do |shopper, index| %>
-        <div class="users1">
-          <div class="row">    
-                <div class="col-lg-3 col-md-4 col-xs-6">
-                    <div class="panel panel-default">
-                      <div class="panel-heading"><%= shopper.user.firstname %> <%= shopper.user.lastname %></div>
-                      <div class="panel-body">
-                        <div class="media">
-                          <div class="media-left media-middle">
-                            <a href="#">
-                              <img class="media-object" src="http://i.imgur.com/p2PSvaa.png" alt="...">
-                            </a>
-                          </div>
-                          <div class="media-body">
-                            <p><b>Total Posts:</b> 1,765</p>
-                            <p><b>Points:</b> 32,455</p>
-                            <p><b>Joining Dtae:</b> 01-Oct-2015</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-                
-                
-          </div>
-    <% end %>
-    </section>
         
-        <section>
+    <section>
       <% @shoppers.each_with_index do |shopper, index| %>
       <div class="users2">
         <div class="row">
@@ -96,7 +68,10 @@
               </div>
               <div class="media-right">
                 <div class="follow transition">
-                  <a href="" class="btn btn-follow btn-sm"><i class="fa fa-plus"></i>Choisir</a>
+                <%= hidden_field_tag 'shopper_id', shopper.id %>
+                <%= hidden_field_tag 'date', @selected_date %>
+                <!-- <%= submit_tag 'choisir ce shopper' %> -->
+                  <input  class="btn btn-follow btn-sm" name="commit" value="Choisir">
                 </div>
                 <p class="rating">
                   <span class="heading">Rating:</span> 5/5
