@@ -1,44 +1,3 @@
-<!-- <h1>Shoppers disponibles</h1>
-
-
-<table class="table table_striped">
-  <thead>
-    <tr>
-      <th>Shoppers</th>
-      <th>Prénom</th>
-      <th>Nom</th>
-      <th>Email</th>
-      <th>Adresse</th>
-      <th>Rayon d'action</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @shoppers.each_with_index do |shopper, index| %>
-      <tr>
-        <td><%= image_tag shopper.user.picture, width:"100px" %></td>
-        <td><%= shopper.user.firstname %></td>
-        <td><%= shopper.user.lastname %></td>
-        <td><%= shopper.user.email %></td>
-        <td><%= shopper.user.address %>, <%= shopper.user.zip_code %> <%= shopper.user.city %></td>
-        <td><%= shopper.default_radius %></td>
-        <td><%= form_tag orders_path do %>
-            <%= hidden_field_tag 'shopper_id', shopper.id %>
-            <%= hidden_field_tag 'date', @selected_date %>
-            <%= submit_tag 'choisir ce shopper' %>
-            <% end %></td>
-      </tr>
-  </tbody>
-</table>
--->
-<!-- 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
- -->
 <div class="shopper-cards">
         
     <section>
@@ -50,14 +9,14 @@
             <div class="media">
               <div class="media-left media-middle">
                 <div class="image loader">
-                  <img src="http://i.imgur.com/p2PSvaa.png" class="borderStyle" alt="">
+                  <img src="<%=shopper.user.picture %>" class="borderStyle" alt="">
                 </div>
               </div>
 
               <div class="media-body bio">
                 <h1 class="name"><%= shopper.user.firstname %> <%= shopper.user.lastname %></h1>
                 <p>
-                  <span class="heading">Address</span> <%= shopper.user.zip_code %> <%= shopper.user.city %>
+                  <span class="heading">Address <%= shopper.user.address %></span> <%= shopper.user.zip_code %> <%= shopper.user.city %>
                 </p>
                 <p>
                   <span class="heading">Rayon d'action:</span> <%= shopper.default_radius %> km
@@ -68,10 +27,11 @@
               </div>
               <div class="media-right">
                 <div class="follow transition">
-                <%= hidden_field_tag 'shopper_id', shopper.id %>
-                <%= hidden_field_tag 'date', @selected_date %>
-                <!-- <%= submit_tag 'choisir ce shopper' %> -->
-                  <input  class="btn btn-follow btn-sm" name="commit" value="Choisir">
+                <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'shopper_id', shopper.id %>
+                  <%= hidden_field_tag 'date', @selected_date %>
+                  <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
+                <% end %>
                 </div>
                 <p class="rating">
                   <span class="heading">Rating:</span> 5/5
@@ -96,4 +56,3 @@
             
   </div>
 </div>
-<% end %>
