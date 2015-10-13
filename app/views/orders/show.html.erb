@@ -1,2 +1,8 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<p style="margin-top: 4em">Order id: <%= @order.id %></p>
+
+<p>Ordered products:</p>
+<ul>
+  <% @order.ordered_products.each do |op| %>
+    <li><%= op.product.name %></li>
+  <% end %>
+</ul>

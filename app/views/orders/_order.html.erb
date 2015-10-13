@@ -1,0 +1,15 @@
+<%= simple_form_for @order do |o| %>
+  <%= o.error_notification %>
+
+  <ul>
+    <% @order.ordered_products.each do |op| %>
+      <li><%= op.product.name %></li>
+    <% end %>
+  </ul>
+
+  <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
+    <%= op.collection_select(:product_id, @products, :id, :name) %>
+  <% end %>
+
+  <%= o.submit "Sauvgarder" %>
+<% end %>
