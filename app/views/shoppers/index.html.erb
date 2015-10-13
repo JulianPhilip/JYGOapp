@@ -1,6 +1,4 @@
-<br>
-<br>
-<h1>Shoppers disponibles</h1>
+<!-- <h1>Shoppers disponibles</h1>
 
 
 <table class="table table_striped">
@@ -32,12 +30,70 @@
             <%= submit_tag 'choisir ce shopper' %>
             <% end %></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
-<!--  New Possibility -->
-
-
+-->
+<!-- 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
+
+ -->
+<div class="shopper-cards">
+        
+    <section>
+      <div class="users2">
+        <div class="row">
+
+      <% @shoppers.each_with_index do |shopper, index| %>
+          <div class="col-sm-6 col-xs-12 full-width">
+            <div class="media">
+              <div class="media-left media-middle">
+                <div class="image loader">
+                  <img src="http://i.imgur.com/p2PSvaa.png" class="borderStyle" alt="">
+                </div>
+              </div>
+
+              <div class="media-body bio">
+                <h1 class="name"><%= shopper.user.firstname %> <%= shopper.user.lastname %></h1>
+                <p>
+                  <span class="heading">Address</span> <%= shopper.user.zip_code %> <%= shopper.user.city %>
+                </p>
+                <p>
+                  <span class="heading">Rayon d'action:</span> <%= shopper.default_radius %> km
+                </p>
+                <p>
+                  <span class="heading">Mail</span> <%= shopper.user.email %> 
+                </p>
+              </div>
+              <div class="media-right">
+                <div class="follow transition">
+                <%= hidden_field_tag 'shopper_id', shopper.id %>
+                <%= hidden_field_tag 'date', @selected_date %>
+                <!-- <%= submit_tag 'choisir ce shopper' %> -->
+                  <input  class="btn btn-follow btn-sm" name="commit" value="Choisir">
+                </div>
+                <p class="rating">
+                  <span class="heading">Rating:</span> 5/5
+                </p>
+                <span>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div> <!--/col-->
+    <% end %>
+
+          
+
+        </div>
+      </div>
+    </section>
+            
+  </div>
+</div>
+<% end %>

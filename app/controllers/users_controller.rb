@@ -31,5 +31,4 @@ class UsersController < ApplicationController
   #   [:address, :city, :zipcode].joins(",")
   # end
 
-
 end

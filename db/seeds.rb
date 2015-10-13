@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
+
 50.times do
   User.create(
     firstname: Faker::Name.first_name,
@@ -44,4 +45,6 @@ end
     description: Faker::Lorem.sentences(1)
     )
 end
+
+
 

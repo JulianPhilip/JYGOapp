@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+	<div class="backround-img blur" style="background:url(http://i.imgur.com/66nKj6x.jpg)"></div>
 	<%= render 'shared/navbar' %>
 
 	<% if false %>
@@ -24,7 +24,7 @@
 	<% end %>
 
 	<div id="openModal" class="modalDialog">
-		<div>
+		<!-- <div>
 			<a href="#close" class="closeModal">X</a>
 			<h2>Login</h2>
 			<form id="loginForm" action="">
@@ -32,14 +32,45 @@
 				<input id="passwordInput" type="password" placeholder="Mot de passe">
 				<button class="loginBtn" type="button">Go</button>
 			</form>
-		</div>
+		</div> -->
+		        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a href="#close" class="closeModal btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+	                    <h3 class="media-heading">
+	                    <small>
+		                    <input id="emailInput" type="text" placeholder="Email">
+		                    <input id="passwordInput" type="password" placeholder="Mot de passe">
+	                    </small>
+	                    </h3>
+                    </center>
+                    <hr>
+                    <center>
+	                   <button class="loginBtn" type="button">Go</button> 
+                    <br>
+                    </center>
+                </div>
+            </div>
+        </div>
 	</div>
+  <%= javascript_include_tag "https://maps.google.com/maps/api/js?sensor=false" %>
+  <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
+
 
 
 
 	<%= yield %>
 
-	<%= javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', params[:controller], 'data-turbolinks-track' => true %>
+
+  <%= yield(:after_js)%>
+
+  <%= javascript_include_tag 'application' %>
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
