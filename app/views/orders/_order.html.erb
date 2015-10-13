@@ -8,7 +8,9 @@
   </ul>
 
   <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
+    <%= op.collection_select(:product_id, @products, :id, :category) %>
     <%= op.collection_select(:product_id, @products, :id, :name) %>
+    <%= op.input :quantity %>
   <% end %>
 
   <%= o.submit "Sauvgarder" %>
