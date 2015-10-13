@@ -7,6 +7,11 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def import
+    Product.import(params[:file])
+    redirect_to root_url, notice: "Products imported."
+  end
+
   def new
     @product = Product.new
   end
@@ -51,11 +56,6 @@ class ProductsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
-    end
-
-    def import
-      Product.import(params [:file])
-      redirect_to product_path, notice:"your product has been successfully imported."
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
