@@ -53,6 +53,11 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
 
+    def import
+      Product.import(params [:file])
+      redirect_to product_path, notice:"your product has been successfully imported."
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:category, :sub_category, :name, :key_words, :description, :min_price, :max_price, :difficulty)
