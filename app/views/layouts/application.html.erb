@@ -43,15 +43,17 @@
                     <center>
 	                    <h3 class="media-heading">
 	                    <small>
-		                    <input id="emailInput" type="text" placeholder="Email">
-		                    <input id="passwordInput" type="password" placeholder="Mot de passe">
+	                    <%= simple_form_for(User.new, as: :user, url: session_path(:user)) do |f| %>
+	                    <%= f.input :email, required: false, autofocus: true, placeholder: "email or username", class:"emailInput" %>
+					    <%= f.input :password, required: false, placeholder: "password", class:"passwordInput" %>
+
+						    <%= f.button :submit, "Log in", class: "btn btn-default" %>
+						<% end %>
 	                    </small>
 	                    </h3>
                     </center>
-	                   <button class="btn btn-default" type="button">Go</button> 
                     <hr>
                     <center>
-                    <br>
                     <%= link_to "Sign up", new_user_registration_path, class: "btn btn-default" %>
                     </center>
                 </div>
