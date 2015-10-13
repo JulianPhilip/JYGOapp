@@ -24,35 +24,36 @@
             </tbody>
     </table>
 
-  <br>
 
-  <div class="row">
-    <div class="form-control">
-    <div class="input-group">
-  <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-  <div class="col-md-3">
-    <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
+        <div class="row">
+          <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
+            <div class="col-xs-3">
+              <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
 
-  </div>
-  <div class="col-md-3">
-    <%= op.collection_select(:product_id, [], :id, :name) %>
-  </div>
-  <div class="col-md-3">
-    <%= op.label :quantity %>
-  </div>
-  <div class="col-md-3">
-    <%= op.text_field :quantity %>
-  </div>
-  <br>
-  <br>
-  <% end %>
+            </div>
+            <div class="col-xs-3">
+              <%= op.collection_select(:product_id, [], :id, :name) %>
+            </div>
+            <div class="col-xs-3">
+              <%= op.label :quantity %>
+            </div>
+            <div class="col-xs-3">
+              <%= op.text_field :quantity %>
+            </div>
+          <% end %>
 
-  <%= o.submit "Ajouter à la liste" %>
+      </div>
 
-<% end %>
-</div>
-</div>
-</div>
+      <div class="row">
+          <div class="col-xs-6">
+            <%= o.submit "Ajouter à la liste" , class:"btn btn-default"%>
+          </div>
+          <div class="col-xs-6">
+            <button type="submit" class="btn btn-default">J'y Go!</button>
+          </div>
+      </div>
+          <% end %>
+
 
 <!-- Préparer la barre de synthèse -->
 <!-- <div class="container">
