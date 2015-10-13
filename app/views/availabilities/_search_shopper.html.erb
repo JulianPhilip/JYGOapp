@@ -1,21 +1,14 @@
 <%= form_for :search, url:  shoppers_path, method: :get do |s| %>
-<br>
-<br>
-<div class="container">
+<!-- <div class="search-shopper-container">
 <div class="row">
 <div class="form-group">
 <label class="sr-only" for="date">Adresse de livraison</label>
 <div class="input-group">
   <div class="col-xs-6">
   <strong>Adresse de livraison :</strong>
-  <br>
-  <br>
 <%= current_user.address %>
- <br>
 <%= current_user.city %>
- <br>
 <%= current_user.zip_code %>
- <br>
 </div>
  <div class="col-xs-6">
  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{current_user.address} #{current_user.zip_code} #{current_user.city}" %>
@@ -23,8 +16,6 @@
 </div>
 </div>
 </div>
-<br>
-<br>
 <label class="sr-only" for="date">Date de livraison</label>
   <div class="input-group">
     <div class="col-xs-6">
@@ -35,9 +26,47 @@
   </div>
 </div>
 </div>
-<br>
-<br>
 <div class="container">
 <button type="submit" class="btn btn-default btn-primary"> Trouver mon shopper </button>
-<% end %>
+</div> -->
+
+ <div class="search-shopper-container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Votre addresse de livraison : </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                    <h3 class="media-heading"><%= current_user.address %> <small><%= current_user.zip_code %> <%= current_user.city %></small></h3>
+                    <span><strong>Vos spécialités: </strong></span>
+
+                        <div class="row">
+
+                        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{current_user.address} #{current_user.zip_code} #{current_user.city}" %>
+                        </div>
+
+                        <!-- <span class="label label-warning">HTML5/CSS</span>
+                        <span class="label label-info">Adobe CS 5.5</span>
+                        <span class="label label-info">Microsoft Office</span>
+                        <span class="label label-success">Windows XP, Vista, 7</span> -->
+                    </center>
+                    <hr>
+                    <center>
+                    <p class="text-left">
+                      <strong>Date de livraison: </strong><br>
+                    </p>
+                        <input type="date" class="form-control" id="date" name="date" required >
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                      <button type="submit" class="btn btn-default btn-primary"> Trouver un shopper !</button>
+                    </center>
+                </div>
+            </div>
+
+        </div>
 </div>
+<% end %>
