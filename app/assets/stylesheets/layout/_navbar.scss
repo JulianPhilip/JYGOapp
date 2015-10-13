@@ -1,13 +1,13 @@
 .navbar-default {
     border-color: transparent;
-    background-color: #222;
+    background-color: #222; // almost black (couleur nav when small)
     img{
       height: 100%;
     }
 }
 
 .navbar-default .navbar-brand {
-    font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
+    font-family: "Raleway", "Helvetica", "sans-serif";
     color: #fed136;
 }
 
@@ -15,7 +15,7 @@
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:active,
 .navbar-default .navbar-brand.active {
-    color: #fec503;
+    color: steelblue;// #fec503; //orange aussi
 }
 
 .navbar-default .navbar-collapse {
@@ -23,12 +23,12 @@
 }
 
 .navbar-default .navbar-toggle {
-    border-color: #fed136;
-    background-color: #fed136;
+    border-color: steelblue;              //#fed136;
+    background-color: steelblue;          //#fed136; // orange
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    background-color: #fff; // blanc
 }
 
 .navbar-default .navbar-toggle:hover,
@@ -38,9 +38,9 @@
 
 .navbar-default .nav li a {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Raleway", "Helvetica", "sans-serif";
     font-size: 0.8em;
-    //font-weight: 400;
+    font-weight: bold;
     //letter-spacing: 1px;
     color: #fff;
     transition: 0.2s;
@@ -49,7 +49,7 @@
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #fed136;
+    color: steelblue; //#fed136;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -60,7 +60,7 @@
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
+    color: #fff; //blanc
     background-color: aliceblue;
 }
 
@@ -85,9 +85,9 @@
         border-radius: 3px;
     }
 
-    .navbar-default.navbar-shrink {
+    .navbar-default.navbar-shrink { // shrink means when scrolling down
         padding: 10px 0;
-        background-color: #222;
+        background-color: #222;//#222;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {

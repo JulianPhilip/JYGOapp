@@ -19,6 +19,7 @@ var docElem = document.documentElement,
 		didScroll = false,
 		changeHeaderOn = $(window).height() - 150;
 
+
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
@@ -44,36 +45,5 @@ var docElem = document.documentElement,
 	}
 
 	init();
-
-// Hide SVG paths :-------------------------------------------------------
-var pathlist = document.querySelectorAll("path");
-
-var hideAllPaths = function() {
-	for (i=0; i<pathlist.length; i++) {
-		l = pathlist[i].getTotalLength();
-		pathlist[i].style.strokeDasharray = l + " " + l;
-		pathlist[i].style.strokeDashoffset = l;
-		pathlist[i].getBoundingClientRect();
-		pathlist[i].style.transition = "stroke-dashoffset 2s ease-in-out";
-	}
-}
-
-// pathlist[0].getBoundingClientRect().top < returns position relative to top of viewport
-// $(window).height() < to get viewport height
-
-//TODO (thomas): make it unroll for real with dash thing
-var unroll = function() {
-	for (i=0; i<pathlist.length; i++) {
-		(function(index) {
-			setTimeout(function(){
-				pathlist[index].style.display = 'inline';
-			}, 900 * index + 300);
-		})(i);
-	}
-}
-
-hideAllPaths();
-//pathlist[i].style.strokeDashoffset = "0";
-//unroll();
 
 })();
