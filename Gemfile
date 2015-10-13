@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 source 'https://rubygems.org'
 ruby "2.2.2"
 
@@ -72,4 +71,4 @@ group :development do
   gem 'spring'
 end
 
->>>>>>> 144c603e9e7f1c9aa479f0ed1686c8528527bb23
+

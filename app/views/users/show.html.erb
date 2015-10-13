@@ -81,7 +81,58 @@
                     <center>
                     <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
                     <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
-                    <span><strong>Skills: </strong></span>
+                    <span><strong>Vos spécialités: </strong></span>
+                        <div class="row">
+        <div class="col-md-6">
+          <ul class="list-unstyled">
+            <li>
+              <% if @user.vin == true %>
+                <span class="label label-warning"><%="Vin"%></span>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.boucherie == true %>
+                <span class="label label-success"><%="Boucherie"%></span>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.charcuterie == true %>
+                <span class="label label-warning"><%="Charcuterie"%></span>
+              <%end%>
+            </li>
+            <li>
+              <% if @user.prix == true %>
+                <span class="label label-info"><%="Meilleurs affaires"%></span>
+              <%end%>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+        <ul class="list-unstyled">
+          <li>
+            <% if @user.legume == true %>
+              <span class="label label-warning"><%="Légume"%></span>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.fruit == true %>
+              <span class="label label-warning"><%="Fruit"%></span>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.poisson == true %>
+              <span class="label label-info"><%="Poisson"%></span>
+            <%end%>
+          </li>
+          <li>
+            <% if @user.boutique == true %>
+              <span class="label label-success"><%="Meilleurs Addresses"%></span>
+            <%end%>
+          </li>
+        </ul>
+        </div>
+        </div>
+
                         <!-- <span class="label label-warning">HTML5/CSS</span>
                         <span class="label label-info">Adobe CS 5.5</span>
                         <span class="label label-info">Microsoft Office</span>
@@ -96,9 +147,10 @@
                 </div>
                 <div class="modal-footer">
                     <center>
-                    <button type="button" class="btn btn-default" >I've heard enough about <%= @user.firstname %></button>
+                     <%= link_to "Modifier vos informations", edit_info_path %>
                     </center>
                 </div>
             </div>
+
         </div>
 </div>
