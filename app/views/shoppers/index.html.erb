@@ -1,0 +1,44 @@
+
+<br>
+<br>
+<h1>Shoppers disponibles</h1>
+
+
+<table class="table table_striped">
+  <thead>
+    <tr>
+      <th>Shoppers</th>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Adresse</th>
+      <th>Rayon d'action</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shoppers.each_with_index do |shopper, index| %>
+      <tr>
+        <td><%= image_tag shopper.user.picture, width:"100px" %></td>
+        <td><%= shopper.user.firstname %></td>
+        <td><%= shopper.user.lastname %></td>
+        <td><%= shopper.user.email %></td>
+        <td><%= shopper.user.address %>, <%= shopper.user.zip_code %> <%= shopper.user.city %></td>
+        <td><%= shopper.default_radius %></td>
+        <td><%= form_tag orders_path do %>
+            <%= hidden_field_tag 'shopper_id', shopper.id %>
+            <%= hidden_field_tag 'date', @selected_date %>
+            <%= submit_tag 'choisir ce shopper' %>
+            <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<!--  New Possibility -->
+
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>

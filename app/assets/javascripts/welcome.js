@@ -13,23 +13,39 @@ $('a').click(function(){
     return false;
 });
 
-// Navbars swaping, (transparent/opaque)
+//Navbar scroll detection : -------------------------------------------------------
+var docElem = document.documentElement,
+		header = document.querySelector( '.navbar-default' ),
+		didScroll = false,
+		changeHeaderOn = $(window).height() - 150;
 
-$("nav#scrollednav").removeClass("active");
-$("nav#landingnav").addClass("active");
-
-doc.on("scroll", function(e){
-	if(doc.scrollTop() >= $(window).height()) {
-		$("nav#landingnav").removeClass("active");
-		$("nav#scrollednav").addClass("active");
+	function init() {
+		window.addEventListener( 'scroll', function( event ) {
+			if( !didScroll ) {
+				didScroll = true;
+				setTimeout( scrollPage, 250 );
+			}
+		}, false );
 	}
-	else {
-		$("nav#scrollednav").removeClass("active");
-		$("nav#landingnav").addClass("active");
-	}
-})
 
-// Hide SVG paths :
+	function scrollPage() {
+		var sy = scrollY();
+		if ( sy >= changeHeaderOn ) {
+			classie.add( header, 'navbar-shrink' );
+		}
+		else {
+			classie.remove( header, 'navbar-shrink' );
+		}
+		didScroll = false;
+	}
+
+	function scrollY() {
+		return window.pageYOffset || docElem.scrollTop;
+	}
+
+	init();
+
+// Hide SVG paths :-------------------------------------------------------
 var pathlist = document.querySelectorAll("path");
 
 var hideAllPaths = function() {
