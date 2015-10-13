@@ -1,14 +1,29 @@
-<h2> Votre course </h2>
-<!-- Validation du shopper à intégrer -->
-<div><%= image_tag @order.shopper.user.picture, class: "img-responsive, image-frame" %></div>
-<h3> Vous avez choisi <%= @order.shopper.user.firstname %> pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %> </h3>
-
-
-<div class="container">
-<h3> Votre liste de courses: </h3>
-
-<p style="margin-top: 5em">Ajoutez des produits à votre liste</p>
-
-<%= render partial: "order" %>
-
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Vous avez choisi <span style="color: tomato;"><%= @order.shopper.user.firstname %> </span>pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %>  </h4>
+        </div>
+        <div class="modal-body">
+            <center>
+            <img src="<%= @order.shopper.user.picture %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            <h3 class="media-heading"><small></small></h3>
+            <span><strong>Faites votre liste ci-dessous :</strong></span>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <ul class="skills left">
+                    </ul>
+                  </div>
+                  <div class="col-sm-6">
+                  <ul class="skills right">
+                  </ul>
+                  </div>
+                </div>
+            </center>
+            <hr>
+            <center>
+				<%= render partial: "order" %>
+            <br>
+            </center>
+        </div>
+    </div>
 </div>
