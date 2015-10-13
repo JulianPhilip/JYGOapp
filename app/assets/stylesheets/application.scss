@@ -40,11 +40,8 @@
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 10px;
-    background: #fff;
-    background: -moz-linear-gradient(#fff, #999);
-    background: -webkit-linear-gradient(#fff, #999);
-    background: -o-linear-gradient(#fff, #999);
 }
+
 .close {
     background: #606061;
     color: #FFFFFF;
@@ -67,7 +64,6 @@
     background: #00d9ff;
 }
 
-
 .blur{
     -webkit-filter: blur(7px);
     background-size: cover !important;
@@ -76,4 +72,14 @@
     height: 100%;
     width: 100%;
     z-index: -10;
+}
+
+#emailInput{
+    height: 44px;
+    width: 100%;
+    margin-bottom: 5px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    padding: 0 8px;
+    box-sizing: border-box;
 }
