@@ -1,29 +1,53 @@
-<h2>Compléter ou éditer votre profil</h2>
 <%= simple_form_for current_user, url: 'users/:id', method: "patch" do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :username, autofocus: true %>
-    <%= f.input :picture %>
-    <%= f.input :firstname, autofocus: true %>
-    <%= f.input :lastname, autofocus: true %>
-    <%= f.select :sexe, [['Male',1],['Female',2]] %>
-    <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-    <%= f.input :address, autofocus: true %>
-    <%= f.input :city, autofocus: true %>
-    <%= f.input :zip_code, autofocus: true %>
-    <%= f.input :phone_number, autofocus: true %>
-    <%= f.input :vin %>
-    <%= f.input :boucherie %>
-    <%= f.input :charcuterie %>
-    <%= f.input :prix %>
-    <%= f.input :legume %>
-    <%= f.input :fruit %>
-    <%= f.input :poisson %>
-    <%= f.input :boutique %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Save changes" %>
-  </div>
+ <div class="container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                      <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                      <%= f.input :picture %>
+                      <h4 class="media-heading">
+                        <%= f.input :username, autofocus: true %>
+                        <%= f.input :firstname, autofocus: true %>
+                        <%= f.input :lastname, autofocus: true %>
+                        <small>
+                          <%= f.select :sexe, [['Male',1],['Female',2]] %>
+                          <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+                          <%= f.input :address, autofocus: true %>
+                          <%= f.input :city, autofocus: true %>
+                          <%= f.input :zip_code, autofocus: true %>
+                          <%= f.input :phone_number, autofocus: true %>
+                        </small>
+                      </h4>
+                    </center>
+                    <div class="container">
+                      <span><strong>Skills: </strong></span>
+                          <%= f.input :vin %>
+                          <%= f.input :boucherie %>
+                          <%= f.input :charcuterie %>
+                          <%= f.input :prix %>
+                          <%= f.input :legume %>
+                          <%= f.input :fruit %>
+                          <%= f.input :poisson %>
+                          <%= f.input :boutique %>
+                    </div>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        </p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <%= f.button :submit, "Save changes" %>
+                    </center>
+                </div>
+            </div>
+        </div>
+</div>
 <% end %>
