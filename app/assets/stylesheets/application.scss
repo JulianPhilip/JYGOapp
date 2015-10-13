@@ -66,3 +66,13 @@
 .close:hover {
     background: #00d9ff;
 }
+
+
+.blur{
+    -webkit-filter: blur(7px);
+    size: cover;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+}
