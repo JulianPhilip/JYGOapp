@@ -1,0 +1,56 @@
+<%= simple_form_for @order do |o| %>
+  <%= o.error_notification %>
+
+  <ul>
+    <% @order.ordered_products.each do |op| %>
+      <li><%= op.product.name %> <%= op.product.category %><%= op.quantity %><%= op.product.unit %>[<%= op.product.min_price %>€ - <%= op.product.min_price %>€]</li>
+    <% end %>
+  </ul>
+
+
+  <br>
+
+  <div class="row">
+     <div class="form-control">
+    <div class="input-group">
+  <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
+  <div class="col-md-4">
+    <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
+
+  </div>
+  <div class="col-md-4">
+    <%= op.collection_select(:product_id, [], :id, :name) %>
+  </div>
+  <div class="col-md-4">
+    <%= op.input :quantity %>
+  </div>
+  <% end %>
+
+  <%= o.submit "Rajouter à la liste" %>
+
+<% end %>
+</div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    var products = <%= raw( @products.map{ |p| [p.id, p.name, p.category] } ) %>;
+    var categoriesDropdown = $("#categories");
+
+    categoriesDropdown.change(filterDropdown);
+
+    function filterDropdown() {
+      var productsDropdown = $("#order_ordered_products_attributes_0_product_id");
+      productsDropdown.empty();
+      var selectedCategory = $(this).val();
+      for (var i = 0; i < products.length; i++)  {
+        if (products[i][2] == selectedCategory) {
+          productsDropdown.append('<option value='+products[i][0]+'>'+products[i][1]+'</option>');
+        }
+      }
+    }
+  });
+</script>
