@@ -3,7 +3,7 @@
 
   <ul>
     <% @order.ordered_products.each do |op| %>
-      <li><%= op.product.name %></li>
+      <li><%= op.product.name %> <%= op.product.category %><%= op.quantity %><%= op.product.unit %>[<%= op.product.min_price %>€ - <%= op.product.min_price %>€]</li>
     <% end %>
   </ul>
 
