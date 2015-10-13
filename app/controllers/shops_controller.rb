@@ -2,6 +2,10 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
   def index
     @shops = Shop.all
+    @markers = Gmaps4rails.build_markers(@shops) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
   end
 
   def show
