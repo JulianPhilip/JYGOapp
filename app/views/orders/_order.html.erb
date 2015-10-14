@@ -17,42 +17,37 @@
               <% @order.ordered_products.each do |op| %>
                 <td><%= op.product.name %></td>
                 <td><%= op.quantity %> <%= op.product.unit %> </td>
-                <td>[<%= op.product.min_price %> € - <%= op.product.min_price %> €]</td>
+                <td>[<%= op.product.min_price %> € - <%= op.product.max_price %> €]</td>
                 <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
             </tr>
             <% end %>
             </tbody>
     </table>
 
-  <br>
-
-  <div class="row">
-    <div class="form-control">
-    <div class="input-group">
-  <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-  <div class="col-md-3">
-    <%= select_tag :categories, options_from_collection_for_select(@products, "category", "category") %>
-
-  </div>
-  <div class="col-md-3">
-    <%= op.collection_select(:product_id, [], :id, :name) %>
-  </div>
-  <div class="col-md-3">
-    <%= op.label :quantity %>
-  </div>
-  <div class="col-md-3">
-    <%= op.text_field :quantity %>
-  </div>
-  <br>
-  <br>
-  <% end %>
-
-  <%= o.submit "Ajouter à la liste" %>
-
+    <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Catégorie</th>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+              <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
+                <td><%= select_tag :categories, options_for_select(@categories) %></td>
+                <td><%= op.collection_select(:product_id, [], :id, :name) %></td>
+                <td><%= op.text_field :quantity %></td>
+                <td><%= o.submit "Ajouter à la liste" %></td>
+            </tr>
+            <% end %>
+            </tbody>
+    </table>
 <% end %>
-</div>
-</div>
-</div>
+  <br>
+
+
 
 <!-- Préparer la barre de synthèse -->
 <!-- <div class="container">
