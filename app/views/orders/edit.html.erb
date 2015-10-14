@@ -6,6 +6,7 @@
             <img src="<%= @order.shopper.user.picture %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
             <br>
             <br>
+            <%= console %>
             <h4 class="modal-title" id="myModalLabel">Vous avez choisi <span style="color: tomato;"><%= @order.shopper.user.firstname %> </span>pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %>  </h4>
         </div>
         <div class="modal-body">

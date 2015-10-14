@@ -1,14 +1,20 @@
 class UserMailer < ApplicationMailer
+  default from: "defaultemail@example.com"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.welcome.subject
-  #
-  def welcome(user)
-    @user = user  # Instance variable => available in view
+  def order_confirmation_shopper(order)
+    @order = order
 
-    mail(to: @user.email, subject: 'Welcome to LeWagon')
-    # This will render a view in `app/views/user_mailer`!
+    @greeting = "Hi"
+
+    mail to: @order.shopper.user.email, subject: "Demande de commande"
   end
+
+  def order_confirmation_user(order)
+    @order = order
+
+    @greeting = "Hi"
+
+    mail to: @order.user.email, subject: "Demande de commande"
+  end
+
 end
