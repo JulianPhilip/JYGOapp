@@ -73,7 +73,7 @@ User.create(
     password_confirmation: "testtest",
     address: "16 rue de Passy",
     zip_code: 75016,
-    city: Paris
+    city: "Paris"
     )
 User.create(
     firstname: Faker::Name.first_name,
@@ -83,5 +83,5 @@ User.create(
     password_confirmation: "testtest",
     address: "16 avenue Paul Doumer",
     zip_code: 75016,
-    city: Paris
+    city: "Paris"
     )
