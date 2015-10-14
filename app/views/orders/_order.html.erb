@@ -39,7 +39,7 @@
                 <td><%= select_tag :categories, options_for_select(@categories) %></td>
                 <td><%= op.collection_select(:product_id, [], :id, :name) %></td>
                 <td><%= op.text_field :quantity %></td>
-                <td><button type="submit" name="commit" class="btn btn-success"><i class="glyphicon glyphicon-plus"> Ajouter</i></td>
+                <td><button type="submit" name="commit" class="btn btn-success"><i class="glyphicon glyphicon-plus"> Ajouter </i></td>
             </tr>
             <% end %>
             </tbody>
@@ -61,6 +61,7 @@
                 <td><%= @order.min_price_sum %> €</td>
                 <td><%= @order.max_price_sum %> €</td>
                 <td>5 €</td>
+                <td><button type="submit" name="commit" class="btn btn-success"><i class="glyphicon glyphicon-plus"> JYGO </i></td>
             </tr>
     </tbody>
   </table>
