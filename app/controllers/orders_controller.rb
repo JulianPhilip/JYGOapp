@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
   def edit
     @order = Order.find(params[:id])
     @products = Product.all
+    @categories = Product.categories
   end
 
   def update
