@@ -1,22 +1,20 @@
 class ReviewsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
+  before_action :find_order, only: [:new, :create]
 
   def new
-  end
-
-  def edit
+    @review = Review.new
   end
 
   def create
+    @review = @order.reviews.build(review_params)
+    @rewiew.save
   end
 
-  def update
+  private
+  def find_order
+      @order = Order.find(params[:order_id])
   end
-
-  def destroy
+  def review_params
+    params.require(:review).permit(:content, :rating)
   end
 end

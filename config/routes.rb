@@ -1,25 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'reviews/index'
-
-  get 'reviews/show'
-
-  get 'reviews/new'
-
-  get 'reviews/edit'
-
-  get 'reviews/create'
-
-  get 'reviews/update'
-
-  get 'reviews/destroy'
 
   resources :products do
     collection { post :import }
   end
 
   resources :shops
-  resources :orders
+  resources :orders do
+    resources :reviews, only: [:new, :create]
+  end
 
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
