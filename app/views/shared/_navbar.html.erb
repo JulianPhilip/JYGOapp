@@ -31,10 +31,10 @@
                   </li>
 
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Profil</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Profil   <img src="<%= current_user.picture.url(:medium)%>" class="img-circle img-profile-nav" ></a>
                       <ul id="login-dp" class="dropdown-menu">
                         <li class="text-center">
-                                <a href="<%= user_path(current_user) %>" >Mon profil  </a><!-- <img src="<%= current_user.picture.url(:medium)%>" class="img-circle" width="50" height="50" border="0"> -->
+                                <a href="<%= user_path(current_user) %>" >Mon profil  </a>
                         </li>
                         <li class="text-center">
                                   <a href="#" >Mes Commandes</a>

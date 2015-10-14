@@ -1,6 +1,20 @@
 .navbar{
     height: 60px;
+    a .img-profile-nav{
+        height: 40px;
+        width: 40px;
+        padding:0;
+        margin-left: 11px;
+    }
+    .dropdown{
+        height: 50px;
+        a{
+            padding-top: 6px;
+            padding-bottom: 5px;
+        }
+    }
 }
+
 .navbar-default {
     border-color: transparent;
     background-color: #222; // almost black (couleur nav when small)
@@ -89,7 +103,7 @@
     }
 
     .navbar-default.navbar-shrink { // shrink means when scrolling down
-        padding: 5px 0;
+        padding: 5px 0 !important;
         background-color: #222;//#222;
     }
 
