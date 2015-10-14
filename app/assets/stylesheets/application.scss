@@ -13,8 +13,22 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
-@import "orders";
+//@import "orders";
 
+.modal-dialog{
+    &.notices{    
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        & > div {
+            width: 400px;
+            position: relative;
+            margin: 10% auto;
+            padding: 5px 20px 13px 20px;
+        }
+    }
+}
 
 .modal-dialog.login {
     position: fixed;
