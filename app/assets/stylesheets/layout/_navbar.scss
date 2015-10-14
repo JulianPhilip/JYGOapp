@@ -98,3 +98,43 @@
     }
 }
 
+
+// Dropdown ----------------------------------------------------------
+#login-dp{
+    min-width: 200px;
+    padding: 5px;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+
+    li {
+        a{
+            margin: auto;
+            color: black;
+        }
+        &:first-child:hover{
+            background-color:rgba(255,255,255, 1);
+        }
+    }
+
+    .help-block{
+        font-size:12px    
+    }
+
+    .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+    }
+}
+
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}

@@ -1,12 +1,44 @@
-<h1>Produits disponibles</h1>
-
-<h2>Import Products</h2>
-
 <%= form_tag import_products_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
-
+ <div class="container">
+        <div class="modal-dialog product">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                      <h4 class="media-heading">
+                          <small>Categorie</small>
+                          <small>Sub-categorie</small>
+                          <small>Nom</small>
+                          <small>mots-clés</small>
+                          <small>Min-Prix</small>
+                          <small>Max-Prix</small>
+                          <small>Difficulté</small>
+                          <small colspan="3"></small>
+                      </h4>
+                    </center>
+                    <hr>
+                      <% @products.each_with_index do |product, index| %>
+                        <div class="container">
+                          <span><strong>Skills: </strong></span>
+                          <%= product.category %>
+                          <%= product.sub_category %>
+                          <%= product.name %>
+                          <%= product.key_words %>
+                          <%= product.description %>
+                          <%= product.min_price %>
+                          <%= product.max_price %>
+                          <%= product.difficulty %>
+                          <%= link_to 'Show', product %>
+                          <%= link_to 'Edit', edit_product_path(product) %>
+                          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                          <%= link_to 'Choisir', :root, class: "btn btn-primary" %>
+                        </div>
+                      <% end %>
 
 <table class="table table_striped">
   <thead>

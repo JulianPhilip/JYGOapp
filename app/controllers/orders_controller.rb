@@ -13,18 +13,16 @@ class OrdersController < ApplicationController
   def create
     shopper = Shopper.find(params[:shopper_id])
     date = params[:date]
-    user = current_user
-    @order = Order.create(shopper: shopper, date: date, user: user)
-
     # send mail
+    @order = Order.create(shopper: shopper, date: date, user: current_user)
     UserMailer.order_confirmation_shopper(@order).deliver
-
     redirect_to edit_order_path(@order)
   end
 
   def edit
     @order = Order.find(params[:id])
     @products = Product.all
+    @categories = Product.categories
   end
 
   def update
@@ -36,6 +34,12 @@ class OrdersController < ApplicationController
   end
 
   def destroy
+    @order.destroy
+    respond_to do |format|
+      format.html { redirect_to order_url, notice: 'The order was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+    redirect_to orders_path
   end
 
   private

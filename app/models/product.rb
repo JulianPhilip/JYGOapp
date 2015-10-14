@@ -6,4 +6,8 @@ class Product < ActiveRecord::Base
       Product.create! row.to_hash
     end
   end
+
+  def self.categories
+    distinct.pluck(:category)
+  end
 end
