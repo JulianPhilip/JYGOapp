@@ -25,16 +25,16 @@
                     <center>
                     <h3 class="media-heading">
                     <small>
-                      <%= f.input :date, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-                      <%= f.input :beginning_hour, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
-                      <%= f.input :ending_hour, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
-                      <%= f.input :acceptation_auto, label: "Souhaitez-vous activer la validation automatique ?" %>   
+                      <%= f.input :date,required: true, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y'),required: true } %>
+                      <%= f.input :beginning_hour,required: true, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s'),  } %>
+                      <%= f.input :ending_hour, required: true, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
+                      <%= f.input :acceptation_auto, label: "Souhaitez-vous activer la validation automatique ?" %>
                     </small>
                     </h3>
                     <span><strong></strong></span>
                         <div class="row">
 
-                          
+
 
                         </div>
 
@@ -51,7 +51,7 @@
                 </div>
                 <div class="modal-footer">
                     <center>
-                     
+
                     </center>
                 </div>
             </div>

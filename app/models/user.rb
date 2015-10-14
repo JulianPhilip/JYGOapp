@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :address, presence: false
   validates :zip_code, presence: false
   validates :city, presence: false
-  validates :phone_number, :phony_plausible => true, presence: false
+  # validates :phone_number, :phony_plausible => true, presence: false
   # validates :status, :inclusion => {:in => [true, false]}, presence: false
   validates :avg_rating_user, presence: false
   # validates :vin, :inclusion => {:in => [true, false]}
