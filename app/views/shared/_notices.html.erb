@@ -1,13 +1,22 @@
 <!-- app/views/shared/_notices.html.erb -->
+
 <% if notice %>
+<div class="modal-dialog notices">
+<div class="modal-dialog">
   <div class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= notice %>
   </div>
+</div>
+</div>
 <% end %>
 <% if alert %>
+<div class="modal-dialog notices">
+<div class="modal-dialog">
   <div class="alert alert-warning alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= alert %>
   </div>
+</div>
+</div>
 <% end %>
