@@ -116,11 +116,11 @@ if ( typeof define === 'function' && define.amd ) {
 
 // Modal -----------------------------------------------------------------
 $(".modalLink").click(function(e){
-	$(".modalDialog").toggleClass("active");
+	$(".modal-dialog.login").toggleClass("active");
 });
 
 $('.closeModal').click(function(e){
-	$(".modalDialog").removeClass("active");
+	$(".modal-dialog.login").removeClass("active");
 })
 
 // AJAX handling stuff :

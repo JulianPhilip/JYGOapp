@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-// .modal-dialog{
-// 	padding-top: 150px;
-// }
+.modal-dialog.profile{
+	padding-top: 100px;
+}
+
+.modal-dialog.edit-profile{
+	padding-top: 100px;
+}
 
 .img-circle{
 	margin-bottom: 10px;
@@ -26,4 +30,101 @@
 			margin: 4px;
 		}
 	}
+}
+
+
+
+.users-cards{
+	padding: 30px;
+	padding-top: 80px;
+}
+
+/*USERS 2*/
+.users2 .image,
+.users2 .image img {
+    width: 70px;
+    height: 70px;
+}
+
+.users2 .media {
+    padding: 10px 0;
+    border-radius: 2px;
+    box-shadow: 0 1px 0px #EEE;
+    -webkit-box-shadow: 0 1px 0px #EEE;
+    -moz-box-shadow: 0 1px 0px #EEE;
+}
+
+.users2 .media .name {
+    font-size: 13px;
+    margin: 5px 0;
+    color: #FFF;
+}
+
+.users2 .media .heading {
+    font-weight: bold;
+}
+
+.users2 .media p {
+    margin: 5px 0;
+    font-size: 11px;
+    line-height: 1.2;
+    color: #f0f0f0;
+}
+
+.users2 .media p.rating {
+    margin: 10px 0 0px;
+}
+
+.users2 .media i.fa {
+    font-size: 10px;
+}
+
+.users2 .media-body {
+    width: 100%;
+}
+
+.users2 .media-right {
+    text-align: center;
+}
+
+.users2 .follow {
+    padding-top: 5px;
+}
+
+.users2 .btn-follow {
+    width: 90px;
+}
+
+.btn-follow {
+    color: #A5A5A5;
+    background-color: #FBFBFB;
+    border: 1px solid #C5C5C5;
+}
+
+.btn-follow:hover, .btn-follow:active, .btn-follow.active {
+    color: #FFF;
+    background-color: #0093FC;
+    border: 1px solid #0093FC;
+}
+
+.borderStyle {
+    padding: 5px;
+    background-color: #F8F8F8;
+    border-radius: 2px;
+    box-shadow: 0 2px 0px #DBDBDB;
+    -webkit-box-shadow: 0 2px 0px #DBDBDB;
+    -moz-box-shadow: 0 2px 0px #DBDBDB;
+}
+
+.fa-star, .fa-star-o, .fa-star-half {
+    margin-right: 0px !important;
+    color: #FFD100;
+}
+
+.fa-star.empty {
+    color: #E1E8ED !important;
+}
+
+.btn i {
+    padding-right: 5px;
 }

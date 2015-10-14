@@ -10,20 +10,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<div class="backround-img blur" style="background:url(http://i.imgur.com/66nKj6x.jpg)"></div>
+
 	<%= render 'shared/navbar' %>
 
-	<% if false %>
-		<%= render 'shared/notices' %>
-	<% end %>
 
-	<% if false %>
-		<% if user_signed_in? %>
-		<%= render partial: "shared/side_bar" %>
-		<% end %>
-	<% end %>
-
-	<div id="openModal" class="modalDialog">
+	<div id="openModal" class="modal-dialog login">
 		        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -67,8 +60,6 @@
   <%= yield(:after_js)%>
 
 
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

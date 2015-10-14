@@ -1,3 +1,4 @@
+<%= render 'shared/roadmap_order' %>
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
@@ -8,32 +9,8 @@
             <h4 class="modal-title" id="myModalLabel">Vous avez choisi <span style="color: tomato;"><%= @order.shopper.user.firstname %> </span>pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %>  </h4>
         </div>
         <div class="modal-body">
-            <center>
-            <h3 class="media-heading"><small></small></h3>
-            <span><strong>Faites votre liste ci-dessous :</strong></span>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <ul class="skills left">
-                    </ul>
-                  </div>
-                  <div class="col-sm-6">
-                  <ul class="skills right">
-                  </ul>
-                  </div>
-                </div>
-            </center>
-            <hr>
-            <center>
-				<%= render partial: "order" %>
-            <br>
-            </center>
+          <span><strong>Faites votre liste ci-dessous :</strong></span>
+          <%= render partial: "order" %>
         </div>
     </div>
 </div>
-<br>
-<br>
-<center>
-<button type="submit">J'y Go!</button>
-</center>
-<br>
-<br>
