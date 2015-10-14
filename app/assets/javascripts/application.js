@@ -118,12 +118,12 @@ $(function(){
 // Modal -----------------------------------------------------------------
 $(".modalLink").click(function(e){
 	$(".modal-dialog.login").toggleClass("active");
+  $(".modal-dialog.login").css("visibility", "visible"); // <<< set to hidden initially in css to avoid a login flash on refresh
 });
 
 $('.closeModal').click(function(e){
 	$(".modal-dialog.login").removeClass("active");
 })
-
 // AJAX handling stuff :
 var getLoginData = function(){
 	var email = $("#emailInput").val();
