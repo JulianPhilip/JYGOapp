@@ -46,5 +46,20 @@ end
     )
 end
 
-
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Aile de Raie', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Bar', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Daurade Royale', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Maquereau', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Queue de Lotte', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Lotte', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Merlu', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Saint Pierre', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Saumon', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Sole', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Caille', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Canard entier', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Canette fermière', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Cuisse de canard confite', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Coquet', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
+Product.create(category:'Boucherie', sub_category:'Volailles', name:'Chapon', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
 
