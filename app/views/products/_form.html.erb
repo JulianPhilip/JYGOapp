@@ -63,3 +63,101 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<%= form_for(@product) do |f| %>
+
+ <div class="container">
+        <div class="modal-dialog edit-products">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About </h4>
+                </div>
+                <div class="modal-body">
+                  <% if @product.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                        <ul>
+                          <% @product.errors.full_messages.each do |message| %>
+                          <li><%= message %></li>
+                        </ul>
+                        </div>
+                    <% end %>
+                  <% end %>
+                    <center>
+                      <h4 class="media-heading">
+                      <%= f.label :category %><br>
+                        <small>
+                          <%= f.select :category, [['Boucherie'],['Boulangerie'],['Charcuterie'],['Primeur'],['Poissonnerie'],['Caviste'],['Traiteur'],['Epicerie']] %>
+                        </small>
+                      </h4>
+                    </center>
+                    <div class="container">
+                      <span><strong>Skills: </strong></span>
+                    </div>
+
+
+                                    <div class="field">
+                                      <%= f.label :sub_category %><br>
+                                      <%= f.select :sub_category, [['Poissons entiers'],['Poissons entiers'],['Poissons fumés'],['Coquillages et crustacés'],['Volailles'],['Lapin'],['Agneau'],['Bœuf'],['Veau'],['Porc'],['Cheval'],['Magrets et viandes séchées'],['Andouilles, andouillettes et abbats'],['Pâtés et terrines'],['Jambons'],['Saucisses et boudins'],['Saucissons'],['Foies gras'],['Fromages au lait de vache'],['Fromages au lait de chèvre et de brebis'],['Crémerie'],['Tomates'],['Salades'],['Pommes de terre'],['Oignons, ails et échalottes'],['Légumes racines'],['Légumes exotiques'],['Légumes anciens'],['Herbes'],['Choux'],['Champignons et truffes'],['Autres légumes'],['Fruits rouges'],['Agrumes'],['Fruits exotiques'],['Pommes et poires'],['Fruits secs et moelleux'],['Autres fruits'],['Baguettes et pains'],['Viennoiseries'],['Patisseries']] %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :name %><br>
+                                      <%= f.text_field :name %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :key_words %><br>
+                                      <%= f.text_field :key_words %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :unité %><br>
+                                      <%= f.select :unit, [['gramme(s)'],['kilogramme(s)'],['litre'],['personne(s)'],['pièce']] %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :description %><br>
+                                      <%= f.text_area :description %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :min_price %><br>
+                                      <%= f.text_field :min_price %>
+                                    </div>
+                                    <br>
+                                     <div class="field">
+                                      <%= f.label :max_price %><br>
+                                      <%= f.text_field :max_price %>
+                                    </div>
+                                    <br>
+                                    <div class="field">
+                                      <%= f.label :difficulty %><br>
+                                      <%= f.select :unit, [['Facile'],['Moyennement facile'],['Assez compiqué'],['Compliqué']] %>
+                                    </div>
+                                    <br>
+                                    <a href=""></a>
+                                    <div class="actions">
+                                      <%= f.submit %>
+                                    </div>
+
+
+
+
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        </p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    </center>
+                </div>
+            </div>
+        </div>
+</div>
+<% end %>

@@ -1,44 +1,55 @@
-<h1>Produits disponibles</h1>
-
-<h2>Import Products</h2>
-
 <%= form_tag import_products_path, multipart: true do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
-
-
-<table class="table table_striped">
-  <thead>
-    <tr>
-      <th>Categorie</th>
-      <th>Sub-categorie</th>
-      <th>Nom</th>
-      <th>mots-clés</th>
-      <th>Min-Prix</th>
-      <th>Max-Prix</th>
-      <th>Difficulté</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each_with_index do |product, index| %>
-      <tr>
-        <td><%= product.category %></td>
-        <td><%= product.sub_category %></td>
-        <td><%= product.name %></td>
-        <td><%= product.key_words %></td>
-        <td><%= product.description %></td>
-        <td><%= product.min_price %></td>
-        <td><%= product.max_price %></td>
-        <td><%= product.difficulty %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Choisir', :root, class: "btn btn-primary" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New product', new_product_path %>
+ <div class="container">
+        <div class="modal-dialog product">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">About </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                      <h4 class="media-heading">
+                          <small>Categorie</small>
+                          <small>Sub-categorie</small>
+                          <small>Nom</small>
+                          <small>mots-clés</small>
+                          <small>Min-Prix</small>
+                          <small>Max-Prix</small>
+                          <small>Difficulté</small>
+                          <small colspan="3"></small>
+                      </h4>
+                    </center>
+                      <% @products.each_with_index do |product, index| %>
+                        <div class="container">
+                          <span><strong>Skills: </strong></span>
+                          <%= product.category %>
+                          <%= product.sub_category %>
+                          <%= product.name %>
+                          <%= product.key_words %>
+                          <%= product.description %>
+                          <%= product.min_price %>
+                          <%= product.max_price %>
+                          <%= product.difficulty %>
+                          <%= link_to 'Show', product %>
+                          <%= link_to 'Edit', edit_product_path(product) %>
+                          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+                          <%= link_to 'Choisir', :root, class: "btn btn-primary" %>
+                        </div>
+                      <% end %>
+                    <hr>
+                    <center>
+                    <p class="text-left"><strong>Bio: </strong><br>
+                        </p>
+                    <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                    <%= link_to 'New product', new_product_path %>
+                    </center>
+                </div>
+            </div>
+        </div>
+</div>
