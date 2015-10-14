@@ -1,18 +1,38 @@
-<h2><%= t('.sign_up', :default => "Sign up") %></h2>
-
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+ <div class="container" style="padding-top: 150px;">
+        <div class="modal-dialog profile">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"><%= t('.sign_up', :default => "Sign up") %></h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                    <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                        <div class="row">
+							<div>
+							<%= f.label :email %><br />
+							<%= f.email_field :email %></div>
+                        </div>
+                        <div class="row" style="margin: 10px;">
+						  <div><%= f.label :password %><br />
+						  <%= f.password_field :password %></div>
+  						</div>
+                        <div class="row" style="margin: 10px;">
+						  <div><%= f.label :password_confirmation %><br />
+						  <%= f.password_field :password_confirmation %></div>
+						  </div>
+                    <input class="btn btn-default" type="submit" name="commit" value="Inscription">
+                    </center>
+                    <hr>
+                    <center>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+						<%= render "devise/shared/links" %>
+                    <br>
+                    </center>
+                </div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+            </div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit t('.sign_up', :default => "Sign up") %></div>
+        </div>
+</div>
 <% end %>
-
-<%= render "devise/shared/links" %>
