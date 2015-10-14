@@ -123,7 +123,6 @@ $(".modalLink").click(function(e){
 $('.closeModal').click(function(e){
 	$(".modal-dialog.login").removeClass("active");
 })
-
 // AJAX handling stuff :
 var getLoginData = function(){
 	var email = $("#emailInput").val();
