@@ -11,16 +11,23 @@
                       <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
                       <%= f.input :picture %>
                       <h4 class="media-heading">
-                        <%= f.input :username, autofocus: true %>
-                        <%= f.input :firstname, autofocus: true %>
-                        <%= f.input :lastname, autofocus: true %>
+                        <%= f.input :username, autofocus: true,required: true %>
+                        <div id="alert7"></div>
+                        <%= f.input :firstname, autofocus: true,required: true %>
+                        <div id="alert6"></div>
+                        <%= f.input :lastname, autofocus: true,required: true %>
+                        <div id="alert5"></div>
                         <small>
                           <%= f.select :sexe, [['Male',1],['Female',2]] %>
                           <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-                          <%= f.input :address, autofocus: true %>
-                          <%= f.input :city, autofocus: true %>
-                          <%= f.input :zip_code, autofocus: true %>
-                          <%= f.input :phone_number, autofocus: true %>
+                          <%= f.input :address, autofocus: true, required: true %>
+                          <div id="alert4"></div>
+                          <%= f.input :city, autofocus: true, required: true %>
+                          <div id="alert3"></div>
+                          <%= f.input :zip_code, autofocus: true, required: true %>
+                          <div id="alert2"></div>
+                          <%= f.input :phone_number, autofocus: true, required: true %>
+                          <div id="alert"></div>
                         </small>
                       </h4>
                     </center>
@@ -44,7 +51,7 @@
                 </div>
                 <div class="modal-footer">
                     <center>
-                    <%= f.button :submit, "Save changes" %>
+                    <%= f.button :submit, "Save changes", id:"validez" %>
                     </center>
                 </div>
             </div>

@@ -112,7 +112,8 @@ if ( typeof define === 'function' && define.amd ) {
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
 //------------------------------------------------------------------------
-(function(){
+
+$(function(){
 
 // Modal -----------------------------------------------------------------
 $(".modalLink").click(function(e){
@@ -148,7 +149,61 @@ $('.loginBtn').click(function(e){
 	//loginrequest.send();
 });
 
+$('#submit_button').click(function(e){
+  var rad = $('#shopper_default_radius').val();
+  if (rad == ''){
+    e.preventDefault();
+    $("#alert").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var uname = $('#user_username').val();
+  if (uname == '' ){
+    e.preventDefault();
+    $("#alert7").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var fname = $('#user_firstname').val();
+  if (fname == '' ){
+    e.preventDefault();
+    $("#alert6").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var lname = $('#user_lastname').val();
+  if (lname == '' ){
+    e.preventDefault();
+    $("#alert5").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var uads = $('#user_address').val();
+  if (uads == '' ){
+    e.preventDefault();
+    $("#alert4").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var ucty = $('#user_city').val();
+  if (ucty == '' ){
+    e.preventDefault();
+    $("#alert3").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var uzpcd = $('#user_zip_code').val();
+  if (uzpcd == '' ){
+    e.preventDefault();
+    $("#alert2").html("ce champ n'est pas rempli");
+  }
+});
+$("#validez").click(function(e){
+  var ufnbr = $('#user_phone_number').val();
+  if (ufnbr == '' ){
+    e.preventDefault();
+    $("#alert").html("ce champ n'est pas rempli");
+  }
+});
+});
 
-
-
-})();

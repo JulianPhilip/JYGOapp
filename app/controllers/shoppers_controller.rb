@@ -37,6 +37,7 @@ class ShoppersController < ApplicationController
 
   def update
     @user = current_user.shopper.update(shopper_params)
+
     redirect_to profile_path
   end
 
