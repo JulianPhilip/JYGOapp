@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013140536) do
+ActiveRecord::Schema.define(version: 20151013173229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,16 @@ ActiveRecord::Schema.define(version: 20151013140536) do
     t.datetime "updated_at",   null: false
     t.string   "unit"
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "order_id"
+    t.text     "content"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["order_id"], name: "index_reviews_on_order_id", using: :btree
 
   create_table "shoppers", force: :cascade do |t|
     t.integer  "user_id"
@@ -160,5 +170,6 @@ ActiveRecord::Schema.define(version: 20151013140536) do
   add_foreign_key "ordered_products", "shops"
   add_foreign_key "orders", "shoppers"
   add_foreign_key "orders", "users"
+  add_foreign_key "reviews", "orders"
   add_foreign_key "shoppers", "users"
 end

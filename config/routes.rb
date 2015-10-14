@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+
   resources :products do
     collection { post :import }
   end
 
   resources :shops
-  resources :orders
+  resources :orders do
+    resources :reviews, only: [:new, :create]
+  end
 
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
