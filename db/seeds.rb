@@ -16,7 +16,8 @@ require 'faker'
     password: "testtest",
     password_confirmation: "testtest",
     address: Faker::Address.street_address,
-    zip_code: Faker::Address.postcode
+    zip_code: 75016,
+    city: "Paris"
     )
 end
 
@@ -63,3 +64,24 @@ Product.create(category:'Boucherie', sub_category:'Volailles', name:'Cuisse de c
 Product.create(category:'Boucherie', sub_category:'Volailles', name:'Coquet', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
 Product.create(category:'Boucherie', sub_category:'Volailles', name:'Chapon', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
 
+
+User.create(
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: "testtest",
+    password_confirmation: "testtest",
+    address: "16 rue de Passy",
+    zip_code: 75016,
+    city: Paris
+    )
+User.create(
+    firstname: Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: "testtest",
+    password_confirmation: "testtest",
+    address: "16 avenue Paul Doumer",
+    zip_code: 75016,
+    city: Paris
+    )
