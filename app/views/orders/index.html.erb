@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @orders.each_with_index do |product, index| %>
+    <% @orders.each_with_index do |order, index| %>
       <tr>
         <td><%= order.user_id %></td>
         <td><%= order.shopper_id %></td>
@@ -22,9 +22,9 @@
         <td><%= order.status_exec %></td>
         <td><%= order.total_amount %></td>
         <td><%= order.commission %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Choisir', :root, class: "btn btn-primary" %></td>
       </tr>
     <% end %>

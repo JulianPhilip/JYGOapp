@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   def create
     shopper = Shopper.find(params[:shopper_id])
     date = params[:date]
-    @order = Order.create(shopper: shopper, date: date)
+    @order = Order.create(shopper: shopper, date: date, user: current_user)
 
     redirect_to edit_order_path(@order)
   end
