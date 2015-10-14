@@ -2,7 +2,11 @@
     <div class="wizard-inner">
         <ul class="nav nav-tabs" role="tablist">
 
+            <% if controller_name == "searchs" %>
             <li role="presentation" class="active">
+            <% else  %>
+            <li role="presentation" class="disabled">
+            <% end  %>
                 <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
                     <span class="round-tab">
                         <i class="glyphicon glyphicon-calendar white"></i>
@@ -13,7 +17,11 @@
                 </center>
             </li>
 
+            <% if controller_name == "shoppers" %>
+            <li role="presentation" class="active">
+            <% else  %>
             <li role="presentation" class="disabled">
+            <% end  %>
                 <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                     <span class="round-tab">
                         <i class="glyphicon glyphicon-user white"></i>
@@ -23,7 +31,11 @@
                         <p>Trouver Shopper</p>
                 </center>        
             </li>
+            <% if controller_name == "orders" %>
+            <li role="presentation" class="active">
+            <% else  %>
             <li role="presentation" class="disabled">
+            <% end  %>
                 <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                     <span class="round-tab">
                         <i class="glyphicon glyphicon-list-alt white"></i>
@@ -34,7 +46,11 @@
                 </center>        
             </li>
 
+            <% if controller_name == "orders" %>
+            <li role="presentation" class="active">
+            <% else  %>
             <li role="presentation" class="disabled">
+            <% end  %>
                 <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
                     <span class="round-tab">
                         <i class="glyphicon glyphicon-thumbs-up white"></i>
