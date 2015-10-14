@@ -118,6 +118,7 @@ $(function(){
 // Modal -----------------------------------------------------------------
 $(".modalLink").click(function(e){
 	$(".modal-dialog.login").toggleClass("active");
+  $(".modal-dialog.login").css("visibility", "visible"); // <<< set to hidden initially in css to avoid a login flash on refresh
 });
 
 $('.closeModal').click(function(e){
