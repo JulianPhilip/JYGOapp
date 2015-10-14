@@ -44,9 +44,33 @@
             <% end %>
             </tbody>
     </table>
-<% end %>
-  <br>
 
+  <br>
+  <table class="table table-striped custab">
+    <thead>
+        <tr>
+            <th>Prix minimum</th>
+            <th>Prix maximum</th>
+            <th>Commission</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+
+                <td><%= @order.min_price_sum %> €</td>
+                <td><%= @order.max_price_sum %> €</td>
+                <td>5 €</td>
+            </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+<% end %>
 <!-- Préparer la barre de synthèse -->
 <!-- <div class="container">
   <div class="col-md-3">
