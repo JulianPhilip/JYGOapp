@@ -13,7 +13,11 @@ class OrdersController < ApplicationController
   def create
     shopper = Shopper.find(params[:shopper_id])
     date = params[:date]
-    @order = Order.create(shopper: shopper, date: date)
+    user = current_user
+    @order = Order.create(shopper: shopper, date: date, user: user)
+
+    # send mail
+    UserMailer.order_confirmation_shopper(@order).deliver
 
     redirect_to edit_order_path(@order)
   end
@@ -26,6 +30,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
+    UserMailer.order_confirmation_user(@order).deliver
 
     redirect_to edit_order_path(@order)
   end
