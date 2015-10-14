@@ -13,7 +13,7 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
-//@import "orders";
+//@import "orders";  << don't do this ! 
 
 .modal-dialog{
     &.notices{    
@@ -26,6 +26,8 @@
             position: relative;
             margin: 10% auto;
             padding: 5px 20px 13px 20px;
+        }
+        .btn{
         }
     }
 }
