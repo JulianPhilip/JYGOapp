@@ -80,7 +80,7 @@ class OrdersController < ApplicationController
   client.account.messages.create(
     :from => from,
     :to => shopper.user.phone_number,
-    :body => "Bonjour {shopper.user.firstname} , Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+    :body => "Bonjour #{shopper.user.firstname} , Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
     )
 
   end
