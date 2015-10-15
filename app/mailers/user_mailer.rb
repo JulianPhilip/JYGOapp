@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: "defaultemail@example.com"
+  default from: "julian.philip@orange.fr"
 
   def order_confirmation_shopper(order)
     @order = order
