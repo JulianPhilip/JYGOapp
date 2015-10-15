@@ -10,13 +10,14 @@ require 'faker'
 
 50.times do
   User.create(
+    picture: Faker::Avatar.image("my-own-slug", "50x50"),
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: "testtest",
     password_confirmation: "testtest",
     address: Faker::Address.street_address,
-    zip_code: 75016,
+    zip_code: 75014,
     city: "Paris"
     )
 end
@@ -47,41 +48,6 @@ end
     )
 end
 
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Aile de Raie', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Bar', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Daurade Royale', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Maquereau', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Queue de Lotte', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Lotte', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Merlu', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Saint Pierre', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Saumon', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Poissonnerie', sub_category:'Poissons entiers', name:'Sole', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Caille', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Canard entier', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Canette fermière', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Cuisse de canard confite', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Coquet', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
-Product.create(category:'Boucherie', sub_category:'Volailles', name:'Chapon', key_words:'', min_price:'1,23', max_price:'3,76', difficulty:'', unit:'kilogramme(s)')
 
 
-User.create(
-    firstname: Faker::Name.first_name,
-    lastname: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: "testtest",
-    password_confirmation: "testtest",
-    address: "16 rue de Passy",
-    zip_code: 75016,
-    city: "Paris"
-    )
-User.create(
-    firstname: Faker::Name.first_name,
-    lastname: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: "testtest",
-    password_confirmation: "testtest",
-    address: "16 avenue Paul Doumer",
-    zip_code: 75016,
-    city: "Paris"
-    )
+
