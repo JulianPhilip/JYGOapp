@@ -1,6 +1,6 @@
 <%= render 'shared/roadmap_order' %>
 <div class="shopper-cards">
-        
+
     <section>
       <div class="users2">
         <div class="row">
@@ -23,37 +23,34 @@
                   <span class="heading">Rayon d'action:</span> <%= shopper.default_radius %> km
                 </p>
                 <p>
-                  <span class="heading">Mail</span> <%= shopper.user.email %> 
+                  <span class="heading">Mail</span> <%= shopper.user.email %>
                 </p>
               </div>
-              <div class="media-right">
-                <div class="follow transition">
-                <%= form_tag orders_path do %>
-                  <%= hidden_field_tag 'shopper_id', shopper.id %>
-                  <%= hidden_field_tag 'date', @selected_date %>
-                  <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
-                <% end %>
-                </div>
-                <p class="rating">
-                  <span class="heading">Rating:</span> 5/5
-                </p>
-                <span>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </span>
+              <div class="follow transition">
+              <%= form_tag orders_path do %>
+                <%= hidden_field_tag 'shopper_id', shopper.id %>
+                <%= hidden_field_tag 'date', @selected_date %>
+                <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
+              <% end %>
               </div>
+              <% stars = rand(5) + 1 %>
+              <p class="rating">
+                <span class="heading">Rating:</span> <%= stars %>/5
+              </p>
+              <span>
+                <% stars.times do %>
+                <i class="fa fa-star"></i>
+               <% end %>
+              </span>
             </div>
           </div> <!--/col-->
     <% end %>
 
-          
+
 
         </div>
       </div>
     </section>
-            
+
   </div>
 </div>
