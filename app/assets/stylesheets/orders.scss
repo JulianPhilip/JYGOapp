@@ -21,6 +21,14 @@
 		background-color: rgba(255, 99, 71, 0.1);
 	}
 }
+
+.products-choices{
+	padding: 0;
+
+	select{
+		width: 100%;
+	}
+}
 // .summary th, .summary td{ // << how to remove the grey border
 // 	border: none !important;
 // }

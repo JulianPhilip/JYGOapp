@@ -33,61 +33,38 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-            <tr>
+
+
+
+
+<div class="container-fluid products-choices">
+    <div class="row">
+            <div class="col-sm-3">Catégorie</div>
+            <div class="col-sm-3">Produit</div>
+            <div class="col-sm-3 col-sm-offset-3">Quantité</div>
+            <!-- <div class="col-sm-3">sqdfmlfkjqsdm</div> -->
+
               <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-                <td><%= select_tag :categories, options_for_select(@categories) %></td>
-                <td><%= op.collection_select(:product_id, [], :id, :name) %></td>
-                <td><%= op.text_field :quantity %></td>
-                <td><button type="submit" name="commit" class="btn btn-success"><i class="glyphicon glyphicon-plus"> Ajouter </i></td>
-            </tr>
-            <% end %>
-            </tbody>
-    </table>
+                <div class="col-sm-3"><%= select_tag :categories, options_for_select(@categories) %></div>
+                <div class="col-sm-3"><%= op.collection_select(:product_id, [], :id, :name) %></div>
+                <div class="col-sm-3"><%= op.text_field :quantity %></div>
+                <div class="col-sm-3"><button type="submit" name="commit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"> Ajouter </i></button></div>
+              <% end %>
+    </div>
 
-  <br>
-  <table class="table table-striped custab summary">
-    <thead >
-        <tr>
-            <th>Prix minimum</th>
-            <th>Prix maximum</th>
-            <th>Commission</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-            <tr>
-
-                <td ><%= @order.min_price_sum %> €</td>
-                <td><%= @order.max_price_sum %> €</td>
-                <td>5 €</td>
-                <td><button type="submit" name="commit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"> JYGO </i></td>
-            </tr>
-    </tbody>
-  </table>
-
-
-
-
-
-
+  <div class="row">
+            <div class="col-sm-3">Prix minimum</div>
+            <div class="col-sm-3">Prix maximum</div>
+            <div class="col-sm-3">Commission</div>
+  </div>
+  <div class="row">
+                <div class="col-sm-3"><%= @order.min_price_sum %> €</div>
+                <div class="col-sm-3"><%= @order.max_price_sum %> €</div>
+                <div class="col-sm-3">5 €</div>
+                <div class="col-sm-3"><button type="submit" name="commit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-ok"> JYGO </i></button></div>
+  </div>
+</div>
 <% end %>
-<!-- Préparer la barre de synthèse -->
-<!-- <div class="container">
-  <div class="col-md-3">
-    Prix min
-  </div>
-  <div class="col-md-3">
-    Prix max
-  </div>
-  <div class="col-md-3">
-    Commission
-  </div>
-  <div class="col-md-3">
-    Go
-  </div>
-</div> -->
-
 
 
 <script type="text/javascript">
