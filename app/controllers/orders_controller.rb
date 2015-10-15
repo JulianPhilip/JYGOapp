@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
   end
 
   def show_all
-    @orders = Order.find(params[current_user])
+   if current_user.shopper
+      @shopper = current_user.shopper
+    else
+      redirect_to :root
+    end
   end
 
   def new
@@ -38,7 +42,11 @@ class OrdersController < ApplicationController
   end
 
   def order_user
-    shopper = Shopper.find(params[:shopper_id])
+    if current_user.shopper
+      @shopper = current_user.shopper
+    else
+      redirect_to :root
+    end
   end
 
   def destroy

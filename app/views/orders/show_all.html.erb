@@ -13,28 +13,26 @@
   </thead>
 
   <tbody>
-    <% @orders.each_with_index do |order, index| %>
+    <% @shopper.orders.each_with_index do |order, index| %>
       <tr>
         <td><%= order.date %></td>
-        <td><%= order.shopper.firstname %></td>
         <td><% if order.status_exec == true %>
-            <%= order.total_amount %>
+              <%= order.total_amount %>
             <% else %>
-            <%=  "Indisponible" %></td>
+              <%=  "Indisponible" %></td>
+              <%end%>
         <td><% if order.status_exec == true %>
-            <%= order.commission %>
+              <%= order.commission %>
             <% else %>
-            <%=  "Indisponible" %></td>
+               <%=  "Indisponible" %></td>
+              <%end%>
         <td><% if order.status_exec == true %>
-            <%= "Effectuée" %>
+              <%= "Effectuée" %>
             <% else %>
-            <%= "En cours" %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Choisir', :root, class: "btn btn-primary" %></td>
-      </tr>
-    <% end %>
+              <%= "En cours" %></td>
+        <td><%= order.commission%></td>
+            <%end%>
+  <% end %>
   </tbody>
 </table>
 
