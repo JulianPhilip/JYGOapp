@@ -39,7 +39,10 @@
                                 <a href="<%= user_path(current_user) %>" >Mon profil  </a>
                         </li>
                         <li class="text-center">
-                          <a href="<%= order_path(current_user) %>"> Mes commandes</a>
+                          <a href="<%= mes_commandes_path(current_user) %>"> Mes commandes</a>
+                        </li>
+                        <li class="text-center">
+                          <a href="<%= mes_livraisons_path(current_user) %>"> Mes livraisons</a>
                         </li>
                         <li class="text-center">
                                   <a href="#" >Mes Avis</a>
