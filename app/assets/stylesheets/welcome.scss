@@ -18,34 +18,74 @@ h1{
   height: 100vh;
   width: 100%;
   padding: 110px;
-  background-image: url(https://i.imgur.com/66nKj6x.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://i.imgur.com/66nKj6x.jpg);
   background-size: cover;
   color: white;
+
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color:    white;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color:    white;
+     opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color:    white;
+     opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color:    white;
+  }
 
   .intro-text{
     margin-top: 50px;
     margin: 0 auto;
 
+    form {
+      display: flex;
+    }
+
+    h1 {
+      justify-content: center;
+      font-size: 80px;
+      font-weight: 900;
+    }
+
+    h3 {
+      padding: 35px 0px;
+      margin: 0;
+    }
+
     input{
-      border: 1px solid black;
-      border-radius: 3px;
-      padding: 5px;
-      color: black;
+      border: 4px solid white;
+      background-color: transparent;
+      outline: 0;
+      padding: 20px;
+      border-radius: 20em;
+      text-align: left;
+
     }
 
     button{
-      height: 40px;
-      width: 100px;
+      margin: 0;
+      border: none;
+      background-color: #2ecc71;
+      border-radius: 20em;
+      padding: 23px;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 20px;
       display: block;
-      margin-top: 10px;
-      color: steelblue;
-      background-color: transparent;
-      border: 3px solid steelblue;
-      border-radius: 3px;
       transition: 0.3s;
       &:hover{
-        background-color: steelblue;
-        color: aliceblue;
+        background-color: #27ae60;
+
       }
     }
 

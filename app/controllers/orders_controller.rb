@@ -8,7 +8,11 @@ class OrdersController < ApplicationController
   end
 
   def show_all
-    @orders = Order.find(params[current_user])
+   if current_user.shopper
+      @shopper = current_user.shopper
+    else
+      redirect_to :root
+    end
   end
 
   def new
@@ -19,7 +23,10 @@ class OrdersController < ApplicationController
     date = params[:date]
     # send mail
     @order = Order.create(shopper: shopper, date: date, user: current_user)
+
     UserMailer.order_confirmation_shopper(@order).deliver
+    send_sms(shopper)
+
     redirect_to edit_order_path(@order)
   end
 
@@ -37,6 +44,14 @@ class OrdersController < ApplicationController
     redirect_to edit_order_path(@order)
   end
 
+  def order_user
+    if current_user.shopper
+      @shopper = current_user.shopper
+    else
+      redirect_to :root
+    end
+  end
+
   def destroy
     @order.destroy
     respond_to do |format|
@@ -50,5 +65,18 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(ordered_products_attributes: [:product_id, :quantity])
+  end
+
+  def send_sms(shopper)
+  account_sid = ENV['TWILIO_SID']
+  auth_token = ENV['TWILIO_AUTHTOKEN']
+
+  client = Twilio::REST::Client.new account_sid, auth_token
+  from = "+32460205695"
+  client.account.messages.create(
+    :from => from,
+    :to => shopper.user.phone_number,
+    :body => "Bonjour ,  Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+  )
   end
 end

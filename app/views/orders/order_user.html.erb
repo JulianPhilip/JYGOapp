@@ -1,0 +1,27 @@
+<h1>Listing de vos Courses</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>La date de votre course</th>
+      <th>Le Montant total</th>
+      <th>Votre destinataire</th>
+      <th>Le Status de votre commande</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= shopper.order.date %></td>
+        <td><%= shopper.order.total_amount %></td>
+        <td><%= shopper.order.user_id %></td>
+        <td><%= shopper.order.status_exec %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Shop', new_shop_path %>
