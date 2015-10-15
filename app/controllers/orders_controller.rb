@@ -81,6 +81,7 @@ class OrdersController < ApplicationController
     :from => from,
     :to => shopper.user.phone_number,
     :body => "Bonjour {shopper.user.firstname} , Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+    )
 
   end
 
@@ -94,6 +95,6 @@ class OrdersController < ApplicationController
     :from => from,
     :to => shopper.user.phone_number,
     :body => "Bonjour #{shopper.user.firstname} , La liste de produits de #{user.firstname} est désormais disponible. Rendez-vous sur jygo.herokuapp.com"
-
+    )
   end
 end
