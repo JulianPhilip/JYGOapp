@@ -152,3 +152,13 @@
         border-top:0 none;
     }
 }
+
+// prevent maximum size ----------------------------------------------
+@media (min-width: 1200px) {
+  /* line 10, /home/awez/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 100%;
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+}

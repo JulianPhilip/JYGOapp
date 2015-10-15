@@ -34,12 +34,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Votre adresse de livraison : </h4>
+                    <center><h4 class="modal-title" id="myModalLabel">Votre addresse de livraison : </h4></center>
                 </div>
                 <div class="modal-body">
                     <center>
                     <h3 class="media-heading"><%= current_user.address %> <small><%= current_user.zip_code %> <%= current_user.city %></small></h3>
-                    <span><strong>Vos spécialités: </strong></span>
+
 
                         <div class="row">
 
@@ -54,15 +54,17 @@
                     <hr>
                     <center>
                     <p class="text-left">
-                      <strong>Date de livraison: </strong><br>
+                      <h4 class="modal-title" id="myModalLabel">Date et horaires de livraison: </h4><br>
                     </p>
-                        <input type="date" class="form-control" id="date" name="date" required >
+                    <strong>Date:</strong> <input type="date" class="form-control" id="date" name="date" style="width: 210px" required >
                     <br>
+                    <strong>Début:</strong> <input type="time" name="Début">
+                    <strong>Fin:</strong> <input type="time" name="Fin">
                     </center>
                 </div>
                 <div class="modal-footer">
                     <center>
-                      <button type="submit" class="btn btn-default btn-primary"> Trouver un shopper !</button>
+                      <button type="submit" class="btn btn-default btn-primary" id="search-button"> Trouver un shopper !</button>
                     </center>
                 </div>
             </div>
