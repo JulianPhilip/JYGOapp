@@ -24,9 +24,10 @@
 
                 <% if user_signed_in? %>
                   <li>
-                      <%= link_to "Exécuter une course", new_availability_path %>
+                      <%= link_to "Exécuter une course", new_availability_path, :id => "commande" %>
                   </li>
                   <li>
+
                       <%= link_to "Passer commande",mes_commandes_path %>
                   </li>
 
