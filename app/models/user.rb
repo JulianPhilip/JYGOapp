@@ -44,7 +44,9 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
-
+  def may_order?
+    firstname.present?&&lastname.present?
+  end
   private
 
   def send_welcome_email

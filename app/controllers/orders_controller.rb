@@ -33,6 +33,10 @@ class OrdersController < ApplicationController
     redirect_to edit_order_path(@order)
   end
 
+  def order_user
+    shopper = Shopper.find(params[:shopper_id])
+  end
+
   def destroy
     @order.destroy
     respond_to do |format|
