@@ -46,4 +46,5 @@ class ShoppersController < ApplicationController
   def shopper_params
     params.require(:shopper).permit(:default_radius)
   end
+
 end
