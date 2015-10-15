@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(order_params)
     UserMailer.order_confirmation_user(@order).deliver
-
+    send_sms_list(@order.shopper, @order.user)
     redirect_to edit_order_path(@order)
   end
 
@@ -80,7 +80,24 @@ class OrdersController < ApplicationController
   client.account.messages.create(
     :from => from,
     :to => shopper.user.phone_number,
+<<<<<<< HEAD
+    :body => "Bonjour {shopper.user.firstname} , Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+  )
+  end
+
+  def send_sms_list(shopper, user)
+  account_sid = ENV['TWILIO_SID']
+  auth_token = ENV['TWILIO_AUTHTOKEN']
+
+  client = Twilio::REST::Client.new account_sid, auth_token
+  from = "+32460205695"
+  client.account.messages.create(
+    :from => from,
+    :to => shopper.user.phone_number,
+    :body => "Bonjour #{shopper.user.firstname} , La liste de produits de #{user.firstname} est désormais disponible. Rendez-vous sur jygo.herokuapp.com"
+=======
     :body => "Bonjour,  Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+>>>>>>> 3385ef046ae175e8d30d08e49149b29f527a3fa7
   )
   end
 end

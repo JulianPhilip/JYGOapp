@@ -9,57 +9,74 @@
                     <center>
                     <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle img-profile-main"></a>
                     <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
+                    <br>
+                    <br>
+                    <h4>Nom d'utilisateur: <%= @user.username %></h4>
+                    <h4>Prénom: <%= @user.firstname %></h4>
+                    <h4>Nom: <%= @user.lastname %></h4>
+                    <p>Adresse:</p>
+                    <p><%= @user.address %></p>
+                    <p><%= @user.zip_code %></p>
+                    <p><%= @user.city %></p>
+                    <p>Numéro de téléphone: <%= @user.phone_number %></p>
+                    <% if @user.address.nil? || @user.zip_code.nil? || @user.city.nil? %>
+                    <p>Veuillez renseigner votre adresse</p>
+                    <% end %>
+                    <% if @user.phone_number.nil? %>
+                    <p>Veuillez renseigner votre numéro de téléphone</p>
+                    <% end %>
+
                     <span><strong>Vos spécialités: </strong></span>
                         <div class="row">
 
                           <div class="col-sm-6">
-                            <ul class="skills left">
+                            <!-- <ul class="skills left"> -->
                                 <% if @user.vin == true %>
-                              <li>
+                              <!-- <li> -->
                                   <span class="label label-warning"><%="Vin"%></span>
-                              </li>
+                              <!-- </li> -->
                                 <%end%>
                                 <% if @user.boucherie == true %>
-                              <li>
+                              <!-- <li> -->
                                   <span class="label label-success"><%="Boucherie"%></span>
-                              </li>
+                              <!-- </li> -->
                                 <%end%>
                                 <% if @user.charcuterie == true %>
-                              <li>
+                              <!-- <li> -->
                                   <span class="label label-warning"><%="Charcuterie"%></span>
-                              </li>
+                              <!-- </li> -->
                                 <%end%>
                                 <% if @user.prix == true %>
-                              <li>
+                              <!-- <li> -->
                                   <span class="label label-info"><%="Meilleurs affaires"%></span>
-                              </li>
+                              <!-- </li> -->
                                 <%end%>
-                            </ul>
+                            <!-- </ul> -->
                           </div>
 
                           <div class="col-sm-6">
                           <ul class="skills right">
                               <% if @user.legume == true %>
-                            <li>
+                            <!-- <li> -->
                                 <span class="label label-warning"><%="Légume"%></span>
-                            </li>
+                            <!-- </li> -->
                               <%end%>
                               <% if @user.fruit == true %>
-                            <li>
+                            <!-- <li> -->
                                 <span class="label label-warning"><%="Fruit"%></span>
-                            </li>
+                            <!-- </li> -->
                               <%end%>
                               <% if @user.poisson == true %>
-                            <li>
+                            <!-- <li> -->
                                 <span class="label label-info"><%="Poisson"%></span>
-                            </li>
+                            <!-- </li> -->
                               <%end%>
                               <% if @user.boutique == true %>
-                            <li>
+                            <!-- <li> -->
                                 <span class="label label-success"><%="Meilleurs Addresses"%></span>
-                            </li>
+                            <!-- </li> -->
                               <%end%>
-                          </ul>
+                          <!-- </ul> -->
                           </div>
 
                         </div>
@@ -71,11 +88,6 @@
                         <span class="label label-success">Windows XP, Vista, 7</span> -->
                     </center>
                     <hr>
-                    <center>
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-                    <br>
-                    </center>
                 </div>
                 <div class="modal-footer">
                     <center>
