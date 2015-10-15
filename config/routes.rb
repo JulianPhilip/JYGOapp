@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get '/edit_info' => "users#edit_info", as: 'edit_info'
   get '/shop_config_1' => "high_voltage/pages#show", id: 'orders_user'
   get '/home_call_action' => "users#home_call_action", as: 'home'
-  get '/show_all' => "orders#show_all", as: "mes_commandes"
+  get '/show_all' => "orders#show_all", as: 'mes_commandes'
   get '/mes_livraisons' => "orders#mes_livraisons"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
