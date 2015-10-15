@@ -3,11 +3,13 @@
 
     <section>
       <div class="users2">
+      <% @shoppers.each_with_index do |shopper, index| %>
+
         <div class="row">
 
-      <% @shoppers.each_with_index do |shopper, index| %>
           <div class="col-sm-6 col-xs-12 full-width">
             <div class="media">
+
               <div class="media-left media-middle">
                 <div class="image loader">
                   <img src="<%=shopper.user.picture %>" class="borderStyle" alt="">
@@ -26,30 +28,33 @@
                   <span class="heading">Mail</span> <%= shopper.user.email %>
                 </p>
               </div>
-              <div class="follow transition">
-              <%= form_tag orders_path do %>
-                <%= hidden_field_tag 'shopper_id', shopper.id %>
-                <%= hidden_field_tag 'date', @selected_date %>
-                <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
-              <% end %>
-              </div>
-              <% stars = rand(5) + 1 %>
-              <p class="rating">
-                <span class="heading">Rating:</span> <%= stars %>/5
-              </p>
-              <span>
-                <% stars.times do %>
-                <i class="fa fa-star"></i>
-               <% end %>
-              </span>
+              <div class="media-right">
+                <div class="follow transition">
+                <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'shopper_id', shopper.id %>
+                  <%= hidden_field_tag 'date', @selected_date %>
+                  <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
+                <% end %>
+                </div>
+
+                <p class="rating">
+                  <% stars = rand(5) + 1 %>
+                  <span class="heading">Rating:</span> <%= stars %>/5
+                </p>
+
+                <span>
+                  <% stars.times do %>
+                    <i class="fa fa-star"></i>
+                  <% end %>
+                </span>
             </div>
           </div> <!--/col-->
-    <% end %>
 
 
 
         </div>
       </div>
+    <% end %>
     </section>
 
   </div>
