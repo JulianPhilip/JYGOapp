@@ -1,41 +1,68 @@
-<br>
-<br>
-<h1>Vos lists de livraison à faire</h1>
-
-<table class="table table_striped">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>User Name</th>
-      <th>User Lastname</th>
-      <th>status </th>
-      <th>total amont</th>
-      <th>commission</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.orders.each_with_index do |order, index| %>
-      <tr>
-        <td><%= order.date %></td>
-        <td><%= order.user.firstname%></td>
-        <td><%= order.user.lastname%></td>
-        <td><% if order.status_exec == true %>
-              <%= "Effectuée" %>
-            <% else %>
-              <%= "En cours" %></td>
-              <%end%>
-        <td><% if order.status_exec == true %>
-              <%= order.total_amount %>
-            <% else %>
-              <%=  "Indisponible" %></td>
-              <%end%>
-        <td><% if order.status_exec == true %>
-              <%= order.commission %>
-            <% else %>
-               <%=  "Indisponible" %></td>
-              <%end%>
-          <% end %>
-  </tbody>
-</table>
+ <div class="container">
+        <div class="modal-dialog deliveries">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Mes livraisons </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                      <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                      <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
+                    </center>
+                    <div class="container-fluid">
+                      <div class="row">
+                          <h4 class="media-heading">
+                            <div class="col-sm-2">Date</div>
+                            <div class="col-sm-2">User Name</div>
+                            <div class="col-sm-2">User Lastname</div>
+                            <div class="col-sm-2">Status</div>
+                            <div class="col-sm-2">Total Amount</div>
+                            <div class="col-sm-2">Commission</div>
+                          </h4>
+                        </div>
+                      </div>
+                    <hr>
+                    <div class="container-fluid">
+                      <% @user.orders.each_with_index do |order, index| %>
+                          <div class="col-sm-2">
+                            <%= order.date %>
+                          </div>
+                          <div class="col-sm-2">
+                            <%= order.user.firstname %>
+                          </div>
+                          <div class="col-sm-2">
+                            <%= order.user.lastname %>
+                          </div>
+                          <div class="col-sm-2">
+                            <% if order.status_exec == true %>
+                              <%= "Effectuée" %>
+                            <% else %>
+                              <%= "En cours" %>
+                            <% end %>
+                          </div>
+                          <div class="col-sm-2">
+                            <% if order.status_exec == true %>
+                              <%= order.total_amount %>
+                            <% else %>
+                              <%=  "Indisponible" %>
+                            <% end %>
+                          </div>
+                          <div class="col-sm-2">
+                            <% if order.status_exec == true %>
+                              <%= order.commission %>
+                            <% else %>
+                              <%=  "Indisponible" %>
+                            <% end %>
+                          </div>
+                      <% end %>
+                    </div>
+                    <center>
+                    </center>
+                </div>
+                <!-- <div class="modal-footer">
+                    <center>
+                    </center>
+                </div> -->
+             </div>
+        </div>
+</div>
