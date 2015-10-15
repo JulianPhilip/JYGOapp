@@ -17,4 +17,12 @@ class UserMailer < ApplicationMailer
     mail to: @order.user.email, subject: "Demande de commande"
   end
 
+  def list_user(order)
+    @order = order
+
+    @greeting = "La liste de produits est disponible!"
+
+    mail to: @order.user.email, subject: "Liste de produits"
+  end
+
 end

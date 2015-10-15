@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    UserMailer.list_user(@order).deliver
     send_sms_list(@order.shopper, @order.user)
   end
 
