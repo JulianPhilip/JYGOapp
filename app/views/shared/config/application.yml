@@ -9,3 +9,5 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+TWILIO_SID: AC5a984c58e10a84acc713c252e7b5b36b
+TWILIO_AUTHTOKEN: c9ff3afdb8930f024cce969f36bf6db6
