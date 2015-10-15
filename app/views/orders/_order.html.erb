@@ -10,14 +10,14 @@
             <div class="col-sm-3">Prix estimé</div>
             <div class="col-sm-3">Action</div>
     </div>
-    <div class="row chosen-products">
       <% @order.ordered_products.each do |op| %>
+    <div class="row chosen-products">
                 <div class="col-sm-3 chosen-product"><%= op.product.name %></div>
                 <div class="col-sm-3 chosen-product"><%= op.quantity %> <%= op.product.unit %> </div>
                 <div class="col-sm-3 chosen-product">[<%= op.product.min_price %> € - <%= op.product.max_price %> €]</div>
                 <div class="col-sm-3 chosen-product"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></div>
-      <% end %>
     </div>
+      <% end %>
   </div>
 
   <div class="order-section current-selection">
