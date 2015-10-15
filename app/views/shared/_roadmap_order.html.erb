@@ -1,9 +1,13 @@
 <div class="wizard">
     <div class="wizard-inner">
         <ul class="nav nav-tabs" role="tablist">
+    <div class="connecting-line <% if (controller_name == "shoppers" || "orders") && (controller_name != "searchs")%> active <% end %>" style="margin-left:170px;"></div>
+    <div class="connecting-line <% if controller_name == "orders" %> active <% end %>" style="margin-left:437px;"></div>
+    <div class="connecting-line <% if controller_name == "orders" && action_name == "show" %> active <% end %>" style="margin-left:704px;"></div>
 
             <% if controller_name == "searchs" %>
             <li role="presentation" class="active">
+            <!-- <div style="width:0;height:0;border-top:60px solid transparent;border-bottom:60px solid transparent;border-left:60px solid transparent;" -->
             <% else  %>
             <li role="presentation" class="disabled">
             <% end  %>
@@ -13,7 +17,7 @@
                     </span>
                 </a>
                 <center>
-                        <p class="text-muted">Choix de Date</p>
+                        <p class="text-muted">Choix de Date<% puts params[:controller].to_s %></p>
                 </center>
             </li>
 
@@ -31,7 +35,7 @@
                         <p>Trouver Shopper</p>
                 </center>        
             </li>
-            <% if controller_name == "orders" %>
+            <% if controller_name == "orders" && action_name == "edit" %>
             <li role="presentation" class="active">
             <% else  %>
             <li role="presentation" class="disabled">
@@ -46,7 +50,7 @@
                 </center>        
             </li>
 
-            <% if controller_name == "" %>
+            <% if controller_name == "orders" && action_name == "show" %>
             <li role="presentation" class="active">
             <% else  %>
             <li role="presentation" class="disabled">
