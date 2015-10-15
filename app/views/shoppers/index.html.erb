@@ -19,7 +19,9 @@
               <div class="media-body bio">
                 <h1 class="name"><%= shopper.user.firstname %> <%= shopper.user.lastname %></h1>
                 <p>
-                  <span class="heading">Address <%= shopper.user.address %></span> <%= shopper.user.zip_code %> <%= shopper.user.city %>
+                  <span class="heading">Address <%= shopper.user.address %></span>                 </p>
+                <p>
+                    <span class="heading"><%= shopper.user.zip_code %> <%= shopper.user.city %></span>
                 </p>
                 <p>
                   <span class="heading">Rayon d'action:</span> <%= shopper.default_radius %> km
