@@ -10,6 +10,10 @@ section {
 	padding-top: 10px;
 }
 
+.card{
+    margin-bottom: 9px;
+}
+
 /*USERS 2*/
 .users2 .image,
 .users2 .image img {
@@ -18,9 +22,10 @@ section {
 }
 
 .users2 .media {
-    padding: 10px 0;
-    border-radius: 2px;
+    padding: 10px 10px;
+    background-color: rgba(255,255,255, 0.1);
     box-shadow: 0 1px 0px #EEE;
+    border-radius: 5px;
     -webkit-box-shadow: 0 1px 0px #EEE;
     -moz-box-shadow: 0 1px 0px #EEE;
 }
