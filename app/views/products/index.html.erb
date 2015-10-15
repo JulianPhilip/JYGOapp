@@ -40,12 +40,37 @@
                         </div>
                       <% end %>
 
-                </div>
-                <div class="modal-footer">
-                    <center>
-                    <%= link_to 'New product', new_product_path , class: 'btn btn-default'%>
-                    </center>
-                </div>
-            </div>
-        </div>
-</div>
+<table class="table table_striped">
+  <thead>
+    <tr>
+      <th>Categorie</th>
+      <th>Sub-categorie</th>
+      <th>Nom</th>
+      <th>mots-clés</th>
+      <th>Min-Prix</th>
+      <th>Max-Prix</th>
+      <th>Difficulté</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each_with_index do |product, index| %>
+      <tr class="white-para">
+        <td><%= product.category %></td>
+        <td><%= product.sub_category %></td>
+        <td><%= product.name %></td>
+        <td><%= product.key_words %></td>
+        <td><%= product.description %></td>
+        <td><%= product.min_price %></td>
+        <td><%= product.max_price %></td>
+        <td><%= product.difficulty %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Choisir', :root, class: "btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New product', new_product_path %>
