@@ -1,69 +1,59 @@
 <%= simple_form_for @order do |o| %>
   <%= o.error_notification %>
 
-
-
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Quantité</th>
-            <th>Prix estimé</th>
-            <th class="text-center">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-            <tr>
-              <% @order.ordered_products.each do |op| %>
-                <td><%= op.product.name %></td>
-                <td><%= op.quantity %> <%= op.product.unit %> </td>
-                <td>[<%= op.product.min_price %> € - <%= op.product.max_price %> €]</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-            </tr>
-            <% end %>
-            </tbody>
-    </table>
-
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>Catégorie</th>
-            <th>Produit</th>
-            <th>Quantité</th>
-            <th></th>
-        </tr>
-    </thead>
-
-
-
-
 <div class="container-fluid products-choices">
-    <div class="row">
+
+  <div class="order-section chosen">
+    <div class="row chosen-products-labels">
+            <div class="col-sm-3">Produit</div>
+            <div class="col-sm-3">Quantité</div>
+            <div class="col-sm-3">Prix estimé</div>
+            <div class="col-sm-3">Action</div>
+    </div>
+    <div class="row chosen-products">
+      <% @order.ordered_products.each do |op| %>
+                <div class="col-sm-3 chosen-product"><%= op.product.name %></div>
+                <div class="col-sm-3 chosen-product"><%= op.quantity %> <%= op.product.unit %> </div>
+                <div class="col-sm-3 chosen-product">[<%= op.product.min_price %> € - <%= op.product.max_price %> €]</div>
+                <div class="col-sm-3 chosen-product"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="order-section current-selection">
+    <div class="row products-choices-labels">
             <div class="col-sm-3">Catégorie</div>
             <div class="col-sm-3">Produit</div>
-            <div class="col-sm-3 col-sm-offset-3">Quantité</div>
+            <div class="col-sm-6">Quantité</div>
             <!-- <div class="col-sm-3">sqdfmlfkjqsdm</div> -->
+    </div>
 
+    <div class="row product-selection">
               <%= o.fields_for :ordered_products, @order.ordered_products.build do |op| %>
-                <div class="col-sm-3"><%= select_tag :categories, options_for_select(@categories) %></div>
+                <div class="col-sm-3"><%= select_tag :categories, options_for_select(@categories)%></div>
                 <div class="col-sm-3"><%= op.collection_select(:product_id, [], :id, :name) %></div>
                 <div class="col-sm-3"><%= op.text_field :quantity %></div>
                 <div class="col-sm-3"><button type="submit" name="commit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-plus"> Ajouter </i></button></div>
               <% end %>
     </div>
+  </div>
 
-  <div class="row">
-            <div class="col-sm-3">Prix minimum</div>
-            <div class="col-sm-3">Prix maximum</div>
-            <div class="col-sm-3">Commission</div>
+  <div class="order-section summary">
+    <div class="row prices-labels">
+              <div class="col-sm-2">Prix-min</div>
+              <div class="col-sm-2">Prix-max</div>
+              <div class="col-sm-8">Commission</div>
+    </div>
+    <div class="row prices-summary">
+                  <div class="col-sm-2"><%= @order.min_price_sum %> €</div>
+                  <div class="col-sm-2"><%= @order.max_price_sum %> €</div>
+                  <div class="col-sm-8">5 €</div>
+                  
+    </div>
   </div>
-  <div class="row">
-                <div class="col-sm-3"><%= @order.min_price_sum %> €</div>
-                <div class="col-sm-3"><%= @order.max_price_sum %> €</div>
-                <div class="col-sm-3">5 €</div>
-                <div class="col-sm-3"><button type="submit" name="commit" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-ok"> JYGO </i></button></div>
-  </div>
+
 </div>
+
 <% end %>
 
 

@@ -11,24 +11,45 @@
 	min-width: 800px;
 }
 
+
+.row{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.order-section{
+	margin: 10px 0;
+	padding: 0 5px;
+}
+.chosen{
+	border: solid 2px rgba(210,210,255, 0.25);
+	background-color: rgba(240,248,255, 0.8);
+	.chosen-products-labels{
+		font-size: 1.3em;
+	}
+	.chosen-product{    // << NOT chosen-productS (this is not a row)
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+}
+
+.current-selection{
+	border: solid 2px rgba(154,205,50, 0.2);
+	background-color: rgba(154,205,50, 0.1);
+	.products-choices-labels{
+		font-size: 1.3em;
+	}
+	.product-selection{
+		select{
+			width: 100%;
+		}
+	}
+}
+
 .summary{
-	border: solid 2px tomato;
+	border: solid 2px rgba(255, 99, 71, 0.1);
 	background-color: rgba(255, 99, 71, 0.1);
-	th{
-		background-color: rgba(255, 99, 71, 0.1);
-	}
-	td{
-		background-color: rgba(255, 99, 71, 0.1);
+	.prices-labels{
+		font-size: 1.3em;
 	}
 }
-
-.products-choices{
-	padding: 0;
-
-	select{
-		width: 100%;
-	}
-}
-// .summary th, .summary td{ // << how to remove the grey border
-// 	border: none !important;
-// }
