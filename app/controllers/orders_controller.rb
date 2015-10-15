@@ -15,6 +15,10 @@ class OrdersController < ApplicationController
     end
   end
 
+  def mes_livraisons
+    @user = current_user
+  end
+
   def new
   end
 
@@ -76,7 +80,7 @@ class OrdersController < ApplicationController
   client.account.messages.create(
     :from => from,
     :to => shopper.user.phone_number,
-    :body => "Bonjour ,  Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
+    :body => "Bonjour,  Vous avez une nouvelle commande à honorer. Rendez-vous sur jygo.herokuapp.com"
   )
   end
 end
