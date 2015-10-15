@@ -34,6 +34,10 @@ class User < ActiveRecord::Base
   has_one :shopper
   has_many :orders
 
+  before_create do |doc|
+    doc.api_key = doc.generate_api_key
+  end 
+
   def full_street_address
     [address, zip_code, city].compact.join(', ')
   end
@@ -45,11 +49,18 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
+def generate_api_key
+  loop do
+    token = SecureRandom.base64.tr('+/=', 'duZ')   
+    break token unless User.exists?(api_key: token)
+  end
+end
+
   private
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
   end
 
-
+  
 end

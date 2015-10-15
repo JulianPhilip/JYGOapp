@@ -35,6 +35,13 @@ Rails.application.routes.draw do
   get '/home_call_action' => "users#home_call_action", as: 'home'
 
 
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :users
+    end
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
