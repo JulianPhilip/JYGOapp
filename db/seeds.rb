@@ -47,13 +47,3 @@ end
     description: Faker::Lorem.sentences(1)
     )
 end
-
-
-
-
-3.times do 
-    Product.create(
-        name: "tomato",
-        category: "nobody knows",
-    )
-end
