@@ -78,7 +78,7 @@ class OrdersController < ApplicationController
   auth_token = ENV['TWILIO_AUTHTOKEN']
 
   client = Twilio::REST::Client.new account_sid, auth_token
-  from = "+32460205695"
+  from = "+33644605096"
   client.account.messages.create(
     :from => from,
     :to => shopper.user.phone_number,
@@ -92,7 +92,7 @@ class OrdersController < ApplicationController
   auth_token = ENV['TWILIO_AUTHTOKEN']
 
   client = Twilio::REST::Client.new account_sid, auth_token
-  from = "+32460205695"
+  from = "+33644605096"
   client.account.messages.create(
     :from => from,
     :to => shopper.user.phone_number,
