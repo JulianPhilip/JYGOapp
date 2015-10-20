@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     # UserMailer.list_user(@order).deliver
-    send_sms_list(@order.shopper, @order.user)
+    # send_sms_list(@order.shopper, @order.user)
   end
 
   def show_all
@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     @order = Order.create(shopper: shopper, date: date, user: current_user)
 
     UserMailer.order_confirmation_shopper(@order).deliver
-    send_sms(shopper)
+    # send_sms(shopper)
 
     redirect_to edit_order_path(@order)
   end
