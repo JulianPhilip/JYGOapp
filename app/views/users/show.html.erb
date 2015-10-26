@@ -9,7 +9,7 @@
                       </div>
                       <div class="modal-body">
                           <center>
-                          <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle img-profile-main"></a>
+                          <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle img-profile-main">
                           <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
                           <br>
                           <br>
@@ -102,8 +102,9 @@
                   <table>
                     <thead>
                       <tr>
-                                  <th>Date</th>
                                   <th>Shopper</th>
+                                  <th></th>
+                                  <th>Date</th>
                                   <th>Status</th>
                                   <th>Total Amount</th>
                                   <th>Commission</th>
@@ -113,10 +114,14 @@
                             <tr>
                             <% @user.orders.each_with_index do |order, index| %>
                                 <td>
-                                  <%= order.date %>
+                                  <img src="<%= order.shopper.user.picture.url(:medium)%>" name="aboutme" width="50" height="50" border="0" class="img-circle img-profile-main">
+
                                 </td>
                                 <td>
                                   <%= order.shopper.user.firstname %> <%= order.shopper.user.lastname %>
+                                </td>
+                                <td>
+                                  <%= order.date %>
                                 </td>
                                 <td>
                                   <% if order.status_exec == true %>
