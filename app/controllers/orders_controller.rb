@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  # before_action :verification
+
   def index
     @orders = Order.all
   end
@@ -72,6 +74,14 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(ordered_products_attributes: [:product_id, :quantity])
   end
+
+  # def verification
+  #   if user_signed_in?
+  #     redirect_to :root
+  #   else
+  #     redirect_to edit_info_path
+  #   end
+  # end
 
   def send_sms(shopper)
   account_sid = ENV['TWILIO_SID']
