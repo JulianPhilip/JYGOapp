@@ -1,99 +1,151 @@
- <div class="container">
-        <div class="modal-dialog profile">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <a href="<%=edit_info_path %>" class="btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <h4 class="modal-title" id="myModalLabel">About <%= @user.firstname %></h4>
-                </div>
-                <div class="modal-body">
-                    <center>
-                    <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle img-profile-main"></a>
-                    <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
-                    <br>
-                    <br>
-                    <h4>Nom d'utilisateur: <%= @user.username %></h4>
-                    <h4>Prénom: <%= @user.firstname %></h4>
-                    <h4>Nom: <%= @user.lastname %></h4>
-                    <p>Adresse:</p>
-                    <p><%= @user.address %></p>
-                    <p><%= @user.zip_code %></p>
-                    <p><%= @user.city %></p>
-                    <p>Numéro de téléphone: <%= @user.phone_number %></p>
-                    <% if @user.address.nil? || @user.zip_code.nil? || @user.city.nil? %>
-                    <p>Veuillez renseigner votre adresse</p>
-                    <% end %>
-                    <% if @user.phone_number.nil? %>
-                    <p>Veuillez renseigner votre numéro de téléphone</p>
-                    <% end %>
+<div class="row">
+  <div class="col-sm-6">
+       <div class="container">
+              <div class="modal-dialog profile">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <a href="<%=edit_info_path %>" class="btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-pencil"></span></a>
+                          <h4 class="modal-title" id="myModalLabel">About <%= @user.firstname %></h4>
+                      </div>
+                      <div class="modal-body">
+                          <center>
+                          <img src="<%= @user.picture.url(:medium)%>" name="aboutme" width="140" height="140" border="0" class="img-circle img-profile-main"></a>
+                          <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
+                          <br>
+                          <br>
+                          <h4>Nom d'utilisateur: <%= @user.username %></h4>
+                          <h4>Prénom: <%= @user.firstname %></h4>
+                          <h4>Nom: <%= @user.lastname %></h4>
+                          <p>Adresse:</p>
+                          <p><%= @user.address %></p>
+                          <p><%= @user.zip_code %></p>
+                          <p><%= @user.city %></p>
+                          <p>Numéro de téléphone: <%= @user.phone_number %></p>
+                          <% if @user.address.nil? || @user.zip_code.nil? || @user.city.nil? %>
+                          <p>Veuillez renseigner votre adresse</p>
+                          <% end %>
+                          <% if @user.phone_number.nil? %>
+                          <p>Veuillez renseigner votre numéro de téléphone</p>
+                          <% end %>
 
-                    <span><strong>Vos spécialités: </strong></span>
-                        <div class="row">
-
-                          <div class="col-sm-6">
-                            <!-- <ul class="skills left"> -->
-                                <% if @user.vin == true %>
-                              <!-- <li> -->
-                                  <span class="label label-warning"><%="Vin"%></span>
-                              <!-- </li> -->
-                                <%end%>
-                                <% if @user.boucherie == true %>
-                              <!-- <li> -->
-                                  <span class="label label-success"><%="Boucherie"%></span>
-                              <!-- </li> -->
-                                <%end%>
-                                <% if @user.charcuterie == true %>
-                              <!-- <li> -->
-                                  <span class="label label-warning"><%="Charcuterie"%></span>
-                              <!-- </li> -->
-                                <%end%>
-                                <% if @user.prix == true %>
-                              <!-- <li> -->
-                                  <span class="label label-info"><%="Meilleurs affaires"%></span>
-                              <!-- </li> -->
-                                <%end%>
-                            <!-- </ul> -->
-                          </div>
-
-                          <div class="col-sm-6">
-                          <ul class="skills right">
-                              <% if @user.legume == true %>
+                          <span><strong>Vos spécialités: </strong></span>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <!-- <ul class="skills left"> -->
+                              <% if @user.vin == true %>
                             <!-- <li> -->
-                                <span class="label label-warning"><%="Légume"%></span>
+                                <span class="label label-warning"><%="Vin"%></span>
                             <!-- </li> -->
                               <%end%>
-                              <% if @user.fruit == true %>
+                              <% if @user.boucherie == true %>
                             <!-- <li> -->
-                                <span class="label label-warning"><%="Fruit"%></span>
+                                <span class="label label-success"><%="Boucherie"%></span>
                             <!-- </li> -->
                               <%end%>
-                              <% if @user.poisson == true %>
+                              <% if @user.charcuterie == true %>
                             <!-- <li> -->
-                                <span class="label label-info"><%="Poisson"%></span>
+                                <span class="label label-warning"><%="Charcuterie"%></span>
                             <!-- </li> -->
                               <%end%>
-                              <% if @user.boutique == true %>
+                              <% if @user.prix == true %>
                             <!-- <li> -->
-                                <span class="label label-success"><%="Meilleurs Addresses"%></span>
+                                <span class="label label-info"><%="Meilleurs affaires"%></span>
                             <!-- </li> -->
                               <%end%>
                           <!-- </ul> -->
-                          </div>
-
                         </div>
-
-                        <!-- USE THIS BOIlERPLATE TO ADD SKILLS-->
-                        <!-- <span class="label label-warning">HTML5/CSS</span>
-                        <span class="label label-info">Adobe CS 5.5</span>
-                        <span class="label label-info">Microsoft Office</span>
-                        <span class="label label-success">Windows XP, Vista, 7</span> -->
-                    </center>
-                    <hr>
+                        <div class="col-sm-6">
+                        <ul class="skills right">
+                            <% if @user.legume == true %>
+                          <!-- <li> -->
+                              <span class="label label-warning"><%="Légume"%></span>
+                          <!-- </li> -->
+                            <%end%>
+                            <% if @user.fruit == true %>
+                          <!-- <li> -->
+                              <span class="label label-warning"><%="Fruit"%></span>
+                          <!-- </li> -->
+                            <%end%>
+                            <% if @user.poisson == true %>
+                          <!-- <li> -->
+                              <span class="label label-info"><%="Poisson"%></span>
+                          <!-- </li> -->
+                            <%end%>
+                            <% if @user.boutique == true %>
+                          <!-- <li> -->
+                              <span class="label label-success"><%="Meilleurs Addresses"%></span>
+                          <!-- </li> -->
+                            <%end%>
+                        <!-- </ul> -->
+                        </div>
+                      </div>
+                              <!-- USE THIS BOIlERPLATE TO ADD SKILLS-->
+                              <!-- <span class="label label-warning">HTML5/CSS</span>
+                              <span class="label label-info">Adobe CS 5.5</span>
+                              <span class="label label-info">Microsoft Office</span>
+                              <span class="label label-success">Windows XP, Vista, 7</span> -->
+                          </center>
+                          <hr>
+                      </div>
+                      <div class="modal-footer">
+                          <center>
+                          </center>
+                      </div>
+                  </div>
+              </div>
+      </div>
+  </div>
+  <div class="col-sm-6">
+       <div class="container">
+              <div class="modal-dialog profile">
+                <div class="modal-content">
+                  <table>
+                    <thead>
+                      <tr>
+                                  <th>Date</th>
+                                  <th>Shopper</th>
+                                  <th>Status</th>
+                                  <th>Total Amount</th>
+                                  <th>Commission</th>
+                      </th>
+                    </thead>
+                    <tbody>
+                            <tr>
+                            <% @user.orders.each_with_index do |order, index| %>
+                                <td>
+                                  <%= order.date %>
+                                </td>
+                                <td>
+                                  <%= order.shopper.user.firstname %> <%= order.shopper.user.lastname %>
+                                </td>
+                                <td>
+                                  <% if order.status_exec == true %>
+                                    <%= "Effectuée" %>
+                                  <% else %>
+                                    <%= "En cours" %>
+                                  <% end %>
+                                <td>
+                                <td>
+                                  <% if order.status_exec == true %>
+                                    <%= order.total_amount %>
+                                  <% else %>
+                                    <%=  "Indisponible" %>
+                                  <% end %>
+                                <td>
+                                <td>
+                                  <% if order.status_exec == true %>
+                                    <%= order.commission %>
+                                  <% else %>
+                                    <%=  "Indisponible" %>
+                                  <% end %>
+                                <td>
+                              </tr>
+                            <% end %>
+                    </tbody>
+                  </table>
                 </div>
-                <div class="modal-footer">
-                    <center>
-                    </center>
-                </div>
-            </div>
-
-        </div>
+              </div>
+      </div>
+  </div>
 </div>
+
