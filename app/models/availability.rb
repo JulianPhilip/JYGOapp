@@ -7,7 +7,11 @@ class Availability < ActiveRecord::Base
     #Appartment.near('Antwerp').where("guest_capacity <= ?", 3).joins(:availabilities).where("availabilities.start_date <= ? AND availabilities.end_date >= ?", Date.new(2015,7,2), Date.new(2015,7,14))
   end
 
-
+  rails_admin do
+    configure :shopper do
+      label 'Owner of this availability: '
+    end
+  end
 
   # validates :verif_time_slot
 

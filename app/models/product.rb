@@ -10,4 +10,6 @@ class Product < ActiveRecord::Base
   def self.categories
     distinct.pluck(:category)
   end
+
+
 end
