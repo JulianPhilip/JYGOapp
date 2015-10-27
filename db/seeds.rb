@@ -32,7 +32,7 @@ end
 20.times do
   Availability.create(
     shopper_id: rand(1..20),
-    date: Faker::Date.forward(10),
+    date: Faker::Date.forward(10)
     )
 end
 
