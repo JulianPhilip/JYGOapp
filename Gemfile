@@ -43,6 +43,7 @@ gem 'paperclip'
 gem 'high_voltage','~> 2.4.0'
 gem 'gmaps4rails'
 gem 'pundit'
+gem 'rails_admin'
 gem 'twilio-ruby'
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

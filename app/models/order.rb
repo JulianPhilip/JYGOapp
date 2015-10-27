@@ -17,4 +17,17 @@ class Order < ActiveRecord::Base
       acc + op.max_price
     end
   end
+
+  rails_admin do
+   configure :user do
+      label 'Owner of this order: '
+    end
+  end
+  rails_admin do
+   configure :shopper do
+      label ' must do this order: '
+    end
+  end
 end
+
+

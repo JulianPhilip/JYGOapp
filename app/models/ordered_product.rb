@@ -20,4 +20,22 @@ class OrderedProduct < ActiveRecord::Base
       0
     end
   end
+  rails_admin do
+    configure :order do
+      label 'ID of this ordered product: '
+    end
+  end
+
+  rails_admin do
+    configure :product do
+      label 'Nature of this ordered product: '
+    end
+  end
+
+  rails_admin do
+    configure :shop do
+      label 'Origin of this ordered product: '
+    end
+  end
 end
+
