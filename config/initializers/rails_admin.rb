@@ -32,6 +32,14 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  # config.model 'Availabilities' do
+  #   list do
+  #     configure :date do
+  #       hide
+  #     end
+  #     field :beginning_hour
+  #   end
+  # end
 
   config.authorize_with do |controller|
     redirect_to main_app.root_path unless current_user.admin
