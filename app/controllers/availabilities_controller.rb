@@ -1,5 +1,6 @@
 class AvailabilitiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :current_user_shopper
 
   def index
     current_shopper = Shopper.where(user: current_user).first
@@ -46,7 +47,12 @@ class AvailabilitiesController < ApplicationController
 
   def availabilities_params
     params.require(:availability).permit(:date)
-
   end
 
+  def current_user_shopper
+    current_shopper = Shopper.where(user: current_user).first
+    if(current_shopper).nil?
+      redirect_to new_shopper_path
+    end
+  end
 end
