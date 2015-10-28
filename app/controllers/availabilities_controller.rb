@@ -1,7 +1,7 @@
 class AvailabilitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :current_user_shopper
-
+  before_action :profile_check
   def index
     current_shopper = Shopper.where(user: current_user).first
     if(current_shopper).nil?
@@ -47,6 +47,15 @@ class AvailabilitiesController < ApplicationController
 
   def availabilities_params
     params.require(:availability).permit(:date)
+  end
+
+  def profile_check
+     cu = current_user
+    if cu.username?||cu.firstname?||cu.lastname?||cu.address?||cu.city?||cu.zip_code?||cu.phone_number?
+    else
+      redirect_to edit_info_path
+      flash[:alert] = "Oups! Avez-vous bien remplis votre profil?"
+    end
   end
 
   def current_user_shopper
