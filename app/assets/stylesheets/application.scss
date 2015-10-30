@@ -104,3 +104,22 @@
     padding: 0 8px;
     box-sizing: border-box;
 }
+
+
+.jygobutton{
+    margin: 0;
+    border: none;
+    background-color: #2ecc71;
+    border-radius: 20em;
+    padding: 23px;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 20px;
+    display: block;
+    transition: 0.3s;
+    &:hover{
+        background-color: #27ae60;
+
+    }
+}
