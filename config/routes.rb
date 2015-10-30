@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get '/home_call_action' => "users#home_call_action", as: 'home'
   get '/show_all' => "orders#show_all", as: 'mes_commandes'
   get '/mes_livraisons' => "orders#mes_livraisons"
+  get '/not_shopper' => "orders#not_shopper"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

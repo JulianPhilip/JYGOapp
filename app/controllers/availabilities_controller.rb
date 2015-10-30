@@ -1,7 +1,8 @@
 class AvailabilitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :current_user_shopper
   before_action :profile_check
+  before_action :current_user_shopper
+
   def index
     current_shopper = Shopper.where(user: current_user).first
     if(current_shopper).nil?

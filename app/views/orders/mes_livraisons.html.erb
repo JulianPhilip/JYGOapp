@@ -13,8 +13,8 @@
                       <div class="row">
                           <h4 class="media-heading">
                             <div class="col-sm-2">Date</div>
-                            <div class="col-sm-2">User Name</div>
-                            <div class="col-sm-2">User Lastname</div>
+                            <div class="col-sm-2">Shopper Name</div>
+                            <div class="col-sm-2">Shopper Lastname</div>
                             <div class="col-sm-2">Status</div>
                             <div class="col-sm-2">Total Amount</div>
                             <div class="col-sm-2">Commission</div>
@@ -28,10 +28,10 @@
                             <%= order.date %>
                           </div>
                           <div class="col-sm-2">
-                            <%= order.user.firstname %>
+                            <%= order.shopper.user.firstname %>
                           </div>
                           <div class="col-sm-2">
-                            <%= order.user.lastname %>
+                            <%= order.shopper.user.lastname %>
                           </div>
                           <div class="col-sm-2">
                             <% if order.status_exec == true %>
