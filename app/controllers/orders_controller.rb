@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
    if current_user.shopper
       @shopper = current_user.shopper
     else
-      redirect_to :root
+      redirect_to not_shopper_path
     end
   end
 
@@ -56,7 +56,7 @@ class OrdersController < ApplicationController
     if current_user.shopper
       @shopper = current_user.shopper
     else
-      redirect_to :root
+      redirect_to not_shopper_path
     end
   end
 
@@ -69,19 +69,14 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
+  def not_shopper
+  end
+
   private
 
   def order_params
     params.require(:order).permit(ordered_products_attributes: [:product_id, :quantity])
   end
-
-  # def verification
-  #   if user_signed_in?
-  #     redirect_to :root
-  #   else
-  #     redirect_to edit_info_path
-  #   end
-  # end
 
   def send_sms(shopper)
   account_sid = ENV['TWILIO_SID']

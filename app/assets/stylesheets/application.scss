@@ -13,10 +13,10 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
-//@import "orders";  << don't do this ! 
+//@import "orders";  << don't do this !
 
 .modal-dialog{
-    &.notices{    
+    &.notices{
         position: fixed;
         width: 100%;
         height: 100%;
