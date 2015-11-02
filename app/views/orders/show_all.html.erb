@@ -36,7 +36,11 @@
             <% else %>
                <%=  "Indisponible" %></td>
             <%end%>
+          <td>
+          <%= link_to 'Commentez!', new_order_review_path(@shopper, index) %>
+        </td>
         </tr>
+
       <%end%>
   </tbody>
 </table>
