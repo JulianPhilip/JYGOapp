@@ -108,7 +108,7 @@
                                   <th>Status</th>
                                   <th>Total Amount</th>
                                   <th>Commission</th>
-                      </th>
+                      </tr>
                     </thead>
                     <tbody>
                             <tr>
@@ -129,21 +129,24 @@
                                   <% else %>
                                     <%= "En cours" %>
                                   <% end %>
-                                <td>
+                                </td>
                                 <td>
                                   <% if order.status_exec == true %>
                                     <%= order.total_amount %>
                                   <% else %>
-                                    <%=  "Indisponible" %>
+                                    <%= "Indisponible" %>
                                   <% end %>
-                                <td>
+                                </td>
                                 <td>
                                   <% if order.status_exec == true %>
                                     <%= order.commission %>
                                   <% else %>
-                                    <%=  "Indisponible" %>
+                                    <%= "Indisponible" %>
                                   <% end %>
+                                </td>
                                 <td>
+                                  <%= link_to 'Commentez!', new_order_review_path(@user, index) %>
+                                </td>
                               </tr>
                             <% end %>
                     </tbody>
