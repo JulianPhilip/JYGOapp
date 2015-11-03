@@ -8,6 +8,7 @@
                 </div>
                 <div class="modal-body">
                     <center>
+                      <small>
                       <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
                       <%= f.input :picture %>
                       <h4 class="media-heading">
@@ -17,8 +18,8 @@
                         <div id="alert6"></div>
                         <%= f.input :lastname, autofocus: true,required: true %>
                         <div id="alert5"></div>
-                        <small>
                           <%= f.select :sexe, [['Male',1],['Female',2]] %>
+                          <br>
                           <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
                           <%= f.input :address, autofocus: true, required: true %>
                           <div id="alert4"></div>
@@ -32,6 +33,7 @@
                       </h4>
                     </center>
                     <div class="container">
+                      <small>
                       <span><strong>Skills: </strong></span>
                           <%= f.input :vin %>
                           <%= f.input :boucherie %>
@@ -41,13 +43,16 @@
                           <%= f.input :fruit %>
                           <%= f.input :poisson %>
                           <%= f.input :boutique %>
+                      </small>
                     </div>
+
                     <hr>
                     <center>
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        </p>
+                      <%= f.input :biography, autofocus: true %><br>
                     <br>
+
                     </center>
+                     </div>
                 </div>
                 <div class="modal-footer">
                     <center>
