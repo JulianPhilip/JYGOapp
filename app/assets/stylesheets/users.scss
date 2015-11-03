@@ -9,13 +9,12 @@
 }
 .modal-dialog.profile{
 	padding-top: 100px;
+    &.order .modal-content{
+        padding: 30px;
+    }
 }
-.modal-dialog.profile-mes-livraison{
-  padding-top: 58px;
-}
-.modal-dialog.edit-profile{
-	padding-top: 100px;
-}
+
+
 
 .img-circle.img-profile-main{
 	margin-bottom: 10px;
