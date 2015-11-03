@@ -80,12 +80,10 @@
                         </div>
                           <div class="modal-body">
                           <center>
-                          <h4>biography: </h4>
-                            <p style="height: 86px;">
-                              <%= @user.biography %>
-                            </p>
-                            <h4 style="height: 86px;">Biography:</h4>
+                            <h4 >Biography:</h4>
+                           <div class="biography">
                             <%= @user.biography %>
+                            </div>
                           </div>
                       </div>
                               <!-- USE THIS BOIlERPLATE TO ADD SKILLS-->
@@ -108,11 +106,12 @@
        <!-- <div class="container"> -->
               <div class="modal-dialog profile">
                 <div class="modal-content">
+                  <h4 class="modal-title" id="myModalLabel">Mes Commande</h4>
                   <table>
                     <thead>
                       <tr>
+                                  <th>Photo</th>
                                   <th>Shopper</th>
-                                  <th></th>
                                   <th>Date</th>
                                   <th>Status</th>
                                   <th>Total Amount</th>
@@ -120,6 +119,7 @@
                       </tr>
                     </thead>
                     <tbody>
+
                             <tr>
                             <% @user.orders.each_with_index do |order, index| %>
                                 <td>
@@ -160,6 +160,71 @@
                             <% end %>
                     </tbody>
                   </table>
+                </div>
+              </div>
+      <!-- </div> -->
+  </div>
+   <div class="col-sm-6">
+       <!-- <div class="container"> -->
+              <div class="modal-dialog profile mes livraison">
+                <div class="modal-content">
+                  <h4 class="modal-title" id="myModalLabel">Mes Livraisons</h4>
+                  <table>
+                    <thead>
+                      <tr>
+                                  <th>Photo</th>
+                                  <th>Destinataire</th>
+                                  <th>Date</th>
+                                  <th>Status</th>
+                                  <th>Total Amount</th>
+                                  <th>Commission</th>
+                      </tr>
+                    </thead>
+                      <tbody>
+                         <% if current_user.shopper == nil%>
+                           <%="vous n'avez pas de profil shopper"%>
+                        <%else%>
+                              <tr>
+                              <% @user.shopper.orders.each_with_index do |order, index| %>
+                                  <td>
+                                    <img src="<%= order.shopper.user.picture.url(:medium)%>" name="aboutme" width="50" height="50" border="0" class="img-circle img-profile-main">
+
+                                  </td>
+                                  <td>
+                                    <%= order.user.firstname %> <%= order.user.lastname %>
+                                  </td>
+                                  <td>
+                                    <%= order.date %>
+                                  </td>
+                                  <td>
+                                    <% if order.status_exec == true %>
+                                      <%= "Effectuée" %>
+                                    <% else %>
+                                      <%= "En cours" %>
+                                    <% end %>
+                                  </td>
+                                  <td>
+                                    <% if order.status_exec == true %>
+                                      <%= order.total_amount %>
+                                    <% else %>
+                                      <%= "Indisponible" %>
+                                    <% end %>
+                                  </td>
+                                  <td>
+                                    <% if order.status_exec == true %>
+                                      <%= order.commission %>
+                                    <% else %>
+                                      <%= "Indisponible" %>
+                                    <% end %>
+                                  </td>
+                                  <td>
+                                    <%= link_to 'Commentez!', new_order_review_path(@user, index) %>
+                                  </td>
+                                </tr>
+                              <% end %>
+                      </tbody>
+                    </table>
+                  <%end%>
                 </div>
               </div>
       <!-- </div> -->

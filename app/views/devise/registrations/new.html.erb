@@ -11,15 +11,18 @@
                         <div class="row">
 							<div>
 							<%= f.label :email %><br />
-							<%= f.email_field :email %></div>
+							<%= f.email_field :email, :class => "login_format"%>
+            </div>
                         </div>
                         <div class="row" style="margin: 10px;">
 						  <div><%= f.label :password %><br />
-						  <%= f.password_field :password %></div>
+						  <%= f.password_field :password,
+              :class =>"login_format"%></div>
   						</div>
                         <div class="row" style="margin: 10px;">
 						  <div><%= f.label :password_confirmation %><br />
-						  <%= f.password_field :password_confirmation %></div>
+						  <%= f.password_field :password_confirmation,
+              :class =>"login_format"%></div>
 						  </div>
                     <input class="btn btn-default" type="submit" name="commit" value="Inscription">
                     </center>
