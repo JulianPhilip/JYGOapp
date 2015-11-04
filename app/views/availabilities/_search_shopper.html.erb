@@ -46,10 +46,6 @@
                         <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=430x300&sensor=false&maptype=roadmap&markers=color:red|#{current_user.address} #{current_user.zip_code} #{current_user.city}" %>
                         </div>
 
-                        <!-- <span class="label label-warning">HTML5/CSS</span>
-                        <span class="label label-info">Adobe CS 5.5</span>
-                        <span class="label label-info">Microsoft Office</span>
-                        <span class="label label-success">Windows XP, Vista, 7</span> -->
                     </center>
                     <hr>
                     <center>
@@ -58,10 +54,10 @@
                     </p>
                     <strong>Date:</strong> <input type="date" class="form-control" id="date" name="date" style="width: 210px" required >
                     <br>
-                    <strong>Début:</strong> <input type="time" name="Début">
-                    <strong>Fin:</strong> <input type="time" name="Fin">
+                    <strong>Début:</strong> <input id="début" name="start-time" type="time">
+                    <strong>Fin:</strong> <input id="fin" name="end-time" type="time">
+
                     </center>
-                </div>
                 <div class="modal-footer">
                     <center>
                       <button type="submit" class="jygobutton" id="search-button"> Trouver un shopper !</button>
