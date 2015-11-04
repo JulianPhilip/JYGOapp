@@ -3,9 +3,10 @@
 <%= simple_form_for @shopper, url: shoppers_path, method: :post do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs" id="form-inputs-default-radius">
 
-  <%= f.input :default_radius, label: false, collection: 1..5, required: true, prompt:"en km" %>
+   <%#= f.input :default_radius, label: false, collection: 1..5, required: true, prompt:"en km" %>
+  <div class="select-input" id="form-inputs-default-radius">
+  <%= f.select :default_radius, options_for_select(1..5),:prompt =>"champ d'action en km", :class =>'select-style'%>
 
   </div>
 
