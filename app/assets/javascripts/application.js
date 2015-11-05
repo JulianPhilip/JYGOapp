@@ -208,11 +208,10 @@ $("#validez").click(function(e){
 $("#sauver").click(function(e){
   var trb = $('#beg').val();
   var tre = $('#end').val();
-  if (trb == tre ){
+  if (trb >= tre ){
     e.preventDefault();
-    $("#attention").html("l'heure de fin ne doit pas être identique à l'heure de début");
+    $("#attention").html("l'heure de fin ne doit pas être identique ou inférieure à l'heure de début");
   }
 });
-
 });
 
