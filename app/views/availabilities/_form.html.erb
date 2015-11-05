@@ -26,8 +26,9 @@
                     <h3 class="media-heading">
                     <small>
                       <%= f.input :date,required: true, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y'),required: true } %>
-                      <%= f.input :beginning_hour,required: true, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s'),  } %>
-                      <%= f.input :ending_hour, required: true, as: :time, input_html: { class: "timepicker", value: Time.now.strftime('%h-%m-%s') } %>
+                      <%= f.input :beginning_hour,required: true, as: :time, label: "heure de début", input_html: { class: "timepicker", id: "beg", value: Time.now.strftime('%h-%m-%s'),  } %>
+                      <%= f.input :ending_hour, label: "heure de fin", required: true, as: :time, input_html: { class: "timepicker", id: "end", value: Time.now.strftime('%h-%m-%s') } %>
+                      <div id="attention"></div>
                       <%= f.input :acceptation_auto, label: "Souhaitez-vous activer la validation automatique ?" %>
                     </small>
                     </h3>
@@ -45,7 +46,7 @@
                     </center>
                     <hr>
                     <center>
-                    <%= f.button :submit, "Sauvegarder" %>
+                    <%= f.button :submit, "Sauvegarder", id: "sauver",:class => "jygobutton" %>
                     <br>
                     </center>
                 </div>

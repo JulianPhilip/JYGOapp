@@ -205,6 +205,14 @@ $("#validez").click(function(e){
     $("#alert").html("ce champ n'est pas rempli");
   }
 });
+$("#sauver").click(function(e){
+  var trb = $('#beg').val();
+  var tre = $('#end').val();
+  if (trb == tre ){
+    e.preventDefault();
+    $("#attention").html("l'heure de fin ne doit pas être identique à l'heure de début");
+  }
+});
 
 });
 
