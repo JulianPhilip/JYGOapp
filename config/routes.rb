@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   get '/show_all' => "orders#show_all", as: 'mes_commandes'
   get '/mes_livraisons' => "orders#mes_livraisons"
   get '/not_shopper' => "orders#not_shopper"
+  get '/step1' => "orders#step1"
+  get '/step2' => "orders#step2"
+  get '/step3' => "orders#step3"
+  get '/step4' => "orders#step4"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

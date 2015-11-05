@@ -1,35 +1,35 @@
+<%= render 'shared/roadmap_order' %>
+<div class="shopper-cards">
 
-<!-- <div class="shopper-cards">
- -->
-  <!--   <section> -->
-     <!--  <div class="users2"> -->
+    <section>
+      <div class="users2">
 
-    <!--     <div class="row"> -->
+        <div class="row">
 
-     <!--  <% @shoppers.each_with_index do |shopper, index| %>
+      <% @shoppers.each_with_index do |shopper, index| %>
           <div class="col-sm-6 col-xs-12 card">
             <div class="media">
- -->
-              <!-- <div class="media-left media-middle">
+
+              <div class="media-left media-middle">
                 <div class="image loader">
                   <img src="<%=shopper.user.picture %>" class="borderStyle" alt="">
                 </div>
               </div>
- -->
-            <!--   <div class="media-body bio">
+
+              <div class="media-body bio">
                 <h1 class="name"><%= shopper.user.firstname %> <%= shopper.user.lastname %></h1>
                 <p>
                   <span class="heading">Address <%= shopper.user.address %></span>                 </p>
                 <p>
                     <span class="heading"><%= shopper.user.zip_code %> <%= shopper.user.city %></span>
-                </p> -->
-                <!-- <p>
+                </p>
+                <p>
                   <span class="heading">Rayon d'action:</span> <%= shopper.default_radius %> km
                 </p>
                 <p>
                   <span class="heading">Mail</span> <%= shopper.user.email %>
-                </p> -->
-             <!--  </div>
+                </p>
+              </div>
               <div class="media-right">
                 <div class="follow transition">
                 <%= form_tag orders_path do %>
@@ -37,19 +37,19 @@
                   <%= hidden_field_tag 'date', @selected_date %>
                   <input  type="submit" name="commit" value="Choisir" class="btn btn-follow btn-sm" >
                 <% end %>
-                </div> -->
+                </div>
 
-               <!--  <p class="rating">
+                <p class="rating">
                   <% stars = rand(5) + 1 %>
                   <span class="heading">Rating:</span> <%= stars %>/5
                 </p>
- -->
-               <!--  <span>
+
+                <span>
                   <% stars.times do %>
                     <i class="fa fa-star"></i>
                   <% end %>
-                </span> -->
-           <!--  </div>
+                </span>
+            </div>
           </div>
         </div>
     <% end %>
@@ -59,4 +59,3 @@
 
   </div>
 </div>
- -->

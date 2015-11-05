@@ -1,15 +1,17 @@
 class OrdersController < ApplicationController
   # before_action :verification
+  before_action :authenticate_user!
+  before_action :profile_check
 
   def index
     @orders = Order.all
   end
 
-  def show
-    @order = Order.find(params[:id])
-    # UserMailer.list_user(@order).deliver
-    # send_sms_list(@order.shopper, @order.user)
-  end
+  # def show
+  #   @order = Order.find(params[:id])
+  #   # UserMailer.list_user(@order).deliver
+  #   # send_sms_list(@order.shopper, @order.user)
+  # end
 
   def show_all
    if current_user.shopper
@@ -38,11 +40,11 @@ class OrdersController < ApplicationController
     redirect_to edit_order_path(@order)
   end
 
-  def edit
-    @order = Order.find(params[:id])
-    @products = Product.all
-    @categories = Product.categories
-  end
+  # def edit
+  #   @order = Order.find(params[:id])
+  #   @products = Product.all
+  #   @categories = Product.categories
+  # end
 
   def update
     @order = Order.find(params[:id])
@@ -67,6 +69,30 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
     redirect_to orders_path
+  end
+
+  def step1
+  end
+
+  def step2
+    search = {
+      #date: params[:date].to_date,
+      location: current_user.full_street_address,
+    }
+
+    @selected_date = params[:date].to_date
+
+    @shoppers = Shopper.search(search).map(&:shopper).compact
+  end
+
+  def step3
+    @order = Order.find(params[:id])
+    @products = Product.all
+    @categories = Product.categories
+  end
+
+  def step4
+    @order = Order.find(params[:id])
   end
 
   def not_shopper
@@ -103,5 +129,13 @@ class OrdersController < ApplicationController
     :to => shopper.user.phone_number,
     :body => "Bonjour #{shopper.user.firstname} , La liste de produits de #{user.firstname} est désormais disponible. Rendez-vous sur jygo.herokuapp.com"
     )
+  end
+  def profile_check
+    cu = current_user
+    if cu.username?||cu.firstname?||cu.lastname?||cu.address?||cu.city?||cu.zip_code?||cu.phone_number?
+    else
+      redirect_to edit_info_path
+      flash[:alert] = "Oups! Avez-vous bien remplis votre profil?"
+    end
   end
 end

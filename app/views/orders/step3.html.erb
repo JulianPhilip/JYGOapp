@@ -1,0 +1,24 @@
+<%= render 'shared/roadmap_order' %>
+<div class="modal-dialog order">
+    <div class="modal-content">
+        <div class="modal-header">
+          <center>
+            <img src="<%= @order.shopper.user.picture %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+            <br>
+            <br>
+            <h4 class="modal-title" id="myModalLabel">Vous avez choisi <span style="color: tomato;"><%= @order.shopper.user.firstname %> </span>pour faire vos courses le <%= @order.date.day %>/<%= @order.date.month %>/<%= @order.date.year %>  </h4>
+          </center>
+        </div>
+        <div class="modal-body">
+          <span><strong>Faites votre liste ci-dessous :</strong></span>
+          <%= render partial: "order" %>
+        </div>
+        <div class="modal-footer">
+        <center>
+          <!-- <button type="submit" name="commit" class="btn btn-primary btn-lg"><i class="glyphicon glyphicon-ok"> JYGO </i></button> -->
+          <!-- class: "btn btn-primary btn-lg" -->
+          <%= link_to "JYGO", order_path(@order), class: "order-button btn-primary btn-lg" %>
+        </center>
+        </div>
+    </div>
+</div>
