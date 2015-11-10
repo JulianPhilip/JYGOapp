@@ -19,6 +19,9 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
   private
   def find_order
       @order = Order.find(params[:order_id])

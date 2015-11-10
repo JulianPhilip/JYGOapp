@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :shops
   resources :orders do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :show]
   end
 
   devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
@@ -37,6 +37,7 @@ Rails.application.routes.draw do
   get '/show_all' => "orders#show_all", as: 'mes_commandes'
   get '/mes_livraisons' => "orders#mes_livraisons"
   get '/not_shopper' => "orders#not_shopper"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
