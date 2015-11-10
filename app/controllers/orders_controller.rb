@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
   end
 
   def show_all
+    @user = current_user
    if current_user.shopper
       @shopper = current_user.shopper
     else

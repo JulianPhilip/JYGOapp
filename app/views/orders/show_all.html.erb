@@ -1,47 +1,70 @@
-<br>
-<br>
-<h1>Mes Commande Shopper</h1>
-
-<table class="table table_striped">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Shopper Name</th>
-      <th>Shopper Lastname</th>
-      <th>status</th>
-      <th>total amount</th>
-      <th>commission</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+        <div class="modal-dialog deliveries">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Mes livraisons </h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                      <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                      <h3 class="media-heading"><%= @user.firstname %> <%= @user.lastname %> <small><%= @user.city %> </small></h3>
+                    </center>
+                <div class="container-fluid">
+                      <div class="row">
+                          <h4 class="media-heading">
+                            <div class="col-sm-2">Date</div>
+                            <div class="col-sm-2"> Présnom du déstinataire</div>
+                            <div class="col-sm-2">Nom du déstinataire</div>
+                            <div class="col-sm-2">Status</div>
+                            <div class="col-sm-2">Total Amount</div>
+                            <div class="col-sm-2">Commission</div>
+                          </h4>
+                        </div>
+                      </div>
+                    <hr>
+                    <div class="container-fluid">
     <% @shopper.orders.each_with_index do |order, index| %>
-      <tr>
-        <td><%= order.date %></td>
-        <td><%= order.shopper.user.firstname%></td>
-        <td><%= order.shopper.user.lastname%></td>
-        <td><% if order.status_exec == true %>
+        <div class="col-sm-2">
+         <%= order.date %>
+        </div>
+        <div class="col-sm-2">
+          <%= order.user.firstname%>
+        </div>
+        <div class="col-sm-2">
+          <%= order.user.lastname%>
+        </div>
+        <div class="col-sm-2">
+          <% if order.status_exec == true %>
               <%= "Effectuée" %>
             <% else %>
               <%= "En cours" %></td>
             <%end%>
-        <td><% if order.status_exec == true %>
+        </div>
+        <div class="col-sm-2">
+          <% if order.status_exec == true %>
               <%= order.total_amount %>
             <% else %>
               <%=  "Indisponible" %></td>
               <%end%>
-        <td><% if order.status_exec == true %>
+        </div>
+        <div class="col-sm-2">
+        <% if order.status_exec == true %>
               <%= order.commission %>
             <% else %>
                <%=  "Indisponible" %></td>
             <%end%>
-          <td>
+        </div>
+        <div>
           <%= link_to 'Commentez!', new_order_review_path(@shopper, index) %>
-        </td>
-        </tr>
-
-      <%end%>
-  </tbody>
-</table>
+         </div>
+        <% end %>
+      </div>
+    </div>
+                <!-- <div class="modal-footer">
+                    <center>
+                    </center>
+                </div> -->
+    </div>
+  </div>
+</div>
 
