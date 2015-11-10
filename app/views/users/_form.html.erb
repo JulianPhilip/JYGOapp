@@ -11,31 +11,32 @@
                     <center>
                       <small>
                       <img src="<%= current_user.picture.url(:medium) %>" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
-                      <%= f.input :picture %>
+                      <%= f.input :picture, label: "Photo" %>
                       <h4 class="media-heading">
-                        <%= f.input :username, autofocus: true,required: true %>
+                        <%= f.input :username, label: "Nom d'utilisateur", autofocus: true,required: true %>
                         <div id="alert7"></div>
-                        <%= f.input :firstname, autofocus: true,required: true %>
+                        <%= f.input :firstname, label: "Prénom",autofocus: true,required: true %>
                         <div id="alert6"></div>
-                        <%= f.input :lastname, autofocus: true,required: true %>
+                        <%= f.input :lastname,label: "Nom", autofocus: true,required: true %>
                         <div id="alert5"></div>
-                          <%= f.select :sexe, [['Male',1],['Female',2]] %>
-                          <br>
-                          <%= f.input :date_of_birth, as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
-                          <%= f.input :address, autofocus: true, required: true %>
+                          <%= f.select :sexe, [['Homme',1],['Femme',2]] %>
+                         <br>
+                         <br>
+                          <%= f.input :date_of_birth,label: "Date de naissance", as: :date, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+                          <%= f.input :address,label: "Adresse", autofocus: true, required: true %>
                           <div id="alert4"></div>
-                          <%= f.input :city, autofocus: true, required: true %>
+                          <%= f.input :city, label: "Ville",autofocus: true, required: true %>
                           <div id="alert3"></div>
-                          <%= f.input :zip_code, autofocus: true, required: true %>
+                          <%= f.input :zip_code, label: "Code postal",autofocus: true, required: true %>
                           <div id="alert2"></div>
-                          <%= f.input :phone_number, autofocus: true, required: true %>
+                          <%= f.input :phone_number, label:"numéros de téléphone", autofocus: true, required: true %>
                           <div id="alert"></div>
                         </small>
                       </h4>
                     </center>
                     <div class="container">
                       <small>
-                      <span><strong>Skills: </strong></span>
+                      <span><strong>Vos spécialitées: </strong></span>
                           <%= f.input :vin %>
                           <%= f.input :boucherie %>
                           <%= f.input :charcuterie %>
@@ -49,7 +50,7 @@
 
                     <hr>
                     <center>
-                      <%= f.input :biography, autofocus: true %><br>
+                      <%= f.input :biography,label:"A propos de vous", autofocus: true %><br>
                     <br>
 
                     </center>
@@ -57,7 +58,7 @@
                 </div>
                 <div class="modal-footer">
                     <center>
-                    <%= f.button :submit, "Save changes", id:"validez" %>
+                    <%= f.button :submit, "Sauver", id:"validez" %>
                     </center>
                 </div>
             </div>
